@@ -1,0 +1,138 @@
+%
+% text handling
+%
+
+% vertical offset shortcut for paragraphs
+\newcommand{\pg}[0]{\vspace*{0.75em}\newline}
+
+% indentation shortcut
+\newcommand{\ind}[0]{\hspace*{\customindent}}
+
+% combination of vertical offset and indentation
+\newcommand{\parag}{\parag\ind}
+
+
+%
+% content shorthands
+%
+
+% text and name highlights
+\newcommand{\thl}[1]{``#1''}
+\newcommand{\nhl}[1]{\textsc{#1}}
+
+% missing citations
+\newcommand{\tocite}[1]{\textbf{\textcolor{red}{[\ifthenelse{\equal{#1}{}}{?}{#1}]}}}
+
+% arXiv and cds link
+\newcommand{\arxivlink}[2]{\href{https://arxiv.org/abs/#1}{\texttt{arXiv:#1\,[#2]}}}
+\newcommand{\cdslink}[1]{\href{http://cds.cern.ch/record/#1}{\texttt{cds:#1}}}
+
+% argmin/max operators
+\DeclareMathOperator*{\argmin}{arg\ min}
+\DeclareMathOperator*{\argmax}{arg\ max}
+
+% uneven plus-minus value
+\newcommand{\upm}[4]{#1#2/\!#3\!#4}
+
+%special signs
+\newcommand{\inches}{\ensuremath{{}^{\prime\prime}}}
+\newcommand{\skiroc}{SKIROC2-CMS}
+\newcommand{\percent}{$\%$}
+\newcommand{\permille}{\ensuremath{{}^\text{o}\mkern-5mu/\mkern-3mu_\text{oo}}}
+\newcommand{\med}{\text{med}}
+
+%% Units
+\newcommand{\degrees}{\ensuremath{^{\circ}}\xspace}
+\newcommand{\hitspermmbx}{\ensuremath{\text{Hits/mm}^{2}\text{/BX}}\xspace}
+\newcommand{\permmbx}{\ensuremath{\text{/mm}^{2}\text{/BX}}\xspace}
+\newcommand{\flux}{\ensuremath{\text{n_{eq}}/\text{cm}^{2}/\text{yr}}\xspace}
+\newcommand{\neqcm}{\ensuremath{\mathrm{n_{eq}}/\mathrm{cm}^{2}}\xspace}
+\newcommand{\percms}{\ensuremath{\text{cm}^{-2}\mathrm{s}^{-1}}\xspace}
+\newcommand{\micron}{\ensuremath{\upmu\mathrm{m}}\xspace}
+\newcommand{\microsecond}{\ensuremath{\upmu\mathrm{s}}\xspace}
+\newcommand{\microwatt}{\ensuremath{\upmu\mathrm{W}}\xspace}
+
+%abbreviations
+\newcommand{\eg}{e.g.}
+\newcommand{\ie}{i.e.}
+
+%software
+\newcommand{\CMSSW}{\textsc{CMSSW}}
+\newcommand{\ROOT}{\textsc{ROOT}}
+\newcommand{\corryvreckan}{\textsc{CORRYVRECKAN}}
+\newcommand{\Geant}{\textsc{GEANT4}}
+\newcommand{\luigi}{\textsc{LUIGI}}
+\newcommand{\millepede}{\textsc{MILLEPEDE}}
+
+%
+% physics processes
+%
+
+\newcommand{\slep}{\text{single-lepton}}
+\newcommand{\dlep}{\text{dilepton}}
+\newcommand{\fullh}{\text{full-hadron}}
+\newcommand{\Slep}{\text{Single-lepton}}
+\newcommand{\Dlep}{\text{Dilepton}}
+\newcommand{\Fullh}{\text{Full-hadron}}
+\newcommand{\slepe}{\text{single-electron}}
+\newcommand{\slepmu}{\text{single-muon}}
+\newcommand{\Slepe}{\text{Single-electron}}
+\newcommand{\Slepmu}{\text{Single-muon}}
+
+\newcommand{\hf}{\text{heavy-flavor}}
+\newcommand{\ttbar}{\ensuremath{t\bar{t}}}
+\newcommand{\bbbar}{\ensuremath{b\bar{b}}}
+\newcommand{\ccbar}{\ensuremath{c\bar{c}}}
+\newcommand{\totbar}{\ensuremath{t\hspace{-0.5mm}/\hspace{-0.5mm}\bar{t}}}
+\newcommand{\bobbar}{\ensuremath{b\hspace{-0.5mm}/\hspace{-0.5mm}\bar{b}}}
+\newcommand{\ttH}{\ensuremath{\ttbar H}}
+\newcommand{\Hbb}{\ensuremath{H\rightarrow \bbbar}}
+\newcommand{\Hnbb}{\ensuremath{H\nrightarrow \bbbar}}
+\newcommand{\HWW}{\ensuremath{H\rightarrow W^+W^-}}
+\newcommand{\Htautau}{\ensuremath{H\rightarrow \tau^+\tau^-}}
+\newcommand{\ttHbb}{\ensuremath{\ttH\,(\Hbb)}}
+\newcommand{\ttHnbb}{\ensuremath{\ttH\,(\Hnbb)}}
+\newcommand{\ttX}{\ensuremath{\ttbar\!+\!\text{X}}}
+\newcommand{\ttbb}{\ensuremath{\ttbar\!+\!\bbbar}}
+\newcommand{\ttb}{\ensuremath{\ttbar\!+\!\bobbar}}
+\newcommand{\tttb}{\ensuremath{\ttbar\!+\!2b}}
+\newcommand{\ttcc}{\ensuremath{\ttbar\!+\!\ccbar}}
+\newcommand{\ttlf}{\ensuremath{\ttbar\!+\!\text{lf}}}
+\newcommand{\tthf}{\ensuremath{\ttbar\!+\!\text{hf}}}
+\newcommand{\Singlet}{\ensuremath{\text{Single}\ \totbar}}
+\newcommand{\singlet}{\ensuremath{\text{single}\ \totbar}}
+\newcommand{\Singlett}{\ensuremath{\text{Single}\ t}}
+\newcommand{\Singletbar}{\ensuremath{\text{Single}\ \bar{t}}}
+\newcommand{\Vjets}{\ensuremath{V\hspace{-0.5mm}\!+\!\text{jets}}}
+\newcommand{\Wjets}{\ensuremath{W\hspace{-0.5mm}\!+\!\text{jets}}}
+\newcommand{\Zjets}{\ensuremath{Z\hspace{-0.5mm}\!+\!\text{jets}}}
+\newcommand{\Diboson}{\ensuremath{\text{Diboson}}}
+\newcommand{\diboson}{\ensuremath{\text{diboson}}}
+\newcommand{\ttW}{\ensuremath{\ttbar\!+\!W}}
+\newcommand{\ttZ}{\ensuremath{\ttbar\!+\!Z}}
+\newcommand{\ttV}{\ensuremath{\ttbar\!+\!V}}
+
+
+%
+% physics process colors
+%
+
+\definecolor{ttHcol}{RGB}{67,118,201}
+\definecolor{ttbbcol}{RGB}{235,230,10}
+\definecolor{ttbcol}{RGB}{205,0,10}
+\definecolor{tttbcol}{RGB}{255,153,1}
+\definecolor{ttcccol}{RGB}{131,38,10}
+\definecolor{ttlfcol}{RGB}{81,142,25}
+\definecolor{Singletcol}{RGB}{0,204,204}
+\definecolor{Vjetscol}{RGB}{104,140,140}
+\definecolor{Dibosoncol}{RGB}{1,25,147}
+\definecolor{ttVcol}{RGB}{255,102,101}
+
+
+%
+% other physics variables
+%
+
+\newcommand{\BR}{\ensuremath{B\!R}}
+\newcommand{\met}{\ensuremath{\cancel{E}_T}}
+\DeclareRobustCommand{\orderof}{\ensuremath{\mathcal{O}}}

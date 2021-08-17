@@ -1,0 +1,32 @@
+variables:
+    DOC: main
+
+# Three stages by default: build, test (default stage), deploy
+compile PDF:
+    stage: build
+
+    # Good enough image: Tex Live 2017 (1GB, 1.5 min runtime) no git
+    # https://hub.docker.com/r/texlive/texlive-full
+    #image: texlive/texlive-full
+
+    # Very good image but 2GB (2.5 min runtime)
+    #image: thomasweise/texlive
+
+    # Excellent image: TeX Live 2019 + git (2GB, 2.5 min)
+    # https://hub.docker.com/r/aergus/latex
+    # image: aergus/latex
+
+    # based on 
+    # https://hub.docker.com/r/texlive/texlive-full
+    # including git
+    image: thorbenquast/texlive-full-wgit
+
+    script:
+        - wget "https://raw.githubusercontent.com/Hightor/gitinfo2/CTAN/post-xxx-sample.txt" -O generate_gitinfo2
+        - chmod +x generate_gitinfo2 && ./generate_gitinfo2
+        - latexmk -pdf -pdflatex='pdflatex -file-line-error -synctex=15' ${DOC}
+        - ls -latr
+    artifacts:
+        paths:
+            - ${DOC}.pdf
+            - ${DOC}.log

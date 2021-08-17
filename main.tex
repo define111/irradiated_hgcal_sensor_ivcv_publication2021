@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1 
+
+\usepackage{jinstpub} 
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+
+\usepackage[capitalise,noabbrev,nameinlink]{cleveref}
+\newlength{\abc}
+\settowidth{\abc}{\space}
+\AtBeginDocument{%
+\renewcommand{\ref}[1]{\mbox{\Cref{#1}}}
+\renewcommand{\equationautorefname}{Equation~\hspace{-\abc}}
+\renewcommand{\sectionautorefname}{Section\,\negthinspace}
+\renewcommand{\subsectionautorefname}{Section\,\negthinspace}
+\renewcommand{\subsubsectionautorefname}{Section\,\negthinspace}
+\renewcommand{\figureautorefname}{Figure\,\negthinspace}
+\renewcommand{\tableautorefname}{Table\,\negthinspace}
+}
+
+\input{setup/packages.tex}
+\input{setup/commands.tex}
+
+\title{\boldmath Electrical characteristics of silicon pad sensor prototypes for the CMS endcap calorimeter upgrade}
+
+
+\author[a]{Thorben Quast}
+\author[a]{Eva Sicking}
+\author[a]{many more ...}
+
+\affiliation[a]{CERN EP-DT}
+
+\collaboration[b]{on behalf of the CMS collaboration}
+
+\emailAdd{thorben.quast@cern.ch}
+
+\abstract{
+Here will be an abstract that will blow your mind.
+} 
+\keywords{Calorimeter, HGCAL, silicon sensors, capacitance, leakage current, electrical characterisation, neutron irradiation, Hamburg model}
+
+\linenumbers
+
+\begin{document}
+\maketitle
+\flushbottom
+
+\linenumbers
+\input{content/1_introduction.tex}
+\input{content/2_sensors.tex}
+\input{content/3_setup.tex}
+\input{content/4_quality_assessment.tex}
+\input{content/5_annealing.tex}
+\input{content/6_irradiation.tex}
+\input{content/7_conclusion.tex}
+\input{content/acknowledgments.tex}
+
+\appendix
+\input{content/appendix/chuck_temperature.tex}
+
+\bibliographystyle{plain}
+\bibliography{bib/bib}
+
+\end{document}
