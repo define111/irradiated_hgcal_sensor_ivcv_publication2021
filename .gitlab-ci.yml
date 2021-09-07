@@ -1,5 +1,6 @@
 stages:
     - download-data
+    - figures
     - build-pdf
 
 
@@ -8,8 +9,7 @@ variables:
 
 download-files:
     stage: download-data
-    tags:
-        - docker
+
     image: thorbenquast/lcd_hgc_ana_wf
     script:
         - cd data;
@@ -22,6 +22,19 @@ download-files:
             - data/ivcv_irradiated_2021
         expire_in: 1 day
 
+
+compile-Figures:
+    stage: figures
+
+    image: rootproject/root:6.22.08-centos7
+    script:
+        - cd plots;
+        - source run.sh;
+    
+        artifacts:
+            paths:
+                - plots/*
+            expire_in: 1 week
 
 
 compile-PDF:
@@ -41,3 +54,4 @@ compile-PDF:
         paths:
             - ${DOC}.pdf
             - ${DOC}.log
+        expire_in: 1 week

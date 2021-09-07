@@ -6,3 +6,8 @@ main.pdf
 *.out
 *.toc
 *.synctex.gz
+*.DS_Store
+*.fdb_latexmk
+*.fls
+data/*
+__pycache__

@@ -4,8 +4,8 @@ import ROOT
 ROOT.PyConfig.IgnoreCommandLineOptions = True
 ROOT.gROOT.SetBatch()
 
-default_canvas_width = 800
-default_canvas_height = 640
+default_canvas_width = 1200
+default_canvas_height = 900
 
 default_style_props = {
   "Palette": 1,
@@ -26,7 +26,7 @@ default_style_props = {
   "PadLeftMargin": 0.12,
   "PadRightMargin": 0.05,
 
-  "LegendTextSize": 0.030
+  "LegendTextSize": 0.80
 }
 
 default_canvas_props = {
@@ -44,7 +44,8 @@ default_axis_props = {
 default_auto_ticklength = 0.015
 
 default_label_props = {
-
+    "TextFont": 43,
+    "TextSize": 32
 }
 
 default_legend_props = {
@@ -54,7 +55,7 @@ default_legend_props = {
     "LineColor": 0,
     "LineWidth": 0,
     "TextFont": 43,
-    "TextSize": 24,
+    "TextSize": 32,
     "ColumnSeparation": 0.
 }
 
@@ -117,7 +118,7 @@ def setup_pad(pad, props=None):
 
 def setup_x_axis(x_axis, pad, props=None):
     _props = default_axis_props.copy()
-    _props["TitleOffset"] = x_axis.GetTitleOffset()*0.95
+    _props["TitleOffset"] = x_axis.GetTitleOffset()*0.93
     apply_root_properties(x_axis, _props, props)
 
 
@@ -135,7 +136,7 @@ def setup_label(label, props=None):
     apply_root_properties(label, default_label_props, props)
 
 
-def calc_legend_pos(n_entries, x1=0.68, x2=0.96, y2=0.92, y_spread=0.045):
+def calc_legend_pos(n_entries, x1=0.68, x2=0.96, y2=0.92, y_spread=0.05):
     y1 = y2 - y_spread * n_entries
     return (x1, y1, x2, y2)
 
@@ -212,17 +213,13 @@ def apply_root_properties(obj, props, *_props):
             setter(value)
 
 
-def create_cms_labels(postfix="private work", x=0.135, y=0.96):
-    cms = ROOT.TLatex(x, y, "HGCal")
-    setup_label(cms, {"TextFont": 73})
-    label = ROOT.TLatex(x, y, "#font[73]{HGCal} " + postfix)
+def create_cms_labels(postfix="preliminary", x=0.135, y=0.96):
+    label = ROOT.TLatex(x, y, "#font[22]{CMS HGCAL} " + postfix)
     setup_label(label)
-    return cms, label
-
-def create_campaign_label(text, x=0.9625, y=0.96):
-    label = ROOT.TLatex(x, y, text)
-    setup_label(label, {"TextAlign": 31})
     return label
 
 
-
+def create_campaign_label(text="2020/21 neutron-irradiation at RINSC", x=0.93, y=0.96):
+    label = ROOT.TLatex(x, y, text)
+    setup_label(label, {"TextAlign": 31})
+    return label
