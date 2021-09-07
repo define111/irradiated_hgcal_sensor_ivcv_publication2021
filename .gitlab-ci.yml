@@ -23,7 +23,7 @@ download-files:
         expire_in: 1 day
 
 
-compile-Figures:
+compile-figures:
     stage: figures
 
     image: rootproject/root:6.22.08-centos7
@@ -31,10 +31,10 @@ compile-Figures:
         - cd plots;
         - source run.sh;
     
-        artifacts:
-            paths:
-                - plots/*
-            expire_in: 1 week
+    artifacts:
+        paths:
+            - plots/*
+        expire_in: 1 week
 
 
 compile-PDF:
