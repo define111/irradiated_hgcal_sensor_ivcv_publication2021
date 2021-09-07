@@ -7,7 +7,7 @@ variables:
     DOC: main
 
 download-files:
-    stage: download
+    stage: download-data
     tags:
         - docker
     image: thorbenquast/lcd_hgc_ana_wf
