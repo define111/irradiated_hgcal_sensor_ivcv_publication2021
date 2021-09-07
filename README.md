@@ -1,7 +1,6 @@
 # Electrical characteristics of silicon pad sensor prototypes for the CMS endcap calorimeter upgrade
 
 * [![build status](https://gitlab.cern.ch/CLICdp/HGCAL/irradiated_hgcal_sensor_ivcv_publication2021/badges/master/pipeline.svg)](https://gitlab.cern.ch/CLICdp/HGCAL/irradiated_hgcal_sensor_ivcv_publication2021/commits/master)
-* [Latest pdf of the paper](https://gitlab.cern.ch/CLICdp/HGCAL/irradiated_hgcal_sensor_ivcv_publication2021/builds/artifacts/master/raw/main.pdf?job=compile%20PDF)
 * [Latest builds of the paper draft](https://gitlab.cern.ch/CLICdp/HGCAL/irradiated_hgcal_sensor_ivcv_publication2021/pipelines) 
 
 ## Download & Compilation: 

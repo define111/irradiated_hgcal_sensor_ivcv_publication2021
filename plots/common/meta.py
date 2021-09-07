@@ -68,10 +68,10 @@ class TotalIV(Dataset):
         self.add_entry(541, "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing", "June2021_ALPS")
     
         # specify style
-        self.update(3003, {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 18, "Label": "HD, 120 #mum, 1E16 neq/cm^{2}", "Priority": 1})
+        self.update(3003, {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 1E16 neq/cm^{2}", "Priority": 1})
         self.update(3009, {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "HD, 120 #mum, 5E15 neq/cm^{2}", "Priority": 2})
         self.update(541, {"Color": ROOT.kCyan+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "LD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 3})
-        self.update(2004, {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 18, "Label": "LD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 4})
+        self.update(2004, {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 20, "Label": "LD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 4})
         self.update(1013, {"Color": ROOT.kGreen+1, "LineStyle": 3, "MarkerStyle": 21, "Label": "LD, 300 #mum, 1E15 neq/cm^{2}", "Priority": 5})
         self.update(1002, {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 22, "Label": "LD, 300 #mum, 6.5E14 neq/cm^{2}", "Priority": 6})
 
