@@ -1,20 +1,31 @@
+stages:
+    - download-data
+    - build-pdf
+
+
 variables:
     DOC: main
 
-# Three stages by default: build, test (default stage), deploy
-compile PDF:
-    stage: build
+download-files:
+    stage: download
+    tags:
+        - docker
+    image: thorbenquast/lcd_hgc_ana_wf
+    script:
+        - cd data;
+        - wget http://cern.ch/tquast/ivcv_irradiated_2021.tar.gz
+        - tar -zxvf ivcv_irradiated_2021.tar.gz
+        - rm ivcv_irradiated_2021.tar.gz
 
-    # Good enough image: Tex Live 2017 (1GB, 1.5 min runtime) no git
-    # https://hub.docker.com/r/texlive/texlive-full
-    #image: texlive/texlive-full
+    artifacts:
+        paths:
+            - data/ivcv_irradiated_2021
+        expire_in: 1 day
 
-    # Very good image but 2GB (2.5 min runtime)
-    #image: thomasweise/texlive
 
-    # Excellent image: TeX Live 2019 + git (2GB, 2.5 min)
-    # https://hub.docker.com/r/aergus/latex
-    # image: aergus/latex
+
+compile-PDF:
+    stage: build-pdf
 
     # based on 
     # https://hub.docker.com/r/texlive/texlive-full
