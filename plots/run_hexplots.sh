@@ -10,6 +10,8 @@ action() {
     export PYTHONPATH=$PWD:$PYTHONPATH;
     export DATA_DIR=$PWD/../data/ivcv_irradiated_2021;
 
+    source $ROOT_SOURCE;
+
     cd "$src_dir"
     (
         echo "HELLO"

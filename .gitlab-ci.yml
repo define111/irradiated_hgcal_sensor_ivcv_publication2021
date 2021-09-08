@@ -43,7 +43,6 @@ compile-hexplotfigures:
     image: thorbenquast/lcd_hgc_ana_wf
     script:
         - source ci/setup.sh;
-        - source /software/ROOT_6_06_06/bin/thisroot.sh;
         - cd plots;
         - source run_hexplots.sh;
     
