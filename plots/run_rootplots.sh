@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#use Python >=2.7
-#tested with ROOT 5.34 and ROOT 6.14
+#use Python >=3.6
+#tested with 6.06 and 6.22
 
 action() {
     local src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && /bin/pwd )"
@@ -10,7 +10,6 @@ action() {
     export DATA_DIR=$PWD/../data/ivcv_irradiated_2021;
 
     cd "$src_dir"
-    # (example) IV summary plots, responsible: T. Quast, last modification: 15 Jan 2020
     (
         python3 total_iv/overlay.py --type good;
         python3 total_iv/overlay.py --type bad;

@@ -23,13 +23,28 @@ download-files:
         expire_in: 1 day
 
 
-compile-figures:
+compile-rootfigures:
     stage: figures
 
     image: rootproject/root:6.22.08-centos7
     script:
         - cd plots;
-        - source run.sh;
+        - source run_rootplots.sh;
+    
+    artifacts:
+        paths:
+            - plots/*
+        expire_in: 1 week
+
+
+compile-hexplotfigures:
+    stage: figures
+
+    image: thorbenquast/lcd_hgc_ana_wf
+    script:
+        - source ci/setup.sh;
+        - cd plots;
+        - source run_hexplots.sh;
     
     artifacts:
         paths:
