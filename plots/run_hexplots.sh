@@ -12,6 +12,7 @@ action() {
 
     cd "$src_dir"
     (
+        echo "HELLO"
         python iv_hexplots/hexplots.py;
         
     )    

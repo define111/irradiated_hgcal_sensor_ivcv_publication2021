@@ -9,7 +9,13 @@ class Dataset:
 
     def add_entry(self, ID, measID, campaign, props=None):
         self.dict[ID] = {"MeasID": measID, "Campaign": campaign, "Priority": 999}
-        props = {"Color": ROOT.kBlack, "MarkerStyle": 21, "LineStyle": 1, "Label": "-"} if props is None else props
+        default_styleprops = {"Color": ROOT.kBlack, "MarkerStyle": 21, "LineStyle": 1, "Label": "-"}
+        if props is None:
+            props = default_styleprops
+        else:
+            default_styleprops.update(props)
+            props = default_styleprops
+        
         self.update(ID, props)
     
     def update(self, ID, props):
@@ -94,3 +100,46 @@ class TotalIV(Dataset):
             
 
 
+class ChannelIV(Dataset):
+    def __init__(self, _type="sensors"):
+        super().__init__()
+        self.data_file_location = "<MAINDATADIR>/iv/<CAMPAIGN>/channelIV/<MEASID>/TGraphErrors.root"
+        self.key = "IV_uncorrected_channel<CHANNEL>"
+
+        if _type == "sensors":
+            self.add_entry("1002", "8in_198ch_2019_1002_65E13_neg40_annealed68min_October2020", "October2020_ALPS", {"Channel": 24})
+            self.add_entry("3003", "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021", "Winter2021", {"Channel": 313})
+            self.add_entry("2004", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing", "Spring2021_ALPS", {"Channel": 24})
+            self.add_entry("3009", "8in_432_3009_5E15_neg40_post80minAnnealing", "June2021_ALPS", {"Channel": 123})
+            self.add_entry("1013", "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing", "June2021_ALPS", {"Channel": 24})
+            self.add_entry("0541_04", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing", "June2021_ALPS", {"Channel": 24})
+
+            # specify style
+            self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 1E16 neq/cm^{2}", "Priority": 1})
+            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, 5E15 neq/cm^{2}", "Priority": 2})
+            self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 3})
+            self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 4})
+            self.update("1013", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 22, "Label": "LD, 300 #mum, 1E15 neq/cm^{2}", "Priority": 5})
+            self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "LD, 300 #mum, 6.5E14 neq/cm^{2}", "Priority": 6})
+        
+        else:
+            self.add_entry("2004_24", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing", "Spring2021_ALPS", {"Channel": 24})
+            self.add_entry("2004_166", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing", "Spring2021_ALPS", {"Channel": 166})
+            self.add_entry("2004_194", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing", "Spring2021_ALPS", {"Channel": 194})
+            self.add_entry("2004_156", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing", "Spring2021_ALPS", {"Channel": 156})
+            self.add_entry("2004_162", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing", "Spring2021_ALPS", {"Channel": 162})
+            self.add_entry("2004_163", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing", "Spring2021_ALPS", {"Channel": 163})
+
+            self.update("2004_24", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "Pad 24 (full)", "Priority": 1})
+            self.update("2004_166", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 21, "Label": "Pad 166 (full)", "Priority": 2})
+            self.update("2004_194", {"Color": ROOT.kCyan+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "Pad 194 (edge, large)", "Priority": 3})
+            self.update("2004_162", {"Color": ROOT.kBlue+1, "LineStyle": 3, "MarkerStyle": 20, "Label": "Pad 162 (outer calib.)", "Priority": 3})
+            self.update("2004_156", {"Color": ROOT.kOrange+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "Pad 156 (edge, small)", "Priority": 5})
+            self.update("2004_163", {"Color": ROOT.kRed+1, "LineStyle": 1, "MarkerStyle": 22, "Label": "Pad 163 (inner calib.)", "Priority": 6})
+
+    def GetChannel(self, ID):
+        return self.dict[ID]["Channel"]
+
+    def GetKey(self, ID):
+        _channel = self.GetChannel(ID)
+        return self.key.replace("<CHANNEL>", str(_channel))

@@ -13,7 +13,12 @@ action() {
     (
         python3 total_iv/overlay.py --type good;
         python3 total_iv/overlay.py --type bad;
-    )    
+    ) 
+    (
+        python3 channel_iv/overlay_different_sensors.py --type sensors;
+        python3 channel_iv/overlay_different_sensors.py --type channels;
+    )
+
 
     cd "$origin"
 }
