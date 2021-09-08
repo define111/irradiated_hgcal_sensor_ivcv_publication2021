@@ -13,10 +13,20 @@ thisdir = os.path.dirname(os.path.realpath(__file__))
 from copy import deepcopy
 from common.util import *
 from common.meta import TotalIV
-Dataset = TotalIV()
+
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--type", type=str, help="", default="good", required=False)
+args = parser.parse_args()
+
 
 #prepare the canvas
-name = "total_current_IV"
+if args.type == "bad":
+    Dataset = TotalIV("bad")
+    name = "total_current_IV_bad"
+else:
+    Dataset = TotalIV("good")
+    name = "total_current_IV"
 
 canvas = ROOT.TCanvas("Canvas" + name, "canvas" + name, cm.default_canvas_width, cm.default_canvas_height)
 cm.setup_canvas(canvas, cm.default_canvas_width, cm.default_canvas_height)

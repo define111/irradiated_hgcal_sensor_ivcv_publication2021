@@ -12,7 +12,8 @@ action() {
     cd "$src_dir"
     # (example) IV summary plots, responsible: T. Quast, last modification: 15 Jan 2020
     (
-        python3 total_iv/overlay.py;
+        python3 total_iv/overlay.py --type good;
+        python3 total_iv/overlay.py --type bad;
     )    
 
     cd "$origin"
