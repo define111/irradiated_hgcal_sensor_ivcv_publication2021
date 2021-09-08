@@ -40,7 +40,7 @@ compile-rootfigures:
 compile-hexplotfigures:
     stage: figures
 
-    image: thorbenquast/lcd_hgc_ana_wf
+    image: thorbenquast/hexplot
     script:
         - source ci/setup.sh;
         - cd plots;

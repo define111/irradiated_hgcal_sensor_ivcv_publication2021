@@ -12,7 +12,7 @@ action() {
 
     cd "$src_dir"
     (
-        python iv_hexplots/hexplots.py;
+        python3 iv_hexplots/hexplots.py;
     )    
 
     cd "$origin"
