@@ -64,7 +64,8 @@ default_hist_props = {
 }
 
 default_graph_props = {
-
+    "MarkerSize": 3,
+    "LineWidth": 4
 }
 
 default_line_props = {

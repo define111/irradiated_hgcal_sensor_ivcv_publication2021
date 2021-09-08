@@ -46,7 +46,7 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
     gr = deepcopy(infile.Get(Dataset.GetKey()))
     Dataset.SetGraph(_id, gr)
 
-    cm.setup_graph(gr, {"MarkerSize": 2, "LineWidth": 3})
+    cm.setup_graph(gr)
     cm.setup_x_axis(gr.GetXaxis(), pad, {"Title": "U_{bias} (V)"})
     cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "I_{tot, -40^{#circ}C} (#muA)"})	
     gr.SetMinimum(5.0)
