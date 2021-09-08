@@ -50,6 +50,7 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
     cm.setup_x_axis(gr.GetXaxis(), pad, {"Title": "U_{bias} (V)"})
     cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "I_{tot, -40^{#circ}C} (#muA)"})	
     gr.SetMinimum(5.0)
+    gr.GetXaxis().SetLimits(0., 900.)
 
     legend.AddEntry(gr, Dataset.GetLabel(_id), "pl")
     
