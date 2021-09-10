@@ -44,7 +44,7 @@ for drawindex, postfix in enumerate(["", "_9minAnnealing", "_24minAnnealing", "_
 
 
     gr = deepcopy(infile.Get("Vdep_serial_model_ch%i" % CHANNEL))
-    infile.Close()x
+    infile.Close()
 
     #apply scale
     scale = 1.
