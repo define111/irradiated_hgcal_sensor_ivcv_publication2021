@@ -10,7 +10,6 @@ action() {
     export DATA_DIR=$PWD/../data/ivcv_irradiated_2021;
 
     cd "$src_dir"
-    '''
     (
         python3 total_iv/overlay.py --type good;
         python3 total_iv/overlay.py --type bad;
@@ -30,7 +29,6 @@ action() {
     (
         python3 annealing_iv/overlay_iv_curve.py;
     )
-    '''
     (
         python3 annealing_Vdep/overlay_cv_curve.py;
     )    
