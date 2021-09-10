@@ -75,12 +75,12 @@ class TotalIV(Dataset):
             self.add_entry("0541_04", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing", "June2021_ALPS")
         
             # specify style
-            self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 1E16 neq/cm^{2}", "Priority": 1})
-            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, 5E15 neq/cm^{2}", "Priority": 2})
-            self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 3})
-            self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 4})
-            self.update("1013", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 22, "Label": "LD, 300 #mum, 1E15 neq/cm^{2}", "Priority": 5})
-            self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "LD, 300 #mum, 6.5E14 neq/cm^{2}", "Priority": 6})
+            self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 1E16 neq", "Priority": 1})
+            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, 5E15 neq", "Priority": 2})
+            self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 3})
+            self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 4})
+            self.update("1013", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 22, "Label": "LD, 300 #mum, 1E15 neq", "Priority": 5})
+            self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "LD, 300 #mum, 6.5E14 neq", "Priority": 6})
 
         else:
             self.add_entry("2002", "8in_198ch_2019_2002_25E14_neg40_80minAnnealing", "Spring2021_ALPS")
@@ -91,11 +91,11 @@ class TotalIV(Dataset):
             self.add_entry("0538_03_unannealed", "8in_198ch_2019_N0538_3_1E15_neg40", "June2021_ALPS")
             
 
-            self.update("3110", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 5E15 neq/cm^{2}", "Priority": 1})
+            self.update("3110", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 5E15 neq", "Priority": 1})
             self.update("3110_afterCV", {"Color": ROOT.kBlue+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "... after CV characterisation", "Priority": 2})
-            self.update("2002", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 3})
+            self.update("2002", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 200 #mum, 2.5E15 neq", "Priority": 3})
             self.update("2002_unannealed", {"Color": ROOT.kGray+1, "LineStyle": 3, "MarkerStyle": 22, "Label": " ... no annealing", "Priority": 4})
-            self.update("0538_03", {"Color": ROOT.kRed+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "LD, 300 #mum, 1E15 neq/cm^{2}", "Priority": 5})
+            self.update("0538_03", {"Color": ROOT.kRed+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "LD, 300 #mum, 1E15 neq", "Priority": 5})
             self.update("0538_03_unannealed", {"Color": ROOT.kRed+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "... no annealing", "Priority": 6})
             
 
@@ -115,12 +115,12 @@ class ChannelIV(Dataset):
             self.add_entry("0541_04", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing", "June2021_ALPS", {"Channel": 24})
 
             # specify style
-            self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 1E16 neq/cm^{2}", "Priority": 1})
-            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, 5E15 neq/cm^{2}", "Priority": 2})
-            self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 3})
-            self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq/cm^{2}", "Priority": 4})
-            self.update("1013", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 22, "Label": "LD, 300 #mum, 1E15 neq/cm^{2}", "Priority": 5})
-            self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "LD, 300 #mum, 6.5E14 neq/cm^{2}", "Priority": 6})
+            self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 1E16 neq", "Priority": 1})
+            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, 5E15 neq", "Priority": 2})
+            self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 3})
+            self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 4})
+            self.update("1013", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 22, "Label": "LD, 300 #mum, 1E15 neq", "Priority": 5})
+            self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "LD, 300 #mum, 6.5E14 neq", "Priority": 6})
         
         else:
             self.add_entry("2004_24", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing", "Spring2021_ALPS", {"Channel": 24})
@@ -143,3 +143,17 @@ class ChannelIV(Dataset):
     def GetKey(self, ID):
         _channel = self.GetChannel(ID)
         return self.key.replace("<CHANNEL>", str(_channel))
+
+
+
+class ChannelCV(ChannelIV):
+    def __init__(self, _type="sensors"):
+        super().__init__(_type)    
+        self.data_file_location = "<MAINDATADIR>/cv/<CAMPAIGN>/channelCV/<MEASID>/TGraphErrors.root"
+        self.key = "CV_serial_open_corrected_channel<CHANNEL>"        
+
+class ChannelInvCV(ChannelCV):
+    def __init__(self, _type="sensors"):
+        super().__init__(_type)    
+        self.data_file_location = "<MAINDATADIR>/cv/<CAMPAIGN>/Vdep/<MEASID>/ch_<CHANNEL>.root"
+        self.key = "Vdep_serial_model_ch<CHANNEL>"

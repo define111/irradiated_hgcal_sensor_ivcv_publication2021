@@ -71,7 +71,7 @@ campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
 if args.type == "channels":
-    label = ROOT.TLatex(0.48, 0.89, "LD, 200 #mum, 2.5E15 neq/cm^{2}")
+    label = ROOT.TLatex(0.48, 0.89, "LD, 200 #mum, 2.5E15 neq")
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
     label.Draw()
 
