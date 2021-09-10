@@ -11,15 +11,20 @@ action() {
     export DATA_DIR=$PWD/../data/ivcv_irradiated_2021;
 
     cd "$src_dir"
+    '''
     (
         python3 iv_hexplots/hexplots.py;
     )    
     (
         python3 Vdep_hexplots/hexplots.py;
     )    
+    '''
     (
         python3 annealing_iv/current_vs_annealing.py;
-    )    
+    )
+    (
+        python3 annealing_Vdep/Vdep_vs_annealing.py;
+    )
 
     cd "$origin"
 }
