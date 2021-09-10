@@ -32,6 +32,9 @@ action() {
     (
         python3 annealing_Vdep/overlay_cv_curve.py;
     )    
+    (
+        python3 alpha/analyse_600V.py;
+    )
     cd "$origin"
 }
 action "$@"  

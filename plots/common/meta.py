@@ -1,6 +1,196 @@
 import ROOT
 import os
 
+FULL_CELL_AREA = {
+    "LD": 125415131,      #unit: mum
+    "HD": 55508574,      #unit: mum
+}
+
+GEOFILES = {
+    "LD": "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt",
+    "HD": "hex_positions_HPK_432ch_8inch_edge_ring_testcap.txt"
+}
+
+MEASUREMENTS = {}
+MEASUREMENTS["1002"] = {
+    "Campaign": "October2020_ALPS",
+    "Design": "LD",
+    "Cells": [159, 171, 172],
+    "ID": "8in_198ch_2019_1002_65E13_neg40_annealed68min_October2020",
+    "p-stop": "ind.",
+    "thickness": 300,
+    "Vfb": -2,
+    "fluence": 8.6,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
+    "annealing": 80.5
+}
+MEASUREMENTS["1102"] = {
+    "Campaign": "October2020_ALPS",
+    "Design": "LD",
+    "Cells": [159, 171, 172],
+    "ID": "8in_198ch_2019_1102_65E13_neg40_annealed68min_October2020",
+    "p-stop": "comm.",
+    "thickness": 300,
+    "Vfb": -2,
+    "fluence": 8.6,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
+    "annealing": 76.7
+}
+MEASUREMENTS["1101"] = {
+    "Campaign": "October2020_ALPS",
+    "Design": "LD",
+    "Cells": [159, 171, 172],
+    "ID": "8in_198ch_2019_1101_65E13_neg40_annealed68min_October2020",
+    "p-stop": "comm.",
+    "thickness": 300,
+    "Vfb": -5,
+    "fluence": 8.6,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
+    "annealing": 76.0
+}
+MEASUREMENTS["2002"] = {
+    "Campaign": "Spring2021_ALPS",
+    "Design": "LD",
+    "Cells": [78, 92, 93],
+    "ID": "8in_198ch_2019_2002_25E14_neg40_80minAnnealing",
+    "p-stop": "ind.",
+    "thickness": 200,
+    "Vfb": -2, 
+    "fluence": 29,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "annealing": 79.9
+}
+MEASUREMENTS["2114"] = {
+    "Campaign": "Spring2021_ALPS",
+    "Design": "LD",
+    "Cells": [78, 92, 93],
+    "ID": "8in_198ch_2019_2114_25E14_neg40_80minAnnealing",
+    "p-stop": "comm.",
+    "thickness": 200,
+    "Vfb": -2, 
+    "fluence": 29,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "annealing": 79.9
+}
+MEASUREMENTS["2105"] = {
+    "Campaign": "Spring2021_ALPS",
+    "Design": "LD",
+    "Cells": [78, 92, 93],
+    "ID": "8in_198ch_2019_2105_25E14_neg40_80minAnnealing",
+    "p-stop": "comm.",
+    "thickness": 200,
+    "Vfb": -5, 
+    "fluence": 29,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "annealing": 79.9
+}
+MEASUREMENTS["2004"] = {
+    "Campaign": "Spring2021_ALPS",
+    "Design": "LD",
+    "Cells": [78, 92, 93],
+    "ID": "8in_198ch_2019_2004_25E14_neg40_80minAnnealing",
+    "p-stop": "ind.",
+    "thickness": 200,
+    "Vfb": -5, 
+    "fluence": 29,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "annealing": 79.9
+}
+MEASUREMENTS["3003"] = {
+    "Campaign": "Winter2021",
+    "Design": "HD",
+    "Cells": [103, 104, 121, 122, 140, 141, 142],
+    "ID": "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021",
+    "p-stop": "ind.",
+    "thickness": 120,
+    "Vfb": -2, 
+    "fluence": 110,                 #round 3, c.f. e-mail U. Heintz 06 May 2021                 
+    "annealing": 400
+}
+MEASUREMENTS["3103"] = {
+    "Campaign": "Winter2021",
+    "Design": "HD",
+    "Cells": [103, 104, 121, 122, 140, 141, 142],
+    "ID": "8in_432_3103_1E16_neg40deg_new_picoammeter_Winter2021",
+    "p-stop": "comm.",
+    "thickness": 120,
+    "Vfb": -2, 
+    "fluence": 110,                 #round 3, c.f. e-mail U. Heintz 06 May 2021
+    "annealing": 400
+}
+MEASUREMENTS["3009"] = {
+    "Campaign": "June2021_ALPS",
+    "Design": "HD",
+    "Cells": [166, 167, 187, 188, 189, 211, 212],
+    "ID": "8in_432_3009_5E15_neg40_post80minAnnealing",
+    "p-stop": "ind.",
+    "thickness": 120,
+    "Vfb": -2, 
+    "fluence": 53,
+    "annealing": 80
+}
+MEASUREMENTS["3010"] = {
+    "Campaign": "June2021_ALPS",
+    "Design": "HD",
+    "Cells": [166, 167, 187, 188, 189, 211, 212],
+    "ID": "8in_432_3010_5E15_neg40_post80minAnnealing",
+    "p-stop": "ind.",
+    "thickness": 120,
+    "Vfb": -2, 
+    "fluence": 53,
+    "annealing": 80
+}
+MEASUREMENTS["3109"] = {
+    "Campaign": "June2021_ALPS",
+    "Design": "HD",
+    "Cells": [166, 167, 187, 188, 189, 211, 212],
+    "ID": "8in_432_3109_5E15_neg40_post80minAnnealing",
+    "p-stop": "comm.",
+    "thickness": 120,
+    "Vfb": -2, 
+    "fluence": 53,
+    "annealing": 80
+}
+MEASUREMENTS["3110"] = {
+    "Campaign": "June2021_ALPS",
+    "Design": "HD",
+    "Cells": [166, 167, 187, 188, 189, 211, 212],
+    "ID": "8in_432_3110_5E15_neg40_post80minAnnealing",
+    "p-stop": "comm.",
+    "thickness": 120,
+    "Vfb": -2, 
+    "fluence": 53,
+    "annealing": 80
+}
+MEASUREMENTS["1013"] = {
+    "Campaign": "June2021_ALPS",
+    "Design": "LD",
+    "Cells": [164, 165, 175],
+    "ID": "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing",
+    "p-stop": "ind.",
+    "thickness": 300,
+    "Vfb": -2, 
+    "fluence": 10,                  
+    "annealing": 80.
+}
+MEASUREMENTS["1114"] = {
+    "Campaign": "June2021_ALPS",
+    "Design": "LD",
+    "Cells": [164, 165, 175],
+    "ID": "8in_198ch_2019_1114_1E15_neg40_post80minAnnealing",
+    "p-stop": "comm.",
+    "thickness": 300,
+    "Vfb": -2, 
+    "fluence": 10,                  
+    "annealing": 80.
+}
+MEASUREMENTS["5414"] = {
+    "Campaign": "June2021_ALPS",
+    "Design": "LD",
+    "Cells": [164, 165, 175],
+    "ID": "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing",
+    "p-stop": "ind.",
+    "thickness": 200,
+    "Vfb": -5, 
+    "fluence": 25,                  
+    "annealing": 100.
+}
+
+
+
 class Dataset:
     def __init__(self):
         self.dict = {}
