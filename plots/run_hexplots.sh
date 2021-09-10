@@ -14,6 +14,9 @@ action() {
     (
         python3 iv_hexplots/hexplots.py;
     )    
+    (
+        python3 Vdep_hexplots/hexplots.py;
+    )    
 
     cd "$origin"
 }
