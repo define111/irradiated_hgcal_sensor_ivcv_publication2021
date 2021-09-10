@@ -23,7 +23,6 @@ Dataset = ChannelIV(args.type)
 name = "channel_IV_sensors_%s" %  args.type
 
 #prepare the canvas
-
 canvas = ROOT.TCanvas("Canvas" + name, "canvas" + name, cm.default_canvas_width, cm.default_canvas_height)
 cm.setup_canvas(canvas, cm.default_canvas_width, cm.default_canvas_height)
 canvas.Divide(1)
