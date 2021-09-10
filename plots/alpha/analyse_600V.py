@@ -2,7 +2,6 @@
 # Date: 10 September 2021
 
 import numpy as np
-import pandas as pd
 
 import common as cm
 ROOT = cm.ROOT
