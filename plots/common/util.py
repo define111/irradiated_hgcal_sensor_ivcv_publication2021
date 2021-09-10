@@ -12,3 +12,9 @@ def scale_graph(gr, scale=1.):
     for i in range(gr.GetN()):
         gr.GetY()[i] *= scale
         gr.GetEY()[i] *= scale
+
+def yshift_graph(gr, yshift=0.):
+	for i in range(gr.GetN()):
+		gr.GetY()[i] += yshift
+
+        

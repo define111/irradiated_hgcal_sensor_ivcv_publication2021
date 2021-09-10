@@ -15,10 +15,15 @@ action() {
         python3 total_iv/overlay.py --type bad;
     ) 
     (
-        python3 channel_iv/overlay_different_sensors.py --type sensors;
-        python3 channel_iv/overlay_different_sensors.py --type channels;
+        python3 channel_iv/overlay.py --type sensors;
+        python3 channel_iv/overlay.py --type channels;
     )
-
+    (
+        python3 channel_cv/overlay_CV.py --type sensors;
+        python3 channel_cv/overlay_CV.py --type channels;
+        python3 channel_cv/overlay_invCV.py --type sensors;
+        python3 channel_cv/overlay_invCV.py --type channels;        
+    )
 
     cd "$origin"
 }

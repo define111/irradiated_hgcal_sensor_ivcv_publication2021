@@ -88,14 +88,14 @@
 		\includegraphics[width=0.999\textwidth]{plots/channel_iv/channel_IV_sensors_sensors.pdf}
 		\subcaption{
 		}
-		\label{plot:tot_IV_good}
+		\label{plot:pad_IV_sensor}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=0.999\textwidth]{plots/channel_iv/channel_IV_sensors_channels.pdf}
 		\subcaption{
 		}
-		\label{plot:tot_IV_bad}
+		\label{plot:pad_IV_channels}
 	\end{subfigure}
 	\caption{
 		Per-pad leakage currents at different effective bias voltages (a) for one central pad on six good sensors from all irradiation rounds, and (b) for different pads with different geometries on one example sensor.
@@ -106,3 +106,47 @@
 
 \subsection{Per-Pad Capacitance and Depletion Voltage}
 \label{subsec:QA_Vdep}
+
+\begin{figure}
+	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=0.999\textwidth]{plots/channel_cv/channel_CV_sensors_sensors.pdf}
+		\subcaption{
+		}
+		\label{plot:pad_CV_sensor}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=0.999\textwidth]{plots/channel_cv/channel_CV_sensors_channels.pdf}
+		\subcaption{
+		}
+		\label{plot:pad_CV_channels}
+	\end{subfigure}
+	\caption{
+		Per-pad capacitances at different effective bias voltages (a) for one central pad on six good sensors from all irradiation rounds, and (b) for different pads with different geometries on one example sensor.
+		The LCR frequency in these measurements was \SI{2}{\kilo\hertz}.
+	}
+\end{figure}
+
+\begin{figure}
+	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=0.999\textwidth]{plots/channel_cv/channel_invCV_sensors_sensors.pdf}
+		\subcaption{
+		}
+		\label{plot:pad_invCV_sensor}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=0.999\textwidth]{plots/channel_cv/channel_invCV_sensors_channels.pdf}
+		\subcaption{
+		}
+		\label{plot:pad_invCV_channels}
+	\end{subfigure}
+	\caption{
+		Per-pad inverse capacitances at different effective bias voltages for estimate of the sensor depletion voltage (a) for one central pad on six good sensors from all irradiation rounds, and (b) for different pads with different geometries on one example sensor.
+		The depletion voltage is known to be affected by the LCR frequency, which was set to \SI{2}{\kilo\hertz} in these measurements.
+	}
+\end{figure}
