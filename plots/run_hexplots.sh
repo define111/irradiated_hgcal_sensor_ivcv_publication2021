@@ -23,7 +23,12 @@ action() {
     (
         python3 annealing_Vdep/Vdep_vs_annealing.py;
     )
-
+    (
+        python3 alpha/analyse_600V.py;
+    )
+    (
+        python3 Vdep_vs_fluence/Vdep_vs_current.py;
+    )
     cd "$origin"
 }
 action "$@"  
