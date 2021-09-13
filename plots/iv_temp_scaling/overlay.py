@@ -30,8 +30,6 @@ cm.setup_pad(pad)
 pad.cd()
 
 
-
-
 graphs = []
 
 #prepare the legend
