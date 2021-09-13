@@ -178,7 +178,7 @@ cms_labels = cm.create_cms_labels()
 cms_labels.Draw()
 
 # campaign label
-campaign_label = cm.create_campaign_label()
+campaign_label = cm.create_campaign_label("2020/21 irradiation at RINSC + annealing")
 campaign_label.Draw()
 
 pad.SetLogx(True)
