@@ -28,8 +28,8 @@ outfile = ROOT.TFile(os.path.join(thisdir, "fits.root"), "RECREATE")
 outfile.Close()
 
 XMINMAX = {
-    "5414": (1.9, 2.55),
-    "1002": (0.85, 1.12)
+    "5414": (1.94, 2.55),
+    "1002": (0.861, 1.12)
 }
 
 YMINMAX = {
@@ -107,7 +107,7 @@ for _ID in ["5414", "1002"]:
     f1_linfit.Draw("SAME")
 
 
-    legend = ROOT.TLegend(*cm.calc_legend_pos(3, x1=0.13, x2=0.58, y2=0.92))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(3, x1=0.13, x2=0.65, y2=0.9))
     cm.setup_legend(legend)
     legend.AddEntry(profile_x, "Data", "pl")
     legend.AddEntry(f1_linfit, "Fit: #DeltaU_{dep}/#DeltaI_{pad, -40^{#circ}C} = %.1f V/#muA" % f1_linfit.GetParameter(1))
@@ -121,6 +121,11 @@ for _ID in ["5414", "1002"]:
     # campaign label
     campaign_label = cm.create_campaign_label()
     campaign_label.Draw()
+
+    textlabel = {"5414": "LD, 200 #mum, 2.5E15 neq", "1002": "LD, 300 #mum, 6.5E14 neq"}[_ID]
+    label = ROOT.TLatex(0.45, 0.9, textlabel)
+    cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
+    label.Draw()
 
     pad.SetGrid(True)
     #save pdf
