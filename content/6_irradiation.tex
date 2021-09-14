@@ -8,8 +8,39 @@
 	\centering
 	\includegraphics[width=0.75\textwidth]{plots/alpha/alpha_600V.pdf}
 	\label{plot:alpha}
+
+\end{figure}
+
+\begin{figure}
+	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
+	\centering
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=0.99\textwidth]{plots/alpha/alpha_600V.pdf}
+		\subcaption{
+			}
+			\label{plot:alpha_600}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=0.99\textwidth]{plots/alpha/alpha_800V.pdf}
+		\subcaption{
+			}
+			\label{plot:alpha_800}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=0.99\textwidth]{plots/alpha/alpha_Udep.pdf}
+		\subcaption{
+			}
+			\label{plot:alpha_Udep}
+	\end{subfigure}
+	\hfill		
 	\caption{
-	    Volume-normalised per-pad leakage current at a bias voltage of \SI{600}{\volt} and at \SI{-20}{\celsius} for different fluences.
+	    Volume-normalised per-pad leakage current for different fluences at a bias voltage (a) of \SI{600}{\volt}, (b) of \SI{800}{\volt}, and (c) at the estimated depletion voltage.
+		All leakage currents were measured after 80-110$~$min of additional annnealing at \SI{60}{\celsius}, and were scaled to a temperature of \SI{-20}{\celsius}.
         The current-relate damage rate ($\alpha$) is independent of the sensor production parameters investigated in this work.
 	}
 \end{figure}

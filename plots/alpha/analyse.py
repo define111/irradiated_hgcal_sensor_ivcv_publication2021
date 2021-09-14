@@ -12,13 +12,20 @@ import os
 thisdir = os.path.dirname(os.path.realpath(__file__))
 
 from common.util import deltaI_relative, scale_graph
-from common.meta import FULL_CELL_AREA, GEOFILES, MEASUREMENTS
+from common.meta import FULL_CELL_AREA, MEASUREMENTS
 
 from math import sqrt
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--UREF", type=int, help="Reference voltage", default="600", required=False)
+args = parser.parse_args()
+
+UREF = args.UREF
+
 # 1. e.g. 10 percent depletion voltage variation, estimated in main program
 # not relevant for fixed voltage reference
-DELTAUREF = 0.0       
+DELTAUREF = 0.0 if UREF > 0 else 0.1
 def compute_errors(measurement_meta, current):
     fluence = measurement_meta["fluence"]
     Campaign = measurement_meta["Campaign"]
@@ -48,7 +55,12 @@ def compute_errors(measurement_meta, current):
 
     return x_err_down, x_err_up, y_err_down, y_err_up
 
-PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["1101", "2105"], ["2004", "5414"]]
+if UREF == -1:
+    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"]]
+elif UREF <= 600:
+    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"]]
+else:
+    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"]]
 iv_vs_fluence_graphs = []
 
 #all points in one, used for fitting
@@ -63,6 +75,10 @@ for _pair in PAIRS:
         MEASID = MEASUREMENTS[ID]["ID"]
         CELLS = MEASUREMENTS[ID]["Cells"]
 
+        #load Vdep_data
+        Vdep_path = os.path.join(os.environ["DATA_DIR"], "cv/%s/Vdep/%s/Vdep_serial.txt" % (Campaign, MEASID.replace("_chucktempcorrected", "")))
+        loaded_channels, loaded_Vdep = np.genfromtxt(Vdep_path, skip_header=1, usecols=(1, 3), unpack=True)
+        
         #load the IV curves
         infile = ROOT.TFile(os.path.join(os.environ["DATA_DIR"], "iv/%s/channelIV/%s/TGraphErrors.root" % (Campaign, MEASID)), "READ")
 
@@ -70,8 +86,9 @@ for _pair in PAIRS:
         lcurr_rel_up_average = []
         lcurr_rel_down_average = []
         for _channel in CELLS:
-            Uref = 600
-            canvas = ROOT.TCanvas("canvas_%s_ch%i"%(ID, _channel), "canvas_%s_ch%i"%(ID, _channel), 1600, 900)
+            Vdep = loaded_Vdep[loaded_channels==_channel][0]
+            
+            Uref = UREF if UREF > 0 else Vdep
             gr = infile.Get("IV_tempcorrected_channel%i" % _channel)
 
             lfti_up = ROOT.TF1("pol1_up", "pol1", (1.+DELTAUREF)*Uref-105., (1.+DELTAUREF)*Uref+105.)
@@ -81,7 +98,7 @@ for _pair in PAIRS:
             gr.Fit(lfti_down, "RQ")
             gr.Fit(lfti, "RQ")
             gr.Draw()
-            #canvas.SaveAs(os.path.join(os.path.dirname(os.path.realpath(__file__)), "%s_ch%i_600V.pdf"%(ID, _channel)))
+           
             lcurr_up = lfti_up.Eval((1.+DELTAUREF)*Uref)
             lcurr_down = lfti_down.Eval((1.-DELTAUREF)*Uref)
             lcurr = lfti.Eval(Uref)
@@ -119,9 +136,12 @@ for _pair in PAIRS:
 
 
 #prepare the canvas
-name = "alpha_600V"
-canvas_width = 1600
-canvas_height = 900
+if UREF > 0:
+    name = "alpha_%iV" % UREF
+else:
+    name = "alpha_Udep"
+canvas_width = cm.default_canvas_width
+canvas_height = cm.default_canvas_height
 canvas = ROOT.TCanvas("Canvas" + name, "canvas" + name, canvas_width, canvas_height)
 cm.setup_canvas(canvas, canvas_width, canvas_height)
 canvas.Divide(1)
@@ -131,10 +151,10 @@ pad.cd()
 
 
 pol1_fits = []
-legend_graphs = ROOT.TLegend(*cm.calc_legend_pos(4, x1=0.15, x2=0.65, y2=0.89))
+legend_graphs = ROOT.TLegend(*cm.calc_legend_pos(len(PAIRS), x1=0.15, x2=0.75, y2=0.92))
 cm.setup_legend(legend_graphs)
 
-legend_fits = ROOT.TLegend(*cm.calc_legend_pos(2, x1=0.4, x2=0.93, y2=0.29))
+legend_fits = ROOT.TLegend(*cm.calc_legend_pos(1.5, x1=0.28, x2=0.98, y2=0.185))
 cm.setup_legend(legend_fits)
 legend_fits.SetTextSize(50)
 
@@ -142,7 +162,10 @@ for draw_index, iv_vs_fluence_gr in enumerate(iv_vs_fluence_graphs):
     cm.setup_graph(iv_vs_fluence_gr, {"MarkerStyle": [20, 21, 22, 23][draw_index], "LineStyle": 1, "MarkerSize": 4})
     iv_vs_fluence_gr.GetYaxis().SetRangeUser(150., 15000.)
     cm.setup_x_axis(iv_vs_fluence_gr.GetXaxis(), pad, {"Title": "Irradiation fluence (1E14 neq/cm^{2})"})
-    cm.setup_y_axis(iv_vs_fluence_gr.GetYaxis(), pad, {"Title": "I_{pad, -20^{#circ}C}(U=600V) / V (#muA/cm^{3})"})
+    y_title = "I_{pad, -20^{#circ}C}(U=%i) / V (#muA/cm^{3})" % UREF
+    if UREF < 0:
+        y_title = "I_{pad, -20^{#circ}C}(U=U_{dep}) / V (#muA/cm^{3})"
+    cm.setup_y_axis(iv_vs_fluence_gr.GetYaxis(), pad, {"Title": y_title})
 
     iv_vs_fluence_gr.SetLineColor([ROOT.kBlue+1, ROOT.kBlack, ROOT.kOrange+1, ROOT.kGreen+2][draw_index])
     iv_vs_fluence_gr.SetMarkerColor([ROOT.kBlue+1, ROOT.kBlack, ROOT.kOrange+1, ROOT.kGreen+2][draw_index])
