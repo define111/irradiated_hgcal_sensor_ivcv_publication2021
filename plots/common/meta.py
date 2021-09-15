@@ -266,11 +266,11 @@ class TotalIV(Dataset):
         
             # specify style
             self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 1E16 neq", "Priority": 1})
-            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, 5E15 neq", "Priority": 2})
+            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 28, "Label": "HD, 120 #mum, 5E15 neq", "Priority": 2})
             self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 3})
-            self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 4})
+            self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 4})
             self.update("1013", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 22, "Label": "LD, 300 #mum, 1E15 neq", "Priority": 5})
-            self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "LD, 300 #mum, 6.5E14 neq", "Priority": 6})
+            self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 32, "Label": "LD, 300 #mum, 6.5E14 neq", "Priority": 6})
 
         else:
             self.add_entry("2002", "8in_198ch_2019_2002_25E14_neg40_80minAnnealing", "Spring2021_ALPS")
@@ -289,6 +289,12 @@ class TotalIV(Dataset):
             self.update("0538_03_unannealed", {"Color": ROOT.kRed+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "... no annealing", "Priority": 6})
             
 
+A_FULLPAD_LD = 122105993.42116399       #mum2
+A_FULLPAD_HD = 55510000.0       #mum2
+A_OUTERCALIB_LD = 92339686.33005302
+A_INNERCALIB_LD = 26947138.189286005
+A_EDGELARGE_LD = 127001525.27368101
+A_EDGESMALL_LD = 85040178.32025799
 
 class ChannelIV(Dataset):
     def __init__(self, _type="sensors"):
@@ -297,35 +303,35 @@ class ChannelIV(Dataset):
         self.key = "IV_uncorrected_channel<CHANNEL>"
 
         if _type == "sensors":
-            self.add_entry("1002", "8in_198ch_2019_1002_65E13_neg40_annealed68min_October2020_chucktempcorrected", "October2020_ALPS", {"Channel": 24})
-            self.add_entry("3003", "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected", "Winter2021", {"Channel": 313})
-            self.add_entry("2004", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing_chucktempcorrected", "Spring2021_ALPS", {"Channel": 24})
-            self.add_entry("3009", "8in_432_3009_5E15_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 123})
-            self.add_entry("1013", "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 24})
-            self.add_entry("0541_04", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 24})
+            self.add_entry("1002", "8in_198ch_2019_1002_65E13_neg40_annealed68min_October2020_chucktempcorrected", "October2020_ALPS", {"Channel": 24, "RelThickness": 3./2., "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
+            self.add_entry("3003", "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected", "Winter2021", {"Channel": 313, "RelThickness": 1.2/2., "RelArea": A_FULLPAD_HD/A_FULLPAD_LD})
+            self.add_entry("2004", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing_chucktempcorrected", "Spring2021_ALPS", {"Channel": 24, "RelThickness": 2./2., "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
+            self.add_entry("3009", "8in_432_3009_5E15_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 123, "RelThickness": 1.2/2., "RelArea": A_FULLPAD_HD/A_FULLPAD_LD})
+            self.add_entry("1013", "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 24, "RelThickness": 3./2., "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
+            self.add_entry("0541_04", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 24, "RelThickness": 2./2., "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
 
             # specify style
             self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 1E16 neq", "Priority": 1})
-            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, 5E15 neq", "Priority": 2})
+            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 28, "Label": "HD, 120 #mum, 5E15 neq", "Priority": 2})
             self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 3})
-            self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 4})
+            self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 4})
             self.update("1013", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 22, "Label": "LD, 300 #mum, 1E15 neq", "Priority": 5})
-            self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "LD, 300 #mum, 6.5E14 neq", "Priority": 6})
+            self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 32, "Label": "LD, 300 #mum, 6.5E14 neq", "Priority": 6})
         
         else:
-            self.add_entry("0541_04_24", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 24})
-            self.add_entry("0541_04_166", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 25})
-            self.add_entry("0541_04_194", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 18})
-            self.add_entry("0541_04_156", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 5})
-            self.add_entry("0541_04_162", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 13})
-            self.add_entry("0541_04_163", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 14})
+            self.add_entry("0541_04_24", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 24, "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
+            self.add_entry("0541_04_166", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 25, "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
+            self.add_entry("0541_04_194", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 18, "RelArea": A_EDGELARGE_LD/A_FULLPAD_LD})
+            self.add_entry("0541_04_156", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 5, "RelArea": A_EDGESMALL_LD/A_FULLPAD_LD})
+            self.add_entry("0541_04_162", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 13, "RelArea": A_OUTERCALIB_LD/A_FULLPAD_LD})
+            self.add_entry("0541_04_163", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 14, "RelArea": A_INNERCALIB_LD/A_FULLPAD_LD})
 
-            self.update("0541_04_24", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "Pad 24 (full)", "Priority": 1, "RelArea": 122105993.42116399/122105993.42116399})
-            self.update("0541_04_166", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 21, "Label": "Pad 25 (full)", "Priority": 2, "RelArea": 122105993.42116399/122105993.42116399})
-            self.update("0541_04_162", {"Color": ROOT.kBlue+1, "LineStyle": 3, "MarkerStyle": 20, "Label": "Pad 13 (outer calib.)", "Priority": 3, "RelArea": 92339686.33005302/122105993.42116399})
-            self.update("0541_04_163", {"Color": ROOT.kRed+1, "LineStyle": 1, "MarkerStyle": 22, "Label": "Pad 14 (inner calib.)", "Priority": 4, "RelArea": 26947138.189286005/122105993.42116399})
-            self.update("0541_04_194", {"Color": ROOT.kCyan+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "Pad 18 (edge, large)", "Priority": 5, "RelArea": 127001525.27368101/122105993.42116399})
-            self.update("0541_04_156", {"Color": ROOT.kOrange+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "Pad 5 (edge, small)", "Priority": 6, "RelArea": 85040178.32025799/122105993.42116399})
+            self.update("0541_04_24", {"Color": ROOT.kCyan+1, "LineStyle": 3, "MarkerStyle": 21, "Label": "Pad 24 (full)", "Priority": 1})
+            self.update("0541_04_166", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 28, "Label": "Pad 25 (full)", "Priority": 2})
+            self.update("0541_04_162", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "Pad 13 (outer calib.)", "Priority": 3})
+            self.update("0541_04_163", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 27, "Label": "Pad 14 (inner calib.)", "Priority": 4})
+            self.update("0541_04_194", {"Color": ROOT.kOrange+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "Pad 18 (edge, large)", "Priority": 5})
+            self.update("0541_04_156", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 32, "Label": "Pad 5 (edge, small)", "Priority": 6})
 
 
     def GetChannel(self, ID):

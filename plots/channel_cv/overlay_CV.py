@@ -33,26 +33,38 @@ pad.cd()
 
 #prepare the legend
 if args.type == "channels":
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.48, x2=0.87, y2=0.89))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.45, x2=0.87, y2=0.89))
 else:
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.48, x2=0.93, y2=0.92))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.45, x2=0.93, y2=0.92))
 cm.setup_legend(legend)
 
 # load the graphs
 
 for draw_index, _id in enumerate(Dataset.GetIDs()):
-    infile = ROOT.TFile(Dataset.GetPath(_id), "READ")
+    infile = ROOT.TFile(Dataset.GetPath(_id).replace("_chucktempcorrected", ""), "READ")
     gr = deepcopy(infile.Get(Dataset.GetKey(_id)))
     Dataset.SetGraph(_id, gr)
 
     cm.setup_graph(gr)
     cm.setup_x_axis(gr.GetXaxis(), pad, {"Title": "U_{bias} (V)"})
-    cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad} (pF)"})	
-    gr.SetMinimum(0.0)
-    gr.SetMaximum(125.0)
     gr.GetXaxis().SetLimits(0., 900.)
 
-    legend.AddEntry(gr, Dataset.GetLabel(_id), "pl")
+    if args.type == "channels":
+        
+        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad} / A_{full pad}  (pF / 122.1 mm^{2})"})
+        y_scale = 1./Dataset.dict[_id]["RelArea"]
+        scale_graph(gr, y_scale)
+        legend.AddEntry(gr, "%s [x%.2f]" % (Dataset.GetLabel(_id), y_scale), "pl")
+
+    elif args.type == "sensors":
+        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad} / A_{full pad LD} x d (pF x 200 #mum / 122.1 mm^{2})"})	
+        y_scale = Dataset.dict[_id]["RelThickness"]/Dataset.dict[_id]["RelArea"]
+        scale_graph(gr, y_scale)
+        legend.AddEntry(gr, "%s [x%.2f]" % (Dataset.GetLabel(_id), y_scale), "pl")
+    
+    gr.SetMinimum(59.0)
+    gr.SetMaximum(94.0)
+
     
     if draw_index == 0:
         gr.Draw("ALP")
@@ -71,7 +83,7 @@ campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
 if args.type == "channels":
-    label = ROOT.TLatex(0.83, 0.89, "LD, 200 #mum, 2.5E15 neq")
+    label = ROOT.TLatex(0.80, 0.89, "LD, 200 #mum, 2.5E15 neq")
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
     label.Draw()
 
