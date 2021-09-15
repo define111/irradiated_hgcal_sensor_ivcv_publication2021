@@ -89,7 +89,7 @@ if args.type == "channels":
 
 
 frequency_label = ROOT.TLatex(0.15, 0.87, "f_{LCR} = 2 kHz")
-cm.setup_label(frequency_label, {"TextFont": 73, "TextColor": ROOT.kViolet+1})
+cm.setup_label(frequency_label, {"TextFont": 73, "TextColor": ROOT.kBlack})
 frequency_label.Draw()
 
 pad.SetGrid(True)

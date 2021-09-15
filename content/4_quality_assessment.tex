@@ -140,6 +140,16 @@
 \subsection{Per-Pad Capacitance and Depletion Voltage}
 \label{subsec:QA_Vdep}
 
+\begin{itemize}
+	\item Capacitances are open-corrected, serial definition, LCR frequency = 2kHz (reminder)
+	\item Only slight dependence of capacitance on bias voltage in the tested regime, cf.~\ref{plot:pad_CV_sensor}
+	\item Area- and thickness normalised end capacitance different for different sensors. Not clear why, no systematic trend w.r.t. fluence or so
+	\item Capacitance dominated by bulk, area-normalised capacitance on one sensor = stable within 5 percent, interpad contributions can explain differences?, cf.~\ref{plot:pad_CV_channels}
+	\item Depletion voltage, i.e. where final capacitance is reached, clearly differs between fluence scenarios and thicknesses, cf.~\ref{plot:pad_invCV_sensor}, provide table?
+	\item Depletion voltage rather independent on pad geometry, cf.~\ref{plot:pad_invCV_channels}
+	\item Depletion voltage hexplot shows profile, matches leakage current profile, quantified in~\ref{subsec:irradiation_Vdep}
+\end{itemize}
+
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -157,7 +167,7 @@
 		\label{plot:pad_CV_channels}
 	\end{subfigure}
 	\caption{
-		Per-pad capacitances at different effective bias voltages (a) for one central pad on six good sensors from all irradiation rounds, and (b) for different pads with different geometries on one example sensor.
+		Area- and thickness-normalised capacitances at different effective bias voltages (a) for one central pad on six good sensors from all irradiation rounds, and (b) area-normalised for different pads with different geometries on one example sensor.
 		The LCR frequency in these measurements was \SI{2}{\kilo\hertz}.
 	}
 \end{figure}
@@ -179,8 +189,8 @@
 		\label{plot:pad_invCV_channels}
 	\end{subfigure}
 	\caption{
-		Per-pad inverse capacitances at different effective bias voltages for estimate of the sensor depletion voltage (a) for one central pad on six good sensors from all irradiation rounds, and (b) for different pads with different geometries on one example sensor.
-		The depletion voltage is known to be affected by the LCR frequency, which was set to \SI{2}{\kilo\hertz} in these measurements.
+		Normalised squared-inverse capacitances at different effective bias voltages for estimating the sensor depletion voltage (a) for one central pad on six good sensors from all irradiation rounds, and (b) for different pads with different geometries on one example sensor.
+		The LCR frequency in these measurements was \SI{2}{\kilo\hertz}.
 	}
 \end{figure}
 
@@ -205,7 +215,7 @@
 	\end{subfigure}	
 	\caption{
 		Per-pad depletion voltage estimates for (a) ..., (b). 
-		Fluence profile visible, cf.~\ref{plot:iv_hexplot_0541_04}, and~\ref{plot:iv_hexplot_1002}.
-		Note the different depletion voltage scales.
+		Fluence profile visible, matches per-pad leakage current profiles cf.~\ref{plot:iv_hexplot_0541_04}, and~\ref{plot:iv_hexplot_1002}.
+		Note the different colour scales.
 	}
 \end{figure}

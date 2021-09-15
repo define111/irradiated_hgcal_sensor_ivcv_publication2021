@@ -60,24 +60,27 @@ cm.setup_legend(legend)
 fits = []
 # load the graphs
 for draw_index, _id in enumerate(Dataset.GetIDs()):
-    infile = ROOT.TFile(Dataset.GetPath(_id).replace("<CHANNEL>", str(Dataset.GetChannel(_id))), "READ")
+    infile = ROOT.TFile(Dataset.GetPath(_id).replace("_chucktempcorrected", "").replace("<CHANNEL>", str(Dataset.GetChannel(_id))), "READ")
     gr = deepcopy(infile.Get(Dataset.GetKey(_id)))
-    scale = 1./ROOT.TMath.MaxElement(gr.GetN(), gr.GetY())
-    yshift = 0.075-0.03*draw_index
-    scale_graph(gr, scale)
-    yshift_graph(gr, yshift)
-    gr.SetMinimum(0.70)
-    gr.SetMaximum(1.1)
     
     
     fit = deepcopy(infile.Get("fit_func_%s" % Dataset.GetKey(_id)))
+
+    scale = 1./fit_function_linearintersection([100000.], [fit.GetParameter(i) for i in range(4)])
+    yshift = 0
+    
+    scale_graph(gr, scale)
+    yshift_graph(gr, yshift)
+    gr.SetMinimum(0.8)
+    gr.SetMaximum(1.019)
+
     fit_draw = ROOT.TF1("fit_draw_%s" % _id, fit_function_linearintersection, 0., 900., 4)
     fit_draw.SetParameter(0, fit.GetParameter(0))
     fit_draw.SetParameter(1, fit.GetParameter(1)*scale+yshift)
     fit_draw.SetParameter(2, fit.GetParameter(2)*scale)
     fit_draw.SetParameter(4, fit.GetParameter(4))
-    Vdep_line = ROOT.TLine(fit.GetParameter(0), 0.7, fit.GetParameter(0), 1+yshift)
-
+    Vdep_line = ROOT.TLine(fit.GetParameter(0), 0.8, fit.GetParameter(0), 1)
+    
     Dataset.SetGraph(_id, fit_draw)
     Dataset.SetGraph(_id, gr)
 
@@ -87,7 +90,7 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
     cm.setup_graph(Vdep_line, {"LineWidth": 2, "LineStyle": fit_draw.GetLineStyle(), "LineColor": fit_draw.GetLineColor()})
     
     cm.setup_x_axis(gr.GetXaxis(), pad, {"Title": "U_{bias} (V)"})
-    cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "normalised C_{pad}^{-2} (a.u.)", "TitleOffset": 1.1*gr.GetYaxis().GetTitleOffset()})	
+    cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad}^{-2}/(C_{pad}^{-2})_{U_{bias}#rightarrow#infty} ", "TitleOffset": 1.1*gr.GetYaxis().GetTitleOffset()})	
     gr.GetXaxis().SetLimits(0., 900.)
 
     legend.AddEntry(gr, Dataset.GetLabel(_id), "pl")
@@ -114,12 +117,12 @@ campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
 if args.type == "channels":
-    label = ROOT.TLatex(0.92, 0.45, "LD, 200 #mum, 2.5E15 neq")
+    label = ROOT.TLatex(0.88, 0.45, "LD, 200 #mum, 2.5E15 neq")
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
     label.Draw()
 
-frequency_label = ROOT.TLatex(0.15, 0.87, "f_{LCR} = 2 kHz")
-cm.setup_label(frequency_label, {"TextFont": 73, "TextColor": ROOT.kViolet+1})
+frequency_label = ROOT.TLatex(0.6, 0.50, "f_{LCR} = 2 kHz")
+cm.setup_label(frequency_label, {"TextFont": 73, "TextColor": ROOT.kBlack})
 frequency_label.Draw()
 
 #pad.SetGrid(True)
