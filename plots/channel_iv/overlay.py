@@ -43,16 +43,28 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
     infile = ROOT.TFile(Dataset.GetPath(_id), "READ")
     gr = deepcopy(infile.Get(Dataset.GetKey(_id)))
     Dataset.SetGraph(_id, gr)
-
     cm.setup_graph(gr)
     cm.setup_x_axis(gr.GetXaxis(), pad, {"Title": "U_{bias} (V)"})
-    cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "I_{pad, -40^{#circ}C} (#muA)"})	
-    gr.SetMinimum(0.0)
-    gr.SetMaximum(3.8)
     gr.GetXaxis().SetLimits(0., 900.)
 
-    legend.AddEntry(gr, Dataset.GetLabel(_id), "pl")
-    
+    if args.type == "channels":
+        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "I_{pad, -40^{#circ}C} / A_{full pad}  (#muA / 122.1 mm^{2})"})	
+        y_scale = 1./Dataset.dict[_id]["RelArea"]
+        scale_graph(gr, y_scale)
+        gr.SetMinimum(0.0)
+        gr.SetMaximum(3.8)
+        legend.AddEntry(gr, "%s [x%.2f]" % (Dataset.GetLabel(_id), y_scale), "pl")
+    elif args.type == "sensors":
+        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "I_{pad, -40^{#circ}C} / I_{pad, -40^{#circ}C}(U_{bias} = 600 V) "})	
+        lin_fit = ROOT.TF1("lin_fit%s" % _id, "pol1", 480, 660)
+        gr.Fit(lin_fit, "RQN")
+        scale_graph(gr, 1./lin_fit.Eval(600))
+        gr.SetMinimum(0.1)
+        gr.SetMaximum(1.8)        
+
+        legend.AddEntry(gr, Dataset.GetLabel(_id), "pl")
+
+
     if draw_index == 0:
         gr.Draw("ALP")
     else:
