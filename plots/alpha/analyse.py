@@ -159,7 +159,7 @@ cm.setup_legend(legend_fits)
 legend_fits.SetTextSize(50)
 
 for draw_index, iv_vs_fluence_gr in enumerate(iv_vs_fluence_graphs):
-    cm.setup_graph(iv_vs_fluence_gr, {"MarkerStyle": [20, 21, 22, 23][draw_index], "LineStyle": 1, "MarkerSize": 4})
+    cm.setup_graph(iv_vs_fluence_gr, {"MarkerStyle": [20, 25, 22, 32][draw_index], "LineStyle": 1, "MarkerSize": 4})
     iv_vs_fluence_gr.GetYaxis().SetRangeUser(150., 15000.)
     cm.setup_x_axis(iv_vs_fluence_gr.GetXaxis(), pad, {"Title": "Irradiation fluence (1E14 neq/cm^{2})"})
     y_title = "I_{pad, -20^{#circ}C}(U=%i) / V (#muA/cm^{3})" % UREF
@@ -167,8 +167,8 @@ for draw_index, iv_vs_fluence_gr in enumerate(iv_vs_fluence_graphs):
         y_title = "I_{pad, -20^{#circ}C}(U=U_{dep}) / V (#muA/cm^{3})"
     cm.setup_y_axis(iv_vs_fluence_gr.GetYaxis(), pad, {"Title": y_title})
 
-    iv_vs_fluence_gr.SetLineColor([ROOT.kBlue+1, ROOT.kBlack, ROOT.kOrange+1, ROOT.kGreen+2][draw_index])
-    iv_vs_fluence_gr.SetMarkerColor([ROOT.kBlue+1, ROOT.kBlack, ROOT.kOrange+1, ROOT.kGreen+2][draw_index])
+    iv_vs_fluence_gr.SetLineColor([ROOT.kBlue+1, ROOT.kOrange+1, ROOT.kBlack, ROOT.kGreen+2][draw_index])
+    iv_vs_fluence_gr.SetMarkerColor([ROOT.kBlue+1, ROOT.kOrange+1, ROOT.kBlack, ROOT.kGreen+2][draw_index])
     
     if draw_index == 0:
         iv_vs_fluence_gr.Draw("AP")
