@@ -1,8 +1,25 @@
 \section{Effect of Irradiation on Electrical Sensor Properties}
 \label{sec:irradiation}
 
+\begin{itemize}
+	\item Irradiation worsens electrical properties of silicon sensors.
+	\item Effects could be measured, reported in the following.
+	\item All based on data with \SI{80}{\min} of annealing at \SI{60}{\celsius}.
+	\item Bulk-dominated leakage current per volumne expected to increase proportionally, investigated in~\ref{subsec:irradiation_alpha}.
+	\item Depletion voltage expected to increase, shown in~\ref{subsec:irradiation_Vdep}.
+\end{itemize}
+
 \subsection{Current-Related Damage Rate}
 \label{subsec:irradiation_alpha}
+
+\begin{itemize}
+	\item Leakage currents normalised by volume, scaled to \SI{-20}{\celsius}, cf.~\ref{eq:temp_scaling}
+	\item Observe: Proportionality, constant referred to as $\alpha$, cf.~\ref{plot:alpha_Udep,plot:alpha_600,plot:alpha_800}
+	\item Report three different alpha values: one around full depletion, one at \SI{600}{\volt} and the third at highest bias voltage of \SI{800}{\volt} (corresponding to end of HGCAL lifetime)
+	\item Observe: Independence on sensor production parameters, consistent with previous findings, e.g.~\cite{moll:SiDamages}
+	\item All $\alpha$ constants underestimated, w.r.t. literature values
+	\item Could possibly hint at overestimate of irradiation fluences at RINSC
+\end{itemize}
 
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
@@ -38,6 +55,15 @@
 \end{figure}
 
 \subsection{Depletion Voltage}
+\label{subsec:irradiation_Vdep}
+
+\begin{itemize}
+	\item Unlike leakage current: Depletion voltage vs. fluence cannot be compared between different sensors. Reason: dependence on production parameters, e.g. active thickness
+	\item Exploit fluence profile to demonstrate positive correlation of depletion voltage to fluence
+	\item Use per-pad leakage current at \SI{600}{\volt} as proxy for fluence
+	\item In fact: Observe positive correlation, cf.~\ref{plot:Vdep_vs_current_5414,plot:Vdep_hexplot_1002}
+	\item Proportionality constant depends on thickness but is consistent between sensors with same thicknesses
+\end{itemize}
 
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
@@ -62,4 +88,4 @@
 	}
 \end{figure}
 
-\label{subsec:irradiation_Vdep}
+
