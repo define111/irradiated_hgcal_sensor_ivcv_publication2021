@@ -1,6 +1,18 @@
 \section{Isothermal Annealing Studies}
 \label{sec:annealing}
 
+\begin{itemize}
+	\item Annealing, i.e. heating up, during long shutdowns
+	\item \SI{80}{\minute} at \SI{60}{\celsius} corresponds to xx at yy or cc at bb
+	\item Systematic annealing study for all sensors was beyond the scope of this study, and anyways not possible due to high temperatures / annealing during irradiation
+	\item Hence: focus on one illustrative example
+	\item \ref{plot:annealing_IV,plot:annealing_current} illustrate the improvement in leakage current for a sensor with minimal additional annealing during irradiation
+	\item \ref{plot:annealing_IV}: IV curves lowered especially at high bias voltages beyond full depletion where bulk currents dominate
+	\item \ref{plot:annealing_current}: Current at \SI{600}{\volt} reduced by approximately 25$~\%$ for all pads
+	\item \ref{plot:annealing_CV} shows a comparison of inverted CV curves after different annealing times, earlier saturation clearly visible
+	\item \ref{plot:annealing_Vdep}: Depletion voltage estimated (cf. \ref{subsec:QA_Vdep}) reduced sizeably, about 40$~\%$ in case of \SI{200}{\micron}
+\end{itemize}
+
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -18,7 +30,7 @@
 		\label{plot:annealing_current}
 	\end{subfigure}
 	\caption{
-		(a) Representative per-pad IV-curves for different annealing scenarios for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to 2.5$~$E15 1-MeV-neutron equivalents/cm$^{2}$.
+		(a) IV-curves of a representative full hexagonal pad for different annealing scenarios for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to 2.5$~$E15 1-MeV-neutron equivalents/cm$^{2}$.
         (b) Decrease of the per-pad leakage current (interpolated to $U_\text{bias}=\SI{600}{\volt}$) as a function of the additional annealing time at \SI{60}{\celsius} for a subset of full pads.
 	}
 \end{figure}
@@ -40,7 +52,7 @@
 		\label{plot:annealing_Vdep}
 	\end{subfigure}
 	\caption{
-		(a) Representative per-pad (inverted) CV-curves for different annealing scenarios for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to 2.5$~$E15 1-MeV-neutron equivalents/cm$^{2}$.
+		(a) (Inverted) CV-curves of a representative full hexagonal pad for different annealing scenarios for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to 2.5$~$E15 1-MeV-neutron equivalents/cm$^{2}$.
         (b) Decrease of the depletion voltage estimate ($U\text{dep}$) as a function of the additional annealing time at \SI{60}{\celsius} for a subset of full pads.
 	}
 \end{figure}

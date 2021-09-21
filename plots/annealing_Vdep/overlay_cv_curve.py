@@ -54,7 +54,7 @@ for drawindex, postfix in enumerate(["", "_9minAnnealing", "_24minAnnealing", "_
     cm.setup_x_axis(gr.GetXaxis(), pad, {"Title": "U_{bias} (V)"})
     cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad}^{-2} (1/fF^{2})"})	
 
-    gr.SetMarkerStyle(20+drawindex)
+    gr.SetMarkerStyle({0: 20, 1: 25, 2: 22, 3: 23, 4: 24, 5: 25}[drawindex])
     gr.SetLineStyle(1+drawindex)
     gr.SetLineColor(colors[drawindex])
     gr.SetMarkerColor(colors[drawindex])
