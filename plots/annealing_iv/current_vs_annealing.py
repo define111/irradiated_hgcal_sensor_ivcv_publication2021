@@ -127,7 +127,7 @@ for draw_index, _channel in enumerate(_df.channel.unique()):
     graphs[_channel].SetLineColor((NGraphs-1)%9+1)
 
     if EVALVOLTAGE == -1:
-        graphs[_channel].GetYaxis().SetRangeUser(60., 101.)
+        graphs[_channel].GetYaxis().SetRangeUser(59., 101.)
     else:
         graphs[_channel].GetYaxis().SetRangeUser(72., 101.)
     xaxis_title = "t = Addtional annealing at +60^{#circ} C (min)"
