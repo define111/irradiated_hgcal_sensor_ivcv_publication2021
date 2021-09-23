@@ -36,11 +36,17 @@ cm.setup_pad(pad)
 pad.cd()
 
 #prepare the legend
-legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.45, x2=0.92, y2=0.42))
+X2 = 0.9
+if args.type == "bad":
+    X2 = 0.99
+legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.14, x2=X2, y2=0.38))
 cm.setup_legend(legend)
 
-# load the graphs
+compliance_line = ROOT.TF1("compliance", "2000", 0., 900.)
+cm.setup_graph(compliance_line, {"LineWidth": 3, "LineStyle": 3, "LineColor": ROOT.kRed+1})
+legend.AddEntry(compliance_line, "2 mA I_{tot} compliance", "l")
 
+# load the graphs
 for draw_index, _id in enumerate(Dataset.GetIDs()):
     infile = ROOT.TFile(Dataset.GetPath(_id), "READ")
     gr = deepcopy(infile.Get(Dataset.GetKey()))
@@ -49,7 +55,8 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
     cm.setup_graph(gr)
     cm.setup_x_axis(gr.GetXaxis(), pad, {"Title": "U_{bias} (V)"})
     cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "I_{tot, -40^{#circ}C} (#muA)"})	
-    gr.SetMinimum(5.0)
+    gr.SetMinimum(4.0)
+    gr.SetMaximum(3000.0)
     gr.GetXaxis().SetLimits(0., 900.)
 
     legend.AddEntry(gr, Dataset.GetLabel(_id), "pl")
@@ -58,8 +65,9 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
         gr.Draw("ALP")
     else:
         gr.Draw("LP")
-legend.Draw()
 
+compliance_line.Draw("SAME")
+legend.Draw()
 
 canvas.cd()
 # cms label
@@ -71,6 +79,6 @@ campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
 pad.SetLogy(True)
-pad.SetGrid(True)
+#pad.SetGrid(True)
 #save pdf
 canvas.Print(os.path.join(thisdir, "{}.pdf".format(name)))

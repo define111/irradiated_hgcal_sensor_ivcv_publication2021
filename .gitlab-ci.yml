@@ -14,7 +14,7 @@ download-files:
     script:
         - cd data;
         - wget http://cern.ch/tquast/ivcv_irradiated_2021.tar.gz
-        - tar -zxvf ivcv_irradiated_2021.tar.gz
+        - tar -xvf ivcv_irradiated_2021.tar.gz
         - rm ivcv_irradiated_2021.tar.gz
 
     artifacts:

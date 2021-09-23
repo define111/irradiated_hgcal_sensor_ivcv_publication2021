@@ -15,6 +15,8 @@ from subprocess import Popen
 import numpy as np
 import pandas as pd
 
+from common.meta import GEOFILES
+
 MEASUREMENTS = {
     "1002": {
         "MeasID": "8in_198ch_2019_1002_65E13_neg40_annealed68min_October2020_chucktempcorrected",
@@ -96,7 +98,7 @@ for ID in MEASUREMENTS:
 
     # retrieve sensor information
 
-    GEOFILE = "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt" if SensorType == "LD" else "hex_positions_HPK_432ch_8inch_edge_ring_testcap.txt"
+    GEOFILE = GEOFILES[SensorType]
     NCHANNELS = 199 if SensorType == "LD" else 444
     ZMAX = measurement["zmax"]
     
