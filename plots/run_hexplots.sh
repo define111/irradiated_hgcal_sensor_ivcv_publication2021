@@ -18,7 +18,8 @@ action() {
         python3 Vdep_hexplots/hexplots.py;
     )    
     (
-        python3 annealing_iv/current_vs_annealing.py;
+        python3 annealing_iv/current_vs_annealing.py --EVALVOLTAGE 600;
+        python3 annealing_iv/current_vs_annealing.py --EVALVOLTAGE -1;
     )
     (
         python3 annealing_Vdep/Vdep_vs_annealing.py;

@@ -19,9 +19,17 @@ from common.util import *
 #measurement specifics
 _measID = "8in_198ch_2019_2004_25E14_neg40"
 Campaign = "Spring2021_ALPS"
-name = "annealing_current"
 
-EVALVOLTAGE = 600
+
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--EVALVOLTAGE", type=int, help="", default=600, required=False)
+args = parser.parse_args()
+EVALVOLTAGE = args.EVALVOLTAGE
+
+name = "annealing_current"
+if EVALVOLTAGE == -1:
+    name += "_atUdep"
 
 hexplot_geo_file_path = os.path.join(os.environ["HEXPLOT_DIR"], "geo", "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt")
 #load geometry mapping
@@ -38,10 +46,24 @@ pad.cd()
 
 
 # determine per-channel leakage current at common voltage (EVALVOLTAGE)
-lfti = ROOT.TF1("pol1", "pol1", EVALVOLTAGE-120., EVALVOLTAGE+70.)
+
 tmp_data = []
 
 for annealing in [0, 9, 24, 61, 80]:
+
+    if EVALVOLTAGE==-1:
+
+        measID = _measID
+        if annealing > 0:
+            postfix = "_%iminAnnealing" % annealing
+            measID = measID+postfix
+        
+        infile_path = os.path.join(os.environ["DATA_DIR"], "cv/%s/Vdep/%s/Vdep_serial.txt" % (Campaign, measID))
+
+        #reject the bad channels
+        VdepData = pd.DataFrame(np.genfromtxt(infile_path, usecols=(1,2,3), skip_header=1), columns=["Pad", "Dummy", "Vdep"])
+        VdepData = VdepData.drop(columns=["Dummy"])
+
     postfix = ""
     if annealing > 0:
         postfix = "_%iminAnnealing" % annealing
@@ -61,11 +83,19 @@ for annealing in [0, 9, 24, 61, 80]:
                 "Effective bias voltage (HV resistance-corrected) [V]")
         except:
             continue
+        if EVALVOLTAGE == -1:
+            channel_data = VdepData[VdepData.Pad==CHANNEL]
+            Vdep = np.array(channel_data.Vdep)[0]
+            _EVALVOLTAGE = Vdep
+        else:
+            _EVALVOLTAGE = EVALVOLTAGE
+
+        lfti = ROOT.TF1("pol1", "pol1", _EVALVOLTAGE-120., _EVALVOLTAGE+120.)
 
         gr.Fit(lfti, "RQ")
 
         # compute ratios and save as file
-        lcurr = lfti.Eval(EVALVOLTAGE)
+        lcurr = lfti.Eval(_EVALVOLTAGE)
 
         # position not really useful because coordinate system center not quite in center
         tmp_data.append((annealing, CHANNEL, EVALVOLTAGE, lcurr))
@@ -96,10 +126,17 @@ for draw_index, _channel in enumerate(_df.channel.unique()):
     graphs[_channel].SetMarkerColor((NGraphs-1)%9+1)
     graphs[_channel].SetLineColor((NGraphs-1)%9+1)
 
-    graphs[_channel].GetYaxis().SetRangeUser(72., 101.)
+    if EVALVOLTAGE == -1:
+        graphs[_channel].GetYaxis().SetRangeUser(60., 101.)
+    else:
+        graphs[_channel].GetYaxis().SetRangeUser(72., 101.)
     xaxis_title = "t = Addtional annealing at +60^{#circ} C (min)"
     cm.setup_x_axis(graphs[_channel].GetXaxis(), pad, {"Title": xaxis_title, "TitleOffset": 0.90*graphs[_channel].GetXaxis().GetTitleOffset()})
-    yaxis_title = "I_{pad, -40^{#circ}C}(t, %i V)/I_{pad, -40^{#circ}C}(t=0, %i V)" % (EVALVOLTAGE, EVALVOLTAGE)+"[%]"
+    if EVALVOLTAGE == -1:
+        yaxis_title = "I_{pad, -40^{#circ}C}(t, U_{dep})/I_{pad, -40^{#circ}C}(t=0, U_{dep}) [%]"
+    else:
+        yaxis_title = "I_{pad, -40^{#circ}C}(t, %i V)/I_{pad, -40^{#circ}C}(t=0, %i V)" % (EVALVOLTAGE, EVALVOLTAGE)+"[%]"
+
     cm.setup_y_axis(graphs[_channel].GetYaxis(), pad, {"Title": yaxis_title})
         
     if NGraphs==1:
