@@ -24,7 +24,7 @@ MEASUREMENTS = {
         "SensorType": "LD",
         "zmin": 345,
         "zmax": 410,
-        "Title": "LD, 300 #mum, 6.5E14 neq/cm^{2}"
+        "Title": "LD, 300 #mum, 0.9E15 neq/cm^{2}"
     },
     "3003": {
         "MeasID": "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021",
@@ -32,7 +32,7 @@ MEASUREMENTS = {
         "SensorType": "HD",
         "zmin": 450,
         "zmax": 515,
-        "Title": "HD, 120 #mum, 1E16 neq/cm^{2}"
+        "Title": "HD, 120 #mum, 11.0E15 neq/cm^{2}"
     },
     "2004": {
         "MeasID": "8in_198ch_2019_2004_25E14_neg40_80minAnnealing",
@@ -40,7 +40,7 @@ MEASUREMENTS = {
         "SensorType": "LD",
         "zmin": 250,
         "zmax": 300,
-        "Title": "LD, 200 #mum, 2.5E15 neq/cm^{2}"
+        "Title": "LD, 200 #mum, 2.9E15 neq/cm^{2}"
     },
     "3009": {
         "MeasID": "8in_432_3009_5E15_neg40_post80minAnnealing",
@@ -48,7 +48,7 @@ MEASUREMENTS = {
         "SensorType": "HD",
         "zmin": 110,
         "zmax": 140,
-        "Title": "HD, 120 #mum, 5E15 neq/cm^{2}"
+        "Title": "HD, 120 #mum, 5.3E15 neq/cm^{2}"
     },
     "1013": {
         "MeasID": "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing",
@@ -56,7 +56,7 @@ MEASUREMENTS = {
         "SensorType": "LD",
         "zmin": 370,
         "zmax": 440,
-        "Title": "LD, 300 #mum, 1E15 neq/cm^{2}"
+        "Title": "LD, 300 #mum, 1.0E15 neq/cm^{2}"
     },
     "0541_04": {
         "MeasID": "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing",

@@ -23,10 +23,10 @@ action() {
     )
     (
         python3 annealing_Vdep/Vdep_vs_annealing.py;
-    )
+    )   
     (
         python3 Vdep_vs_fluence/Vdep_vs_current.py;
-    )
+    )   
     (
         python3 chuck_temp_correction/chuckTemp.py;
         python3 chuck_temp_correction/chuckTemp_profile.py;

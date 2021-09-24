@@ -23,35 +23,35 @@ MEASUREMENTS = {
         "Campaign": "October2020_ALPS", 
         "SensorType": "LD",
         "zmax": 1.15,
-        "Title": "LD, 300 #mum, 6.5E14 neq/cm^{2}"
+        "Title": "LD, 300 #mum, 0.9E15 neq/cm^{2}"
     },
     "3003": {
         "MeasID": "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected",
         "Campaign": "Winter2021", 
         "SensorType": "HD",
         "zmax": 2.85,
-        "Title": "HD, 120 #mum, 1E16 neq/cm^{2}"
+        "Title": "HD, 120 #mum, 11.0E15 neq/cm^{2}"
     },
     "2004": {
         "MeasID": "8in_198ch_2019_2004_25E14_neg40_80minAnnealing_chucktempcorrected",
         "Campaign": "Spring2021_ALPS", 
         "SensorType": "LD",
         "zmax": 2.75,
-        "Title": "LD, 200 #mum, 2.5E15 neq/cm^{2}"
+        "Title": "LD, 200 #mum, 2.9E15 neq/cm^{2}"
     },
     "3009": {
         "MeasID": "8in_432_3009_5E15_neg40_post80minAnnealing_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "HD",
         "zmax": 1.7,
-        "Title": "HD, 120 #mum, 5E15 neq/cm^{2}"
+        "Title": "HD, 120 #mum, 5.3E15 neq/cm^{2}"
     },
     "1013": {
         "MeasID": "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
         "zmax": 1.4,
-        "Title": "LD, 300 #mum, 1E15 neq/cm^{2}"
+        "Title": "LD, 300 #mum, 1.0E15 neq/cm^{2}"
     },
     "0541_04": {
         "MeasID": "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected",
@@ -62,7 +62,6 @@ MEASUREMENTS = {
     }
 }
 EVALVOLTAGE = 600
-
 
 HEXPLOTCOMMAND = "<HEXPLOTDIR>/bin/HexPlot \
                 -g <HEXPLOTDIR>/geo/<GEOFILE> \

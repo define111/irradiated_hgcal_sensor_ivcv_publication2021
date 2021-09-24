@@ -39,7 +39,7 @@ pad.cd()
 X2 = 0.9
 if args.type == "bad":
     X2 = 0.99
-legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.14, x2=X2, y2=0.38))
+legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.12, x2=X2, y2=0.38))
 cm.setup_legend(legend)
 
 compliance_line = ROOT.TF1("compliance", "2000", 0., 900.)

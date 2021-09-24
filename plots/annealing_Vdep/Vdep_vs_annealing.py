@@ -111,7 +111,7 @@ cms_labels.Draw()
 campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
-label = ROOT.TLatex(0.6, 0.88, "LD, 200 #mum, 2.5E15 neq")
+label = ROOT.TLatex(0.6, 0.88, "LD, 200 #mum, 2.9E15 neq")
 cm.setup_label(label, {"TextFont": 73})
 label.Draw()
 

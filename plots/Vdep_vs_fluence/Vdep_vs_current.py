@@ -29,16 +29,18 @@ outfile.Close()
 
 XMINMAX = {
     "5414": (1.94, 2.55),
-    "1002": (0.861, 1.12)
+    "1002": (0.861, 1.12), 
+    "3009": (1.4, 1.7)
 }
 
 YMINMAX = {
     "5414": (238., 280.),
-    "1002": (350., 420.)
+    "1002": (350., 420.),
+    "3009": (110., 140.)
 }
 
 
-for _ID in ["5414", "1002"]:
+for _ID in ["5414", "1002", "3009"]:
     Campaign = MEASUREMENTS[_ID]["Campaign"]
     Geometry = MEASUREMENTS[_ID]["Design"]
     measID = MEASUREMENTS[_ID]["ID"]
@@ -55,7 +57,10 @@ for _ID in ["5414", "1002"]:
     VdepData = np.genfromtxt(datapath, skip_header=1, usecols=(1, 3))
 
     #retrieve information from db
-    hexplot_geo_file_path = os.path.join(os.environ["HEXPLOT_DIR"], "geo", "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt")
+    if _ID == "3009":
+        hexplot_geo_file_path = os.path.join(os.environ["HEXPLOT_DIR"], "geo", "hex_positions_HPK_432ch_8inch_edge_ring_testcap.txt")
+    else:
+        hexplot_geo_file_path = os.path.join(os.environ["HEXPLOT_DIR"], "geo", "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt")
 
     #load geometry mapping
     geo_mapping = pd.DataFrame(np.genfromtxt(open(hexplot_geo_file_path, "r"), skip_header=7, usecols=(0, 1, 2, 3), dtype=[("channel", "i4"), ("x", "f8"), ("y", "f8"), ("type", "i4")]))
@@ -122,7 +127,7 @@ for _ID in ["5414", "1002"]:
     campaign_label = cm.create_campaign_label()
     campaign_label.Draw()
 
-    textlabel = {"5414": "LD, 200 #mum, 2.5E15 neq", "1002": "LD, 300 #mum, 6.5E14 neq"}[_ID]
+    textlabel = {"5414": "LD, 200 #mum, 2.5E15 neq", "1002": "LD, 300 #mum, 0.9E15 neq", "3009": "HD, 120 #mum, 5.3E15 neq"}[_ID]
     label = ROOT.TLatex(0.45, 0.9, textlabel)
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
     label.Draw()
