@@ -285,8 +285,8 @@ class TotalIV(Dataset):
             self.update("3110_afterCV", {"Color": ROOT.kOrange+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "HD, 120 #mum, 5E15 neq, after annealing, #font[22]{after discharge}", "Priority": 2})
             #self.update("2002", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 200 #mum, 2.5E15 neq", "Priority": 3})
             #self.update("2002_unannealed", {"Color": ROOT.kGray+1, "LineStyle": 3, "MarkerStyle": 22, "Label": " ... no annealing", "Priority": 4})
-            self.update("0538_03_unannealed", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 27, "Label": "LD, 300 #mum, 1E15 neq, #font[22]{before annealing}, after discharge", "Priority": 3})
-            self.update("0538_03", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "LD, 300 #mum, 1E15 neq, #font[22]{after annealing}, after discharge", "Priority": 4})
+            self.update("0538_03_unannealed", {"Color": ROOT.kGray+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 300 #mum, 1E15 neq, #font[22]{before annealing}, after discharge", "Priority": 3})
+            self.update("0538_03", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 300 #mum, 1E15 neq, #font[22]{after annealing}, after discharge", "Priority": 4})
             
 
 A_FULLPAD_LD = 122105993.42116399       #mum2
