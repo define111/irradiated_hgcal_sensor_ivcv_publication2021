@@ -11,8 +11,9 @@ cd irradiated_hgcal_sensor_ivcv_publication2021
 ```
 
 ## Contributing:
-- push directly to the master branch if you are only editing the files corresponding to your chapter
-- otherwise use merge requests
+- please open, use and push your own branch for the chapter that you are authoring
+- instructions on creating and pushing new branches: [here](https://forum.freecodecamp.org/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222)
+- once in a reviewable state, please submit a [merge request](https://docs.gitlab.com/ee/user/project/merge_requests/getting_started.html) to the master branch to have your contributions merged with the others
 
 ## Text:
 - text files = one per subsection & section
