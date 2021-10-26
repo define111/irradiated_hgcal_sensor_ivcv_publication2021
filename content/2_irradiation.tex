@@ -6,7 +6,7 @@
 RINSC (Rhode Island Nuclear Science Center) is a 2 MW, light water cooled, pool type reactor in Narragansett, Rhode Island, USA.
 The core consists of fuel assemblies reflected with a combination of graphite and beryllium.
 The fuel is plate type U3Si2 cladded with aluminum enriched to less than 20% Uranium-235.
-At RINSC there are three (six?) different ways to irradiate materials: beamports (pipes that run from the work area to the reactor core), rabbit system (pneumatic system that ferries plastic sample bottles to the reactor core), and InCore tubes (small samples are placed into a tube and lowered into an empty basket next to the fuel elements). 
+At RINSC there are three (technically six, do we only include the ones we use?) different ways to irradiate materials: beamports (pipes that run from the work area to the reactor core), rabbit system (pneumatic system that ferries plastic sample bottles to the reactor core), and InCore tubes (small samples are placed into a tube and lowered into an empty basket next to the fuel elements). 
 The beamports can accomodate samples of up to 7.75" x 3' [diameter by length], the rabbit system can accept sampes 1.125" x 6.25", and the InCore system can irradiate objects 1.25" x 9". 
 Of the irradiation methods available, only the beamports are large enough to accomodate the silicon sensors for this project.
 \begin{itemize}
@@ -18,8 +18,8 @@ Of the irradiation methods available, only the beamports are large enough to acc
     \item Fig 4 - other hardware, cylinder, temp monitoring setup (see figure~\ref{fig:Temperature_Monitoring_Setup})
     Keithley 2400 for temperature readout (along with 20-channel input board), RTDs instrumented with 20' of radiation-resistant wire (McMaster), laptop with GPIB connection to keithely, and custom LabVIEW code for readout.
     \item Fig 5 - schemaitc of experimental setup? Is this needed?
-    \item describe sample removal/storage after irradiation
-    \item describe fluence measurement setup/procedure at Brown? 
+    \item describe sample removal/storage after irradiation - need for full day for activity levels to decay to the point that reactor staff can transfer cylinder from beamport to freezer. Chest freezer has been installed a few steps away from the beamport with enough storage capacity for 3 cylinders.
+    \item Fig 6 describe fluence measurement setup/procedure at Brown? IV of D0 diodes prior to irradiation, then cold (-20C) measurement of irradiated diodes with current scaled up to 20C. Also include pin diodes but they have not been found to be useful at fluences above 1e15. (see figure~\ref{fig:Fluence_Measurement_Setup})
 \end{itemize}
 
 \begin{figure}[!hbt]
@@ -64,6 +64,15 @@ Of the irradiation methods available, only the beamports are large enough to acc
     \includegraphics[width=0.80\textwidth]{figures/Temperature_Monitoring_Setup}
     \caption{Temperature monitoring setup for use during beamport irradiations at RINSC.}
     \label{fig:Temperature_Monitoring_Setup}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!hbt]
+  \begin{center}
+    \includegraphics[width=0.70\textwidth]{figures/CVIV_Setup}
+    \includegraphics[width=0.70\textwidth]{figures/D0_Measurement}
+    \caption{Left: measurement setup for extracting fluence values from irradiated diodes. Right: measurement of an unirradiated D0 diode.}
+    \label{fig:Fluence_Measurement_Setup}
   \end{center}
 \end{figure}
 
