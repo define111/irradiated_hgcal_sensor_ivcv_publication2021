@@ -10,12 +10,13 @@ At RINSC there are three (six?) different ways to irradiate materials: beamports
 The beamports can accomodate samples of up to 7.75" x 3' [diameter by length], the rabbit system can accept sampes 1.125" x 6.25", and the InCore system can irradiate objects 1.25" x 9". 
 Of the irradiation methods available, only the beamports are large enough to accomodate the silicon sensors for this project.
 \begin{itemize}
-    \item Fig 1 - image(s) of reactor core, beamport (see fig~\ref{fig:RINSC_Facility})
+    \item Fig 1 - image(s) of reactor core, beamport (see \ref{fig:RINSC_Facility})
     what other details are useful here?
     Is it better to omit the sample irradiation options that are not being used?
-    \item Fig 2 - puck design/layout, real pucks (see fig~\ref{fig:Pucks_Arrayed})
-    \item Fig 3 - puck layout, packing (see fig~\ref{fig:Puck_Packing}), how much detail about packing materials?
-    \item Fig 4 - other hardware, cylinder, temp monitoring setup (see fig~\ref{fig:Temperature_Monitoring_Setup})
+    \item Fig 2 - puck design/layout, real pucks (see \ref{fig:Pucks_Arrayed})
+    \item Fig 3 - puck layout, packing (see \ref{fig:Puck_Packing}), how much detail about packing materials? (see \ref{fig:Cylinder_Details})
+    \item Fig 4 - other hardware, cylinder, temp monitoring setup (see \ref{fig:Temperature_Monitoring_Setup})
+    Keithley 2400 for temperature readout (along with 20-channel input board), RTDs instrumented with ~20' of radiation-resistant wire (McMaster #?), laptop with GPIB connection to keithely, and custom LabVIEW code for readout.
     \item Fig 5 - schemaitc of experimental setup? Is this needed?
     \item describe sample removal/storage after irradiation
     \item describe fluence measurement setup/procedure at Brown? 
@@ -35,6 +36,15 @@ Of the irradiation methods available, only the beamports are large enough to acc
     \includegraphics[width=0.70\textwidth]{figures/Hockey_Pucks_Arrayed}
     \caption{Sample containers ('hockey pucks') for sensors to be irradiated in the beamport at RINSC. The materials are wood (oak), acrylic, and PEEK.}
     \label{fig:Pucks_Arrayed}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!hbt]
+  \begin{center}
+    \includegraphics[width=0.70\textwidth]{figures/Cylinder_Side_View}
+    \includegraphics[width=0.70\textwidth]{figures/Cylinder_With_Dry_Ice}
+    \caption{Left: aluminum cylinder used to transport hockey puck containers into the beamport. Right: cylinder containing a sample puck along with dry ice for cooling.}
+    \label{fig:Cylinder_Details}
   \end{center}
 \end{figure}
 
