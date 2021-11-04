@@ -189,6 +189,17 @@ MEASUREMENTS["5414"] = {
     "annealing": 100.
 }
 
+MEASUREMENTS["3104"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "HD",
+    "Cells": [203, 204, 227, 228, 229, 251, 252],
+    "ID": "8in_432_3104_25E14_neg40_TTU",
+    "p-stop": "comm.",
+    "thickness": 120,
+    #"Vfb": -2,                  #to cross-check
+    "fluence": 19.5,
+    "annealing": 0
+}
 
 
 class Dataset:
