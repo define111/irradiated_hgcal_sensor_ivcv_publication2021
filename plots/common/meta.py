@@ -201,6 +201,17 @@ MEASUREMENTS["3104"] = {
     "annealing": 0
 }
 
+MEASUREMENTS["1003"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "LD",
+    "Cells": [87, 88, 118, 119],
+    "ID": "8in_198ch_2019_1003_15E14_neg40_TTU",
+    "p-stop": "ind.",
+    "thickness": 120,
+    #"Vfb": -2,                  #to cross-check
+    "fluence": 16.,
+    "annealing": 0
+}
 
 class Dataset:
     def __init__(self):

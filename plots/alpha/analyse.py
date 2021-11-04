@@ -61,7 +61,7 @@ def compute_errors(measurement_meta, current):
 if UREF == -1:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"]]
 elif UREF <= 600:
-    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"], ["3104"]]            #TODO: 3104 really correct?
+    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"], ["3104", "1003"]]  
 else:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"]]
 iv_vs_fluence_graphs = []
@@ -80,7 +80,8 @@ for _pair in PAIRS:
 
         #load Vdep_data
         Vdep_path = os.path.join(os.environ["DATA_DIR"], "cv/%s/Vdep/%s/Vdep_serial.txt" % (Campaign, MEASID.replace("_chucktempcorrected", "")))
-        loaded_channels, loaded_Vdep = np.genfromtxt(Vdep_path, skip_header=1, usecols=(1, 3), unpack=True)
+        if UREF == -1:
+            loaded_channels, loaded_Vdep = np.genfromtxt(Vdep_path, skip_header=1, usecols=(1, 3), unpack=True)
         
         #load the IV curves
         infile = ROOT.TFile(os.path.join(os.environ["DATA_DIR"], "iv/%s/channelIV/%s/TGraphErrors.root" % (Campaign, MEASID)), "READ")
@@ -89,9 +90,10 @@ for _pair in PAIRS:
         lcurr_rel_up_average = []
         lcurr_rel_down_average = []
         for _channel in CELLS:
-            Vdep = loaded_Vdep[loaded_channels==_channel][0]
-            
-            Uref = UREF if UREF > 0 else Vdep
+            if UREF == -1:
+                Uref = loaded_Vdep[loaded_channels==_channel][0]
+            else:
+                Uref = UREF 
             gr = infile.Get("IV_tempcorrected_channel%i" % _channel)
 
             lfti_up = ROOT.TF1("pol1_up", "pol1", (1.+DELTAUREF)*Uref-105., (1.+DELTAUREF)*Uref+105.)
