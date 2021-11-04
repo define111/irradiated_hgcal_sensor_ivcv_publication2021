@@ -23,7 +23,7 @@ MEASUREMENTS = {
         "Campaign": "October2020_ALPS", 
         "SensorType": "LD",
         "zmin": 345,
-        "zmax": 410,
+        "zmax": 530,
         "Title": "LD, 300 #mum, 0.9E15 neq/cm^{2}"
     },
     "3003": {
@@ -39,7 +39,7 @@ MEASUREMENTS = {
         "Campaign": "Spring2021_ALPS", 
         "SensorType": "LD",
         "zmin": 250,
-        "zmax": 300,
+        "zmax": 480,
         "Title": "LD, 200 #mum, 2.9E15 neq/cm^{2}"
     },
     "3009": {
@@ -47,7 +47,7 @@ MEASUREMENTS = {
         "Campaign": "June2021_ALPS", 
         "SensorType": "HD",
         "zmin": 110,
-        "zmax": 140,
+        "zmax": 180,
         "Title": "HD, 120 #mum, 5.3E15 neq/cm^{2}"
     },
     "1013": {
@@ -55,7 +55,7 @@ MEASUREMENTS = {
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
         "zmin": 370,
-        "zmax": 440,
+        "zmax": 580,
         "Title": "LD, 300 #mum, 1.0E15 neq/cm^{2}"
     },
     "0541_04": {
@@ -63,8 +63,24 @@ MEASUREMENTS = {
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
         "zmin": 220,
-        "zmax": 280,
+        "zmax": 440,
         "Title": "LD, 200 #mum, 2.5E15 neq/cm^{2}"
+    },
+    "3104": {
+        "MeasID": "8in_432_3104_25E14_neg40_TTU",
+        "Campaign": "TTU_October2021", 
+        "SensorType": "HD",
+        "zmin": 200,
+        "zmax": 250,
+        "Title": "HD, 120 #mum, 1.9E15 neq/cm^{2}"
+    },
+    "3105": {
+        "MeasID": "8in_432_3105_25E14_neg40_TTU",
+        "Campaign": "TTU_October2021", 
+        "SensorType": "HD",
+        "zmin": 200,
+        "zmax": 250,
+        "Title": "HD, 120 #mum, 1.9E15 neq/cm^{2}"
     }
 }
 EVALVOLTAGE = 600
@@ -111,7 +127,10 @@ for ID in MEASUREMENTS:
     ZMAX = measurement["zmax"]
     
 
-    infile_path = os.path.join(os.environ["DATA_DIR"], "cv/%s/Vdep/%s/Vdep_serial.txt" % (Campaign, measID))
+    _Vdep_type = "serial"
+    if Campaign == "TTU_October2021":
+        _Vdep_type = "parallel"
+    infile_path = os.path.join(os.environ["DATA_DIR"], "cv/%s/Vdep/%s/Vdep_%s.txt" % (Campaign, measID, _Vdep_type))
     infile_path_tmp = infile_path.replace(".txt", "_tmp.txt")
 
     #reject the bad channels

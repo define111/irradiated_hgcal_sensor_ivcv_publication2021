@@ -22,7 +22,7 @@ MEASUREMENTS = {
         "MeasID": "8in_198ch_2019_1002_65E13_neg40_annealed68min_October2020_chucktempcorrected",
         "Campaign": "October2020_ALPS", 
         "SensorType": "LD",
-        "zmax": 1.15,
+        "zmax": 1.35,
         "Title": "LD, 300 #mum, 0.9E15 neq/cm^{2}"
     },
     "3003": {
@@ -36,29 +36,50 @@ MEASUREMENTS = {
         "MeasID": "8in_198ch_2019_2004_25E14_neg40_80minAnnealing_chucktempcorrected",
         "Campaign": "Spring2021_ALPS", 
         "SensorType": "LD",
-        "zmax": 2.75,
+        "zmax": 3.75,
         "Title": "LD, 200 #mum, 2.9E15 neq/cm^{2}"
     },
     "3009": {
         "MeasID": "8in_432_3009_5E15_neg40_post80minAnnealing_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "HD",
-        "zmax": 1.7,
+        "zmax": 2.15,
         "Title": "HD, 120 #mum, 5.3E15 neq/cm^{2}"
     },
     "1013": {
         "MeasID": "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
-        "zmax": 1.4,
+        "zmax": 1.65,
         "Title": "LD, 300 #mum, 1.0E15 neq/cm^{2}"
     },
     "0541_04": {
         "MeasID": "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
-        "zmax": 2.5,
+        "zmax": 3.25,
         "Title": "LD, 200 #mum, 2.5E15 neq/cm^{2}"
+    },
+    "3008": {
+        "MeasID": "8in_432_3008_25E14_neg40_TTU",
+        "Campaign": "TTU_October2021", 
+        "SensorType": "HD",
+        "zmax": 0.75,
+        "Title": "HD, 120 #mum, 1.9E15 neq/cm^{2}"
+    },
+    "3104": {
+        "MeasID": "8in_432_3104_25E14_neg40_TTU",
+        "Campaign": "TTU_October2021", 
+        "SensorType": "HD",
+        "zmax": 0.75,
+        "Title": "HD, 120 #mum, 1.9E15 neq/cm^{2}"
+    },
+    "3105": {
+        "MeasID": "8in_432_3105_25E14_neg40_TTU",
+        "Campaign": "TTU_October2021", 
+        "SensorType": "HD",
+        "zmax": 0.75,
+        "Title": "HD, 120 #mum, 1.9E15 neq/cm^{2}"
     }
 }
 EVALVOLTAGE = 600
