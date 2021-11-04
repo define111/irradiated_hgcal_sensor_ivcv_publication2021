@@ -147,7 +147,7 @@ for _pair in PAIRS:
     if Campaign != "TTU_October2021":
         iv_vs_fluence_gr.SetName("STD. oxide, %s p-stop, U_{fb}=%i V" % (MEASUREMENTS[ID]["p-stop"], MEASUREMENTS[ID]["Vfb"]))
     else:
-        iv_vs_fluence_gr.SetName("non-annealed HD sensor @ TTU [x0.75]")
+        iv_vs_fluence_gr.SetName("non-annealed sensors @ TTU [x0.75]")
 
     iv_vs_fluence_graphs.append(iv_vs_fluence_gr)
 
