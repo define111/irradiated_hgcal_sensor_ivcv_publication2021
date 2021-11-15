@@ -20,7 +20,7 @@ MEASUREMENTS["1002"] = {
     "p-stop": "ind.",
     "thickness": 300,
     "Vfb": -2,
-    "fluence": 8.6,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 7.1,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
     "annealing": 80.5
 }
 MEASUREMENTS["1102"] = {
@@ -31,7 +31,7 @@ MEASUREMENTS["1102"] = {
     "p-stop": "comm.",
     "thickness": 300,
     "Vfb": -2,
-    "fluence": 8.6,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 7.1,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
     "annealing": 76.7
 }
 MEASUREMENTS["1101"] = {
@@ -42,7 +42,7 @@ MEASUREMENTS["1101"] = {
     "p-stop": "comm.",
     "thickness": 300,
     "Vfb": -5,
-    "fluence": 8.6,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 7.1,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
     "annealing": 76.0
 }
 MEASUREMENTS["2002"] = {
@@ -53,7 +53,7 @@ MEASUREMENTS["2002"] = {
     "p-stop": "ind.",
     "thickness": 200,
     "Vfb": -2, 
-    "fluence": 29,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 23.5,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
     "annealing": 79.9
 }
 MEASUREMENTS["2114"] = {
@@ -64,7 +64,7 @@ MEASUREMENTS["2114"] = {
     "p-stop": "comm.",
     "thickness": 200,
     "Vfb": -2, 
-    "fluence": 29,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 23.5,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
     "annealing": 79.9
 }
 MEASUREMENTS["2105"] = {
@@ -75,7 +75,7 @@ MEASUREMENTS["2105"] = {
     "p-stop": "comm.",
     "thickness": 200,
     "Vfb": -5, 
-    "fluence": 29,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 23.5,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
     "annealing": 79.9
 }
 MEASUREMENTS["2004"] = {
@@ -86,7 +86,7 @@ MEASUREMENTS["2004"] = {
     "p-stop": "ind.",
     "thickness": 200,
     "Vfb": -5, 
-    "fluence": 29,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 23.5,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
     "annealing": 79.9
 }
 MEASUREMENTS["3003"] = {
@@ -119,7 +119,7 @@ MEASUREMENTS["3009"] = {
     "p-stop": "ind.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 53,
+    "fluence": 42,                  #round 8
     "annealing": 80
 }
 MEASUREMENTS["3010"] = {
@@ -130,7 +130,7 @@ MEASUREMENTS["3010"] = {
     "p-stop": "ind.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 53,
+    "fluence": 42,                  #round 8
     "annealing": 80
 }
 MEASUREMENTS["3109"] = {
@@ -141,7 +141,7 @@ MEASUREMENTS["3109"] = {
     "p-stop": "comm.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 53,
+    "fluence": 42,                  #round 8
     "annealing": 80
 }
 MEASUREMENTS["3110"] = {
@@ -152,7 +152,7 @@ MEASUREMENTS["3110"] = {
     "p-stop": "comm.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 53,
+    "fluence": 42,                  #round 8
     "annealing": 80
 }
 MEASUREMENTS["1013"] = {
@@ -163,7 +163,7 @@ MEASUREMENTS["1013"] = {
     "p-stop": "ind.",
     "thickness": 300,
     "Vfb": -2, 
-    "fluence": 10,                  
+    "fluence": 8.2,                  #round 10               
     "annealing": 80.
 }
 MEASUREMENTS["1114"] = {
@@ -174,7 +174,7 @@ MEASUREMENTS["1114"] = {
     "p-stop": "comm.",
     "thickness": 300,
     "Vfb": -2, 
-    "fluence": 10,                  
+    "fluence": 8.2,                  #round 10               
     "annealing": 80.
 }
 MEASUREMENTS["5414"] = {
@@ -185,7 +185,7 @@ MEASUREMENTS["5414"] = {
     "p-stop": "ind.",
     "thickness": 200,
     "Vfb": -5, 
-    "fluence": 25,                  
+    "fluence": 19,                  #round 11
     "annealing": 100.
 }
 
@@ -197,7 +197,7 @@ MEASUREMENTS["3104"] = {
     "p-stop": "comm.",
     "thickness": 120,
     #"Vfb": -2,                  #to cross-check
-    "fluence": 19.5,
+    "fluence": 16.5,             #round 7
     "annealing": 0
 }
 
@@ -209,7 +209,7 @@ MEASUREMENTS["1003"] = {
     "p-stop": "ind.",
     "thickness": 120,
     #"Vfb": -2,                  #to cross-check
-    "fluence": 16.,
+    "fluence": 14.,              #round 9
     "annealing": 0
 }
 
@@ -288,11 +288,11 @@ class TotalIV(Dataset):
         
             # specify style
             #self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 11.0E15 neq", "Priority": 1})
-            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 5.3E15 neq, after annealing", "Priority": 2})
-            #self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 3})
-            #self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.9E15 neq", "Priority": 4})
-            self.update("1013", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 300 #mum, 1.0E15 neq, after annealing", "Priority": 5})
-            #self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 32, "Label": "LD, 300 #mum, 0.9E16 neq", "Priority": 6})
+            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 4.2E15 neq, after annealing", "Priority": 2})
+            #self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 1.5E15 neq", "Priority": 3})
+            #self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.3E15 neq", "Priority": 4})
+            self.update("1013", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 300 #mum, 0.8E15 neq, after annealing", "Priority": 5})
+            #self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 32, "Label": "LD, 300 #mum, 0.7E16 neq", "Priority": 6})
 
         else:
             #self.add_entry("2002", "8in_198ch_2019_2002_25E14_neg40_80minAnnealing", "Spring2021_ALPS")
@@ -303,12 +303,12 @@ class TotalIV(Dataset):
             self.add_entry("0538_03_unannealed", "8in_198ch_2019_N0538_3_1E15_neg40", "June2021_ALPS")
             
 
-            self.update("3110", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 5.3E15 neq, after annealing, #font[22]{before discharge}", "Priority": 1})
-            self.update("3110_afterCV", {"Color": ROOT.kOrange+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "HD, 120 #mum, 5.3E15 neq, after annealing, #font[22]{after discharge}", "Priority": 2})
+            self.update("3110", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 4.2E15 neq, after annealing, #font[22]{before discharge}", "Priority": 1})
+            self.update("3110_afterCV", {"Color": ROOT.kOrange+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "HD, 120 #mum, 4.2E15 neq, after annealing, #font[22]{after discharge}", "Priority": 2})
             #self.update("2002", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 200 #mum, 2.9E15 neq", "Priority": 3})
             #self.update("2002_unannealed", {"Color": ROOT.kGray+1, "LineStyle": 3, "MarkerStyle": 22, "Label": " ... no annealing", "Priority": 4})
-            self.update("0538_03_unannealed", {"Color": ROOT.kGray+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 300 #mum, 1.0E15 neq, #font[22]{before annealing}, after discharge", "Priority": 3})
-            self.update("0538_03", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 300 #mum, 1.0E15 neq, #font[22]{after annealing}, after discharge", "Priority": 4})
+            self.update("0538_03_unannealed", {"Color": ROOT.kGray+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 300 #mum, 0.8E15 neq, #font[22]{before annealing}, after discharge", "Priority": 3})
+            self.update("0538_03", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 300 #mum, 0.8E15 neq, #font[22]{after annealing}, after discharge", "Priority": 4})
             
 
 A_FULLPAD_LD = 122105993.42116399       #mum2
@@ -334,8 +334,8 @@ class ChannelIV(Dataset):
 
             # specify style
             #self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 11.0 E15 neq", "Priority": 1})
-            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 5.3E15 neq", "Priority": 2})
-            self.update("0541_04", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 27  , "Label": "LD, 200 #mum, 2.5E15 neq", "Priority": 3})
+            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 4.2E15 neq", "Priority": 2})
+            self.update("0541_04", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 27  , "Label": "LD, 200 #mum, 1.9E15 neq", "Priority": 3})
             #self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.9E15 neq", "Priority": 4})
             self.update("1013", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 300 #mum, 1.0E15 neq", "Priority": 5})
             #self.update("1002", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 32, "Label": "LD, 300 #mum, 0.9E15 neq", "Priority": 6})

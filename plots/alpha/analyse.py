@@ -29,8 +29,8 @@ DELTAUREF = 0.0 if UREF > 0 else 0.1
 def compute_errors(measurement_meta, current):
     fluence = measurement_meta["fluence"]
     Campaign = measurement_meta["Campaign"]
-    #2. fluence error is assumed to be 20%, c.f. U. Heintz e-mail on 06 May 2021
-    x_err_up =  0.20 * fluence
+    #2. fluence error is assumed to be 5% up and 20%, c.f. N. Hinton's talk at review on 12 November 2021
+    x_err_up =  0.05 * fluence
     x_err_down = 0.20 * fluence 
 
     # 3. +/- 0.5 deg C temperature variation at CERN, +/- 1.5 deg C at TTU
@@ -61,7 +61,8 @@ def compute_errors(measurement_meta, current):
 if UREF == -1:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"]]
 elif UREF <= 600:
-    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"], ["3104", "1003"]]  
+    #PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"], ["3104", "1003"]]  
+    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"]]  
 else:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"]]
 iv_vs_fluence_graphs = []
