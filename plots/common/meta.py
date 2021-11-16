@@ -1,10 +1,7 @@
 import ROOT
 import os
 
-FULL_CELL_AREA = {
-    "LD": 125415131,      #unit: mum
-    "HD": 55508574,      #unit: mum
-}
+
 
 GEOFILES = {
     "LD": "hex_positions_HPK_198ch_8inch_edge_ring_testcap_paper.txt",
@@ -189,29 +186,78 @@ MEASUREMENTS["5414"] = {
     "annealing": 100.
 }
 
-MEASUREMENTS["3104"] = {
+MEASUREMENTS["3005"] = {
     "Campaign": "TTU_October2021",
     "Design": "HD",
     "Cells": [203, 204, 227, 228, 229, 251, 252],
-    "ID": "8in_432_3104_25E14_neg40_TTU",
+    "ID": "8in_432_3005_25E14_neg40_postAnnealing_TTU",
     "p-stop": "comm.",
     "thickness": 120,
     #"Vfb": -2,                  #to cross-check
     "fluence": 16.5,             #round 7
+    "annealing": 80
+}
+
+MEASUREMENTS["3008"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "HD",
+    "Cells": [203, 204, 227, 228, 229, 251, 252],
+    "ID": "8in_432_3008_25E14_neg40_postAnnealing_TTU",
+    "p-stop": "comm.",
+    "thickness": 120,
+    #"Vfb": -2,                  #to cross-check
+    "fluence": 16.5,             #round 7
+    "annealing": 80
+}
+
+MEASUREMENTS["3104"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "HD",
+    "Cells": [203, 204, 227, 228, 229, 251, 252],
+    "ID": "8in_432_3104_25E14_neg40_postAnnealing_TTU",
+    "p-stop": "comm.",
+    "thickness": 120,
+    #"Vfb": -2,                  #to cross-check
+    "fluence": 16.5,             #round 7
+    "annealing": 80
+}
+
+MEASUREMENTS["3105"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "HD",
+    "Cells": [203, 204, 227, 228, 229, 251, 252],
+    "ID": "8in_432_3105_25E14_neg40_postAnnealing_TTU",
+    "p-stop": "comm.",
+    "thickness": 120,
+    #"Vfb": -2,                  #to cross-check
+    "fluence": 16.5,             #round 7
+    "annealing": 80
+}
+
+MEASUREMENTS["3101"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "HD",
+    "Cells": [203, 204, 227, 228, 229, 251, 252],
+    "ID": "8in_432_3101_1E16_neg40_TTU",
+    "p-stop": "comm.",
+    "thickness": 120,
+    #"Vfb": -2,                  #to cross-check
+    "fluence": 80.0,             #round 6
     "annealing": 0
 }
 
-MEASUREMENTS["1003"] = {
+MEASUREMENTS["3107"] = {
     "Campaign": "TTU_October2021",
-    "Design": "LD",
-    "Cells": [87, 88, 118, 119],
-    "ID": "8in_198ch_2019_1003_15E14_neg40_TTU",
-    "p-stop": "ind.",
+    "Design": "HD",
+    "Cells": [203, 204, 227, 228, 229, 251, 252],
+    "ID": "8in_432_3107_1E16_neg40_TTU",
+    "p-stop": "comm.",
     "thickness": 120,
     #"Vfb": -2,                  #to cross-check
-    "fluence": 14.,              #round 9
+    "fluence": 80.0,             #round 6
     "annealing": 0
 }
+
 
 class Dataset:
     def __init__(self):
@@ -317,6 +363,11 @@ A_OUTERCALIB_LD = 92339686.33005302
 A_INNERCALIB_LD = 26947138.189286005
 A_EDGELARGE_LD = 127001525.27368101
 A_EDGESMALL_LD = 85040178.32025799
+
+FULL_CELL_AREA = {
+    "LD": A_FULLPAD_LD,      #unit: mum
+    "HD": A_FULLPAD_HD,      #unit: mum
+}
 
 class ChannelIV(Dataset):
     def __init__(self, _type="sensors"):

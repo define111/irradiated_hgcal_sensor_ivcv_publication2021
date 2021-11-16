@@ -36,7 +36,7 @@ def compute_errors(measurement_meta, current):
     # 3. +/- 0.5 deg C temperature variation at CERN, +/- 1.5 deg C at TTU
     DELTAT = 0.5
     if Campaign == "TTU_October2021":
-        DELTAT = 1.5
+        DELTAT = 1.0
     y_err_down = deltaI_relative(DELTAT, -40.)*current
     y_err_up = deltaI_relative(DELTAT, -40.)*current
     
@@ -61,8 +61,8 @@ def compute_errors(measurement_meta, current):
 if UREF == -1:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"]]
 elif UREF <= 600:
-    #PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"], ["3104", "1003"]]  
-    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"]]  
+    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"], ["3005", "3008", "3104", "3105"]]  
+    #PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"], ["3101", "3107"]]  
 else:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"]]
 iv_vs_fluence_graphs = []
@@ -123,7 +123,7 @@ for _pair in PAIRS:
         lcurr_average = np.mean(lcurr_average)
         lcurr_rel_up_average = np.mean(lcurr_rel_up_average)
         lcurr_rel_down_average = np.mean(lcurr_rel_down_average)
-        if Campaign == "TTU_October2021":
+        if Campaign == "TTU_October2021" and False:
             lcurr_average = lcurr_average * 0.75                #scale down by expected annealing improvement           
             lcurr_rel_up_average = lcurr_rel_up_average * 0.75                #scale down by expected annealing improvement           
             lcurr_rel_down_average = lcurr_rel_down_average * 0.75                #scale down by expected annealing improvement           
@@ -148,7 +148,7 @@ for _pair in PAIRS:
     if Campaign != "TTU_October2021":
         iv_vs_fluence_gr.SetName("STD. oxide, %s p-stop, U_{fb}=%i V" % (MEASUREMENTS[ID]["p-stop"], MEASUREMENTS[ID]["Vfb"]))
     else:
-        iv_vs_fluence_gr.SetName("non-annealed sensors @ TTU [x0.75]")
+        iv_vs_fluence_gr.SetName("IV measurements at @ TTU")
 
     iv_vs_fluence_graphs.append(iv_vs_fluence_gr)
 
