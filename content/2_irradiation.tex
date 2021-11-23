@@ -1,30 +1,71 @@
-\section{Neutron Irradiation}
+\section{Irradiation at the Rhode Island Neutron Irradiation Facility}
 \label{sec:irradiation}
 
-\subsection{Rhode Island Neutron Irradiation Facility}
+\subsection{Rhode Island Nuclear Reactor}
 \label{subsec:RINSC}
+"What we, as a group, were given in terms of infrastructure." \textcolor{red}{Responsible: Nick}
+\begin{itemize}
+  \item Reactor description, incl. particle spectrum (if available), expected peak fluence rate (only if something was known a priori, otherwise discuss in~\ref{subsec:fluence_assessment})
+  \item sketch of the reactor incl. beamport. Other two sytems can be included in the sketch, should be mentioned in a side-sentence.
+  \item Focus should be on the beamport because that is the only way one can irradiate such large sensors. Hence, incl. photo (ideally with annotations)
+\end{itemize}
+
 RINSC (Rhode Island Nuclear Science Center) is a 2 MW, light water cooled, pool type reactor in Narragansett, Rhode Island, USA.
 The core consists of fuel assemblies reflected with a combination of graphite and beryllium.
 The fuel is plate type U3Si2 cladded with aluminum enriched to less than 20% Uranium-235.
 At RINSC there are three (technically six, do we only include the ones we use?) different ways to irradiate materials: beamports (pipes that run from the work area to the reactor core), rabbit system (pneumatic system that ferries plastic sample bottles to the reactor core), and InCore tubes (small samples are placed into a tube and lowered into an empty basket next to the fuel elements). 
 The beamports can accomodate samples of up to 7.75" x 3' [diameter by length], the rabbit system can accept sampes 1.125" x 6.25", and the InCore system can irradiate objects 1.25" x 9". 
 Of the irradiation methods available, only the beamports are large enough to accomodate the silicon sensors for this project.
+
+
+\subsection{Irradiation of HGCAL silicon sensor prototypes}
+\label{subsec:irradiation}
+"What had to be developed in order to conduct the irradiations?" \textcolor{red}{Responsible: Nick}
 \begin{itemize}
-    \item Fig 1 - image(s) of reactor core, beamport (see .~\ref{fig:RINSC_Facility})
-    what other details are useful here?
-    Is it better to omit the sample irradiation options that are not being used?
-    \item Fig 2 - puck design/layout, real pucks (see .~\ref{fig:Pucks_Arrayed})
-    \item Fig 3 - puck layout, packing (see .~\ref{fig:Puck_Packing}), how much detail about packing materials? (see .~\ref{fig:Cylinder_Details})
-    \item Fig 4 - other hardware, cylinder, temp monitoring setup (see .~\ref{fig:Temperature_Monitoring_Setup})
-    Keithley 2400 for temperature readout (along with 20-channel input board), RTDs instrumented with 20' of radiation-resistant wire (McMaster), laptop with GPIB connection to keithely, and custom LabVIEW code for readout.
-    \item Fig 5 - schemaitc of experimental setup? Is this needed?
-    \item describe sample removal/storage after irradiation - need for full day for activity levels to decay to the point that reactor staff can transfer cylinder from beamport to freezer. Chest freezer has been installed a few steps away from the beamport with enough storage capacity for 3 cylinders.
-    \item Fig 6 describe fluence measurement setup/procedure at Brown? IV of D0 diodes prior to irradiation, then cold (-20C) measurement of irradiated diodes with current scaled up to 20C. Also include pin diodes but they have not been found to be useful at fluences above 1e15. (see .~\ref{fig:Fluence_Measurement_Setup})
+  \item Puck and other hardware for placement of the sensors into the beamport
+  \item Temperature (!) as it may cause annealing (affecting the IV+CV results). Usage of dry ice.
+  \item Temperature monitoring essential. Show illustrative temperature-vs-time graph during irradiation round. 
+\end{itemize}
+
+\subsection{Fluence Assessment}
+"What were the achieved fluences?" \textcolor{red}{Responsible: Nick}
+\label{subsec:fluence_assessment}
+\begin{itemize}
+  \item Explain how fluence was extracted (diodes, integrated power, ...?)
+\end{itemize}
+
+\subsection{List of Neutron-Irradiated Sensors}
+\label{subsec:sensors_irradiation}
+"Which sensors were irradiated"? \textcolor{red}{Responsible: Thorben}
+\begin{itemize}
+  \item full table of sensors irradiated in first campaign (see .~\ref{fig:Irradiation_Schedule}). Do we want to include sensors irradiated prior to the main campaign? On the order of 10 or so sensors irradiated prior to this campaign.
 \end{itemize}
 
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.25\textwidth]{figures/RINSC_Reactor_Core}
+    \includegraphics[width=0.90\textwidth]{figures/Completed_Irradiation_Schedule_at_RINSC}
+    \caption{Completed irradiation schedule for all sensors irradiated in this campaign.}
+    \label{fig:Irradiation_Schedule}
+  \end{center}
+\end{figure}
+
+
+\begin{itemize}
+    \item \ref{fig:RINSC_Facility} - image(s) of reactor core, beamport (see .~\ref{fig:RINSC_Facility})
+    %what other details are useful here?
+    %Is it better to omit the sample irradiation options that are not being used?
+    \item \ref{fig:Pucks_Arrayed} - puck design/layout, real pucks (see .~\ref{fig:Pucks_Arrayed})
+    %\item Fig 3 - puck layout, packing (see .~\ref{fig:Puck_Packing}), how much detail about packing materials? (see .~\ref{fig:Cylinder_Details})
+    %\item Fig 4 - other hardware, cylinder, temp monitoring setup (see .~\ref{fig:Temperature_Monitoring_Setup})
+    %Keithley 2400 for temperature readout (along with 20-channel input board), RTDs instrumented with 20' of radiation-resistant wire (McMaster), laptop with GPIB connection to keithely, and custom LabVIEW code for readout.
+    %\item Fig 5 - schemaitc of experimental setup? Is this needed?
+    %\item describe sample removal/storage after irradiation - need for full day for activity levels to decay to the point that reactor staff can transfer cylinder from beamport to freezer. Chest freezer has been installed a few steps away from the beamport with enough storage capacity for 3 cylinders.
+    %\item Fig 6 describe fluence measurement setup/procedure at Brown? IV of D0 diodes prior to irradiation, then cold (-20C) measurement of irradiated diodes with current scaled up to 20C. Also include pin diodes but they have not been found to be useful at fluences above 1e15. (see .~\ref{fig:Fluence_Measurement_Setup})
+\end{itemize}
+
+\begin{figure}[!hbt]
+  \begin{center}
+    %\includegraphics[width=0.25\textwidth]{figures/RINSC_Reactor_Core}
     \includegraphics[width=0.40\textwidth]{figures/Beamport_View}
     \caption{On the left is an image of the reactor core at RINSC, and on the right is a view down the beamport used for these irradiation studies.}
     \label{fig:RINSC_Facility}
@@ -39,6 +80,7 @@ Of the irradiation methods available, only the beamports are large enough to acc
   \end{center}
 \end{figure}
 
+\iffalse      %START OF MULTILINE COMMENT
 \begin{figure}[!hbt]
   \begin{center}
     \includegraphics[width=0.60\textwidth]{figures/Cylinder_Side_View}
@@ -76,17 +118,4 @@ Of the irradiation methods available, only the beamports are large enough to acc
   \end{center}
 \end{figure}
 
-\subsection{List of Neutron-Irradiated Sensors}
-\begin{itemize}
-  \item full table of sensors irradiated in first campaign (see .~\ref{fig:Irradiation_Schedule}). Do we want to include sensors irradiated prior to the main campaign? On the order of 10 or so sensors irradiated prior to this campaign.
-\end{itemize}
-
-\begin{figure}[!hbt]
-  \begin{center}
-    \includegraphics[width=0.90\textwidth]{figures/Completed_Irradiation_Schedule_at_RINSC}
-    \caption{Completed irradiation schedule for all sensors irradiated in this campaign.}
-    \label{fig:Irradiation_Schedule}
-  \end{center}
-\end{figure}
-
-\label{subsec:sensors_irradiation}
+\fi       %END OF MULTILINE COMMENT
