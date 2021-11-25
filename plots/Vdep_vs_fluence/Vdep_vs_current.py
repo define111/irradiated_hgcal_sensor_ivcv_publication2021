@@ -34,13 +34,13 @@ XMINMAX = {
 }
 
 YMINMAX = {
-    "5414": (238., 280.),
+    "5414": (238., 276.),
     "1002": (350., 420.),
     "3009": (110., 140.)
 }
 
 
-for _ID in ["5414", "1002", "3009"]:
+for _ID in ["5414"]:
     Campaign = MEASUREMENTS[_ID]["Campaign"]
     Geometry = MEASUREMENTS[_ID]["Design"]
     measID = MEASUREMENTS[_ID]["ID"]
@@ -112,7 +112,7 @@ for _ID in ["5414", "1002", "3009"]:
     f1_linfit.Draw("SAME")
 
 
-    legend = ROOT.TLegend(*cm.calc_legend_pos(3, x1=0.13, x2=0.65, y2=0.9))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(3+1, x1=0.42, x2=0.92, y2=0.35))
     cm.setup_legend(legend)
     legend.AddEntry(profile_x, "Data", "pl")
     legend.AddEntry(f1_linfit, "Fit: #DeltaU_{dep}/#DeltaI_{pad, -40^{#circ}C} = %.1f V/#muA" % f1_linfit.GetParameter(1))
@@ -127,13 +127,12 @@ for _ID in ["5414", "1002", "3009"]:
     campaign_label = cm.create_campaign_label()
     campaign_label.Draw()
 
-    textlabel = {"5414": "LD, 200 #mum, 2.5E15 neq", "1002": "LD, 300 #mum, 0.9E15 neq", "3009": "HD, 120 #mum, 5.3E15 neq"}[_ID]
+    textlabel = {"5414": "LD, 200 #mum, ~1.9E15 neq/cm^{2}", "1002": "LD, 300 #mum, ~0.8E15 neq/cm^{2}", "3009": "HD, 120 #mum, ~4.2E15 neq/cm^{2}"}[_ID]
     label = ROOT.TLatex(0.45, 0.9, textlabel)
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
-    label.Draw()
+    #label.Draw()
+    legend.SetHeader(textlabel+" + annealing")
 
     pad.SetGrid(True)
     #save pdf
     canvas.Print(os.path.join(thisdir, "{}.pdf".format(name)))
-
-
