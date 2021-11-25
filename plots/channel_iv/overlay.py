@@ -32,7 +32,7 @@ pad.cd()
 
 #prepare the legend
 if args.type == "channels":
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.13, x2=0.52, y2=0.89))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.52, x2=0.92, y2=0.49))
 else:
     legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.13, x2=0.58, y2=0.92))
 cm.setup_legend(legend)
@@ -48,12 +48,12 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
     gr.GetXaxis().SetLimits(0., 900.)
 
     if args.type == "channels":
-        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "I_{pad, -40^{#circ}C} / A_{full pad}  (#muA / 122.1 mm^{2})"})	
+        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "I_{pad, -40^{#circ}C} / A_{full pad}  (#muA / 1.2 cm^{2})"})	
         y_scale = 1./Dataset.dict[_id]["RelArea"]
         scale_graph(gr, y_scale)
         gr.SetMinimum(0.0)
-        gr.SetMaximum(3.8)
-        legend.AddEntry(gr, "%s [x%.2f]" % (Dataset.GetLabel(_id), y_scale), "pl")
+        gr.SetMaximum(4.05)
+        legend.AddEntry(gr, "%s" % (Dataset.GetLabel(_id)), "pl")
     elif args.type == "sensors":
         cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "I_{pad, -40^{#circ}C} / I_{pad, -40^{#circ}C}(U_{bias} = 600 V) "})	
         lin_fit = ROOT.TF1("lin_fit%s" % _id, "pol1", 480, 660)
@@ -82,7 +82,7 @@ campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
 if args.type == "channels":
-    label = ROOT.TLatex(0.48, 0.89, "LD, 200 #mum, 2.5E15 neq")
+    label = ROOT.TLatex(0.48, 0.89, "LD, 200 #mum, ~1.9E15 neq")
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
     label.Draw()
 

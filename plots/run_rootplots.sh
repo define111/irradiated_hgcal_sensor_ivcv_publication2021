@@ -14,7 +14,6 @@ action() {
         python3 total_iv/overlay.py --type good;
     ) 
     (
-        python3 channel_iv/overlay.py --type sensors;
         python3 channel_iv/overlay.py --type channels;
     )
     (
@@ -38,7 +37,7 @@ action() {
     )
     (
         python3 iv_temp_scaling/overlay.py;
-    )    
+    )  
     cd "$origin"
 }
 action "$@"  
