@@ -191,9 +191,9 @@ MEASUREMENTS["3005"] = {
     "Design": "HD",
     "Cells": [203, 204, 227, 228, 229, 251, 252],
     "ID": "8in_432_3005_25E14_neg40_postAnnealing_TTU",
-    "p-stop": "comm.",
+    "p-stop": "ind.",
     "thickness": 120,
-    #"Vfb": -2,                  #to cross-check
+    "Vfb": -2,                  #cf. https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 16.5,             #round 7
     "annealing": 80
 }
@@ -203,9 +203,9 @@ MEASUREMENTS["3008"] = {
     "Design": "HD",
     "Cells": [203, 204, 227, 228, 229, 251, 252],
     "ID": "8in_432_3008_25E14_neg40_postAnnealing_TTU",
-    "p-stop": "comm.",
+    "p-stop": "ind.",
     "thickness": 120,
-    #"Vfb": -2,                  #to cross-check
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 16.5,             #round 7
     "annealing": 80
 }
@@ -217,7 +217,7 @@ MEASUREMENTS["3104"] = {
     "ID": "8in_432_3104_25E14_neg40_postAnnealing_TTU",
     "p-stop": "comm.",
     "thickness": 120,
-    #"Vfb": -2,                  #to cross-check
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 16.5,             #round 7
     "annealing": 80
 }
@@ -229,7 +229,7 @@ MEASUREMENTS["3105"] = {
     "ID": "8in_432_3105_25E14_neg40_postAnnealing_TTU",
     "p-stop": "comm.",
     "thickness": 120,
-    #"Vfb": -2,                  #to cross-check
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 16.5,             #round 7
     "annealing": 80
 }
@@ -241,7 +241,7 @@ MEASUREMENTS["3101"] = {
     "ID": "8in_432_3101_1E16_neg40_TTU",
     "p-stop": "comm.",
     "thickness": 120,
-    #"Vfb": -2,                  #to cross-check
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 80.0,             #round 6
     "annealing": 0
 }
@@ -253,7 +253,7 @@ MEASUREMENTS["3107"] = {
     "ID": "8in_432_3107_1E16_neg40_TTU",
     "p-stop": "comm.",
     "thickness": 120,
-    #"Vfb": -2,                  #to cross-check
+    "Vfb": -5,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 80.0,             #round 6
     "annealing": 0
 }

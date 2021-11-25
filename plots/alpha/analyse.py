@@ -11,7 +11,7 @@ cm.setup_style()
 import os
 thisdir = os.path.dirname(os.path.realpath(__file__))
 
-from common.util import deltaI_relative, scale_graph
+from common.util import deltaI_relative, TemperatureScaling, scale_graph
 from common.meta import FULL_CELL_AREA, MEASUREMENTS
 
 from math import sqrt
@@ -29,9 +29,9 @@ DELTAUREF = 0.0 if UREF > 0 else 0.1
 def compute_errors(measurement_meta, current):
     fluence = measurement_meta["fluence"]
     Campaign = measurement_meta["Campaign"]
-    #2. fluence error is assumed to be 5% up and 20%, c.f. N. Hinton's talk at review on 12 November 2021
-    x_err_up =  0.05 * fluence
-    x_err_down = 0.20 * fluence 
+    #2. fluence uncertainty is assumed to be 10%
+    x_err_up =  0.10 * fluence
+    x_err_down = 0.10 * fluence 
 
     # 3. +/- 0.5 deg C temperature variation at CERN, +/- 1.5 deg C at TTU
     DELTAT = 0.5
@@ -43,13 +43,13 @@ def compute_errors(measurement_meta, current):
     # 4. annealing time uncertainty, only underestimate of time possible --> lower currents
     annealing_down = 0.
     if Campaign == "Spring2021_ALPS":
-        annealing_up = 0.01
-    elif (Campaign == "Winter2021") or (Campaign == "TTU_October2021"):
-        annealing_up = 0.2
-    else:
         annealing_up = 0.05
+    elif (Campaign == "Winter2021") or (Campaign == "TTU_October2021"):
+        annealing_up = 0.3
+    else:
+        annealing_up = 0.10
     y_err_up = sqrt(y_err_up**2 + (annealing_up*current)**2)
-    #y_err_down = sqrt(y_err_down**2 + (annealing_up*current)**2)
+    y_err_down = sqrt(y_err_down**2 + (annealing_down*current)**2)
 
     #5. thickness variation
     delta_thickness = 2./measurement_meta["thickness"]
@@ -61,14 +61,11 @@ def compute_errors(measurement_meta, current):
 if UREF == -1:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"]]
 elif UREF <= 600:
-    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"], ["3005", "3008", "3104", "3105"]]  
-    #PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"], ["3101", "3107"]]  
+    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013", "3008"], ["1102", "2114", "3103", "3109", "3110", "1114", "3104"], ["2004", "5414"], ["1101", "2105"]]  
 else:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"]]
 iv_vs_fluence_graphs = []
 
-#all points in one, used for fitting
-iv_vs_fluence_gr_all = ROOT.TGraphAsymmErrors()
 
 for _pair in PAIRS:
     iv_vs_fluence_gr = ROOT.TGraphAsymmErrors()
@@ -95,7 +92,8 @@ for _pair in PAIRS:
                 Uref = loaded_Vdep[loaded_channels==_channel][0]
             else:
                 Uref = UREF 
-            gr = infile.Get("IV_tempcorrected_channel%i" % _channel)
+            gr = infile.Get("IV_uncorrected_channel%i" % _channel)
+            scale_graph(gr, TemperatureScaling(-40., 20.))
 
             lfti_up = ROOT.TF1("pol1_up", "pol1", (1.+DELTAUREF)*Uref-105., (1.+DELTAUREF)*Uref+105.)
             lfti_down = ROOT.TF1("pol1_down", "pol1", (1.-DELTAUREF)*Uref-105., (1.-DELTAUREF)*Uref+105.)
@@ -122,11 +120,7 @@ for _pair in PAIRS:
         fluence = MEASUREMENTS[ID]["fluence"]
         lcurr_average = np.mean(lcurr_average)
         lcurr_rel_up_average = np.mean(lcurr_rel_up_average)
-        lcurr_rel_down_average = np.mean(lcurr_rel_down_average)
-        if Campaign == "TTU_October2021" and False:
-            lcurr_average = lcurr_average * 0.75                #scale down by expected annealing improvement           
-            lcurr_rel_up_average = lcurr_rel_up_average * 0.75                #scale down by expected annealing improvement           
-            lcurr_rel_down_average = lcurr_rel_down_average * 0.75                #scale down by expected annealing improvement           
+        lcurr_rel_down_average = np.mean(lcurr_rel_down_average)    
         np_gr = iv_vs_fluence_gr.GetN()
         iv_vs_fluence_gr.SetPoint(np_gr, fluence, lcurr_average)
         
@@ -140,16 +134,7 @@ for _pair in PAIRS:
 
         iv_vs_fluence_gr.SetPointError(np_gr, x_err_down, x_err_up, y_err_down, y_err_up)
         
-        if Campaign != "TTU_October2021":
-            np_gr_all = iv_vs_fluence_gr_all.GetN()
-            iv_vs_fluence_gr_all.SetPoint(np_gr_all, fluence, lcurr_average)
-            iv_vs_fluence_gr_all.SetPointError(np_gr_all, x_err_down, x_err_up, y_err_down, y_err_up)
-
-    if Campaign != "TTU_October2021":
-        iv_vs_fluence_gr.SetName("STD. oxide, %s p-stop, U_{fb}=%i V" % (MEASUREMENTS[ID]["p-stop"], MEASUREMENTS[ID]["Vfb"]))
-    else:
-        iv_vs_fluence_gr.SetName("IV measurements at @ TTU")
-
+    iv_vs_fluence_gr.SetName("%s p-stop, U_{fb}=%i V" % (MEASUREMENTS[ID]["p-stop"], MEASUREMENTS[ID]["Vfb"]))
     iv_vs_fluence_graphs.append(iv_vs_fluence_gr)
 
 
@@ -169,20 +154,21 @@ pad.cd()
 
 
 pol1_fits = []
-legend_graphs = ROOT.TLegend(*cm.calc_legend_pos(len(PAIRS), x1=0.15, x2=0.76, y2=0.94))
+legend_graphs = ROOT.TLegend(*cm.calc_legend_pos(len(PAIRS)+1, x1=0.15, x2=0.52, y2=0.94))
 cm.setup_legend(legend_graphs)
 
-legend_fits = ROOT.TLegend(*cm.calc_legend_pos(1.5, x1=0.28, x2=0.98, y2=0.185))
+legend_fits = ROOT.TLegend(*cm.calc_legend_pos(1.35, x1=0.15, x2=0.93, y2=0.185))
 cm.setup_legend(legend_fits)
-legend_fits.SetTextSize(50)
+legend_fits.SetTextSize(45)
 
+pol1_fits = []
 for draw_index, iv_vs_fluence_gr in enumerate(iv_vs_fluence_graphs):
     cm.setup_graph(iv_vs_fluence_gr, {"MarkerStyle": [20, 25, 22, 32, 28][draw_index], "LineStyle": 1, "MarkerSize": 4})
-    iv_vs_fluence_gr.GetYaxis().SetRangeUser(150., 15000.)
+    iv_vs_fluence_gr.GetYaxis().SetRangeUser(9.0E3, 5.0E5)
     cm.setup_x_axis(iv_vs_fluence_gr.GetXaxis(), pad, {"Title": "Irradiation fluence (1E14 neq/cm^{2})"})
-    y_title = "I_{pad, -20^{#circ}C}(U=%i) / V (#muA/cm^{3})" % UREF
+    y_title = "I_{pad, +20^{#circ}C}(U=%i) / V (#muA/cm^{3})" % UREF
     if UREF < 0:
-        y_title = "I_{pad, -20^{#circ}C}(U=U_{dep}) / V (#muA/cm^{3})"
+        y_title = "I_{pad, +20^{#circ}C}(U=U_{dep}) / V (#muA/cm^{3})"
     cm.setup_y_axis(iv_vs_fluence_gr.GetYaxis(), pad, {"Title": y_title})
 
     iv_vs_fluence_gr.SetLineColor([ROOT.kBlue+1, ROOT.kOrange+1, ROOT.kBlack, ROOT.kGreen+2, ROOT.kGray][draw_index])
@@ -195,21 +181,33 @@ for draw_index, iv_vs_fluence_gr in enumerate(iv_vs_fluence_graphs):
     else:
         iv_vs_fluence_gr.Draw("PSAME")
 
-
+    pol1_fit = ROOT.TF1("pol1_%i", "pol1", 0., 120.)
+    pol1_fit.FixParameter(0, 0)
+    iv_vs_fluence_gr.Fit(pol1_fit, "N")
+    pol1_fits.append(pol1_fit)
+    
     legend_graphs.AddEntry(iv_vs_fluence_gr, iv_vs_fluence_gr.GetName(), "p")
+
+
+#combine all alpha values
+alphas = np.array([g.GetParameter(1) for g in pol1_fits])
+alpha_errors = np.array([g.GetParError(1) for g in pol1_fits])
+alpha_mean = np.average(alphas, weights=alpha_errors**(-2))
+alpha_error = sqrt(1/np.sum(alpha_errors**(-2)))
 
 
 #perform alpha fit
 pol1_fit = ROOT.TF1("pol1", "pol1", 0., 120.)
 pol1_fit.FixParameter(0, 0)
-pol1_fit.SetParameter(1, 5.)
-iv_vs_fluence_gr_all.Fit(pol1_fit, "RN")
+pol1_fit.SetParameter(1, alpha_mean)
 pol1_fit.SetLineColor(ROOT.kRed)
 pol1_fit.SetLineStyle(2)
 pol1_fit.SetLineWidth(4)    
 pol1_fit.Draw("SAME")
-legend_fits.AddEntry(pol1_fit, "#alpha(-20^{#circ}C)=(%.1f#pm%.1f)x10^{-19} A/cm" % (pol1_fit.GetParameter(1)*0.1, pol1_fit.GetParError(1)*0.1), "l")
+legend_fits.AddEntry(pol1_fit, "#alpha_{600V}(+20^{#circ}C)=(%.1f#pm%.1f^{+%.1f}_{ -0.0})x10^{-17} A/cm" % (alpha_mean*(1E-3), alpha_error*(1E-3), alpha_mean*(1E-3)*0.2), "l")
 
+
+legend_graphs.SetHeader("Process variation:")
 legend_graphs.Draw()
 legend_fits.Draw()
 
@@ -225,6 +223,19 @@ campaign_label.Draw()
 pad.SetLogx(True)
 pad.SetLogy(True)
 pad.SetGrid(True)
+
+if UREF == 600:
+    location_label_text = ROOT.TText()
+    location_label_text.SetTextColor(ROOT.kGray)
+    location_label_text.SetTextSize(0.03)
+    location_label_text.DrawText(0.23, 0.24, "CERN")
+    location_label_text.DrawText(0.3, 0.29, "CERN")
+    location_label_text.DrawText(0.44, 0.42, "TTU")
+    location_label_text.DrawText(0.49, 0.48, "CERN")
+    location_label_text.DrawText(0.57, 0.54, "CERN")
+    location_label_text.DrawText(0.65, 0.76, "CERN")
+    location_label_text.DrawText(0.87, 0.78, "CERN")
+
 
 #save pdf
 canvas.Print(os.path.join(thisdir, "{}.pdf".format(name)))
