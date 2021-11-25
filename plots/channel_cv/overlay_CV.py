@@ -33,9 +33,9 @@ pad.cd()
 
 #prepare the legend
 if args.type == "channels":
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.45, x2=0.87, y2=0.89))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.30, x2=0.82, y2=0.89))
 else:
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.45, x2=0.93, y2=0.92))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.30, x2=0.93, y2=0.92))
 cm.setup_legend(legend)
 
 # load the graphs
@@ -51,13 +51,13 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
 
     if args.type == "channels":
         
-        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad} / A_{full pad}  (pF / 122.1 mm^{2})"})
+        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad} / A_{full pad}  (pF / 1.2 cm^{2})"})
         y_scale = 1./Dataset.dict[_id]["RelArea"]
         scale_graph(gr, y_scale)
-        legend.AddEntry(gr, "%s [x%.2f]" % (Dataset.GetLabel(_id), y_scale), "pl")
+        legend.AddEntry(gr, "%s" % (Dataset.GetLabel(_id)), "pl")
 
     elif args.type == "sensors":
-        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad} / A_{full pad LD} x d (pF x 200 #mum / 122.1 mm^{2})"})	
+        cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad} / A_{full pad LD} x d (pF x 200 #mum / 1.2 cm^{2})"})	
         y_scale = Dataset.dict[_id]["RelThickness"]/Dataset.dict[_id]["RelArea"]
         scale_graph(gr, y_scale)
         legend.AddEntry(gr, "%s [x%.2f]" % (Dataset.GetLabel(_id), y_scale), "pl")
@@ -83,12 +83,14 @@ campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
 if args.type == "channels":
-    label = ROOT.TLatex(0.80, 0.89, "LD, 200 #mum, 2.5E15 neq")
+    _label_text = "LD, 200 #mum, ~1.9E15 neq/cm^{2} + annealing"
+    label = ROOT.TLatex(0.80, 0.89, _label_text)
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
-    label.Draw()
+    #label.Draw()
+    legend.SetHeader(_label_text)
 
 
-frequency_label = ROOT.TLatex(0.15, 0.87, "f_{LCR} = 2 kHz")
+frequency_label = ROOT.TLatex(0.85, 0.17, "f_{LCR} = 2 kHz")
 cm.setup_label(frequency_label, {"TextFont": 73, "TextColor": ROOT.kBlack})
 frequency_label.Draw()
 

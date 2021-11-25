@@ -52,9 +52,9 @@ pad.cd()
 
 #prepare the legend
 if args.type == "channels":
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.57, x2=0.87, y2=0.42))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.47, x2=0.87, y2=0.45))
 else:
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.57, x2=1.03, y2=0.45))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.47, x2=1.03, y2=0.48))
 cm.setup_legend(legend)
 
 fits = []
@@ -87,7 +87,7 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
 
     cm.setup_graph(gr, {"MarkerSize": 2, "LineWidth": 2})
     cm.setup_graph(fit_draw, {"LineWidth": 2})
-    cm.setup_graph(Vdep_line, {"LineWidth": 2, "LineStyle": fit_draw.GetLineStyle(), "LineColor": fit_draw.GetLineColor()})
+    cm.setup_graph(Vdep_line, {"LineWidth": 2, "LineStyle": 1, "LineColor": fit_draw.GetLineColor()+1})
     
     cm.setup_x_axis(gr.GetXaxis(), pad, {"Title": "U_{bias} (V)"})
     cm.setup_y_axis(gr.GetYaxis(), pad, {"Title": "C_{pad}^{-2}/(C_{pad}^{-2})_{U_{bias}#rightarrow#infty} ", "TitleOffset": 1.1*gr.GetYaxis().GetTitleOffset()})	
@@ -117,11 +117,13 @@ campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
 if args.type == "channels":
-    label = ROOT.TLatex(0.88, 0.45, "LD, 200 #mum, 2.5E15 neq")
+    _label_text = "LD, 200 #mum, ~1.9E15 neq/cm^{2} + annealing"
+    label = ROOT.TLatex(0.88, 0.45, _label_text)
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
-    label.Draw()
+    #label.Draw()
+    legend.SetHeader(_label_text)
 
-frequency_label = ROOT.TLatex(0.6, 0.50, "f_{LCR} = 2 kHz")
+frequency_label = ROOT.TLatex(0.85, 0.17, "f_{LCR} = 2 kHz")
 cm.setup_label(frequency_label, {"TextFont": 73, "TextColor": ROOT.kBlack})
 frequency_label.Draw()
 
