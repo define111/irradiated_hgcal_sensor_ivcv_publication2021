@@ -36,7 +36,7 @@ cm.setup_pad(pad)
 pad.cd()
 
 #prepare the legend
-X2 = 0.65
+X2 = 0.67
 if args.type == "bad":
     X2 = 0.99
 legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.15, x2=X2, y2=0.38))

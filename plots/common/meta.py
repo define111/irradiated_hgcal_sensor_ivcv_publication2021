@@ -17,7 +17,7 @@ MEASUREMENTS["1002"] = {
     "p-stop": "ind.",
     "thickness": 300,
     "Vfb": -2,
-    "fluence": 7.1,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 7.1,                 #round 1, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
     "annealing": 80.5
 }
 MEASUREMENTS["1102"] = {
@@ -28,7 +28,7 @@ MEASUREMENTS["1102"] = {
     "p-stop": "comm.",
     "thickness": 300,
     "Vfb": -2,
-    "fluence": 7.1,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 7.1,                 #round 1, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
     "annealing": 76.7
 }
 MEASUREMENTS["1101"] = {
@@ -39,7 +39,7 @@ MEASUREMENTS["1101"] = {
     "p-stop": "comm.",
     "thickness": 300,
     "Vfb": -5,
-    "fluence": 7.1,                 #round 1, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 7.1,                 #round 1, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
     "annealing": 76.0
 }
 MEASUREMENTS["2002"] = {
@@ -50,7 +50,7 @@ MEASUREMENTS["2002"] = {
     "p-stop": "ind.",
     "thickness": 200,
     "Vfb": -2, 
-    "fluence": 23.5,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 23.5,                  #round 5, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
     "annealing": 79.9
 }
 MEASUREMENTS["2114"] = {
@@ -61,7 +61,7 @@ MEASUREMENTS["2114"] = {
     "p-stop": "comm.",
     "thickness": 200,
     "Vfb": -2, 
-    "fluence": 23.5,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 23.5,                  #round 5, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
     "annealing": 79.9
 }
 MEASUREMENTS["2105"] = {
@@ -72,7 +72,7 @@ MEASUREMENTS["2105"] = {
     "p-stop": "comm.",
     "thickness": 200,
     "Vfb": -5, 
-    "fluence": 23.5,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 23.5,                  #round 5, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
     "annealing": 79.9
 }
 MEASUREMENTS["2004"] = {
@@ -83,7 +83,7 @@ MEASUREMENTS["2004"] = {
     "p-stop": "ind.",
     "thickness": 200,
     "Vfb": -5, 
-    "fluence": 23.5,                  #round 5, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 23.5,                  #round 5, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
     "annealing": 79.9
 }
 MEASUREMENTS["3003"] = {
@@ -94,7 +94,7 @@ MEASUREMENTS["3003"] = {
     "p-stop": "ind.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 110,                 #round 3, c.f. e-mail U. Heintz 06 May 2021                 
+    "fluence": 110,                 #round 3, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf                 
     "annealing": 400
 }
 MEASUREMENTS["3103"] = {
@@ -105,7 +105,7 @@ MEASUREMENTS["3103"] = {
     "p-stop": "comm.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 110,                 #round 3, c.f. e-mail U. Heintz 06 May 2021
+    "fluence": 110,                 #round 3, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
     "annealing": 400
 }
 MEASUREMENTS["3009"] = {
@@ -333,12 +333,12 @@ class TotalIV(Dataset):
             #self.add_entry("0541_04", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing", "June2021_ALPS")
         
             # specify style
-            self.update("3003", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, 11.0E15 neq/cm^{2}", "Priority": 1})
+            self.update("3003", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, ~11.0E15 neq/cm^{2}", "Priority": 1})
             #self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 4.2E15 neq, after annealing", "Priority": 2})
             #self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 1.5E15 neq", "Priority": 3})
             #self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.3E15 neq", "Priority": 4})
             #self.update("1013", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 300 #mum, 0.8E15 neq, after annealing", "Priority": 5})
-            self.update("1002", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 23, "Label": "LD,  300 #mum,  0.7E15 neq/cm^{2}", "Priority": 2})
+            self.update("1002", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 23, "Label": "LD,  300 #mum, ~0.7E15 neq/cm^{2}", "Priority": 2})
 
         else:
             #self.add_entry("2002", "8in_198ch_2019_2002_25E14_neg40_80minAnnealing", "Spring2021_ALPS")
