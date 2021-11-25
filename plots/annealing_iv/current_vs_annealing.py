@@ -102,7 +102,7 @@ for annealing in [0, 9, 24, 61, 80]:
 
 _df = pd.DataFrame(tmp_data, columns=["annealingMin", "channel", "U", "I"])
 
-legend1 = ROOT.TLegend(*cm.calc_legend_pos(10, x1=0.6, x2=0.9, y2=0.87))
+legend1 = ROOT.TLegend(*cm.calc_legend_pos(10+1, x1=0.6, x2=0.9, y2=0.92))
 cm.setup_legend(legend1)
 legend1.SetNColumns(2)
 
@@ -160,9 +160,12 @@ cms_labels.Draw()
 campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
-label = ROOT.TLatex(0.6, 0.88, "LD, 200 #mum, 2.5E15 neq")
+_label_text = "LD, 200 #mum, ~2.4E15/cm^{2}"
+label = ROOT.TLatex(0.24, 0.82, _label_text)
 cm.setup_label(label, {"TextFont": 73})
-label.Draw()
+
+legend1.SetHeader(_label_text)
+#label.Draw()
 
 legend1.Draw()
 

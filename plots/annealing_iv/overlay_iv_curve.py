@@ -28,7 +28,7 @@ cm.setup_pad(pad)
 pad.cd()
 
 graphs = []
-legend1 = ROOT.TLegend(*cm.calc_legend_pos(1, x1=0.2, x2=0.5, y2=0.8))
+legend1 = ROOT.TLegend(*cm.calc_legend_pos(1+1, x1=0.2, x2=0.5, y2=0.85))
 legend2 = ROOT.TLegend(*cm.calc_legend_pos(4, x1=0.6, x2=0.9, y2=0.34))
 cm.setup_legend(legend1)
 cm.setup_legend(legend2)
@@ -88,9 +88,12 @@ cms_labels.Draw()
 campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
-label = ROOT.TLatex(0.24, 0.82, "LD, 200 #mum, 2.9E15 neq")
+_label_text = "LD, 200 #mum, ~2.4E15/cm^{2}"
+label = ROOT.TLatex(0.24, 0.82, _label_text)
 cm.setup_label(label, {"TextFont": 73})
-label.Draw()
+
+legend1.SetHeader(_label_text)
+#label.Draw()
 
 pad.SetGrid(True)
 #save pdf
