@@ -18,70 +18,14 @@ import pandas as pd
 from common.meta import GEOFILES
 
 MEASUREMENTS = {
-    "1002": {
-        "MeasID": "8in_198ch_2019_1002_65E13_neg40_annealed68min_October2020",
-        "Campaign": "October2020_ALPS", 
-        "SensorType": "LD",
-        "zmin": 345,
-        "zmax": 530,
-        "Title": "LD, 300 #mum, 0.9E15 neq/cm^{2}"
-    },
-    "3003": {
-        "MeasID": "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021",
-        "Campaign": "Winter2021", 
-        "SensorType": "HD",
-        "zmin": 450,
-        "zmax": 515,
-        "Title": "HD, 120 #mum, 11.0E15 neq/cm^{2}"
-    },
-    "2004": {
-        "MeasID": "8in_198ch_2019_2004_25E14_neg40_80minAnnealing",
-        "Campaign": "Spring2021_ALPS", 
-        "SensorType": "LD",
-        "zmin": 250,
-        "zmax": 480,
-        "Title": "LD, 200 #mum, 2.9E15 neq/cm^{2}"
-    },
-    "3009": {
-        "MeasID": "8in_432_3009_5E15_neg40_post80minAnnealing",
-        "Campaign": "June2021_ALPS", 
-        "SensorType": "HD",
-        "zmin": 110,
-        "zmax": 180,
-        "Title": "HD, 120 #mum, 5.3E15 neq/cm^{2}"
-    },
-    "1013": {
-        "MeasID": "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing",
-        "Campaign": "June2021_ALPS", 
-        "SensorType": "LD",
-        "zmin": 370,
-        "zmax": 580,
-        "Title": "LD, 300 #mum, 1.0E15 neq/cm^{2}"
-    },
     "0541_04": {
         "MeasID": "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing",
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
-        "zmin": 220,
-        "zmax": 440,
-        "Title": "LD, 200 #mum, 2.5E15 neq/cm^{2}"
+        "zmin": 217,
+        "zmax": 276,
+        "Title": "LD, 200 #mum, 1.9E15 neq/cm^{2}"
     },
-    "3104": {
-        "MeasID": "8in_432_3104_25E14_neg40_TTU",
-        "Campaign": "TTU_October2021", 
-        "SensorType": "HD",
-        "zmin": 200,
-        "zmax": 250,
-        "Title": "HD, 120 #mum, 1.9E15 neq/cm^{2}"
-    },
-    "3105": {
-        "MeasID": "8in_432_3105_25E14_neg40_TTU",
-        "Campaign": "TTU_October2021", 
-        "SensorType": "HD",
-        "zmin": 200,
-        "zmax": 250,
-        "Title": "HD, 120 #mum, 1.9E15 neq/cm^{2}"
-    }
 }
 EVALVOLTAGE = 600
 
