@@ -18,48 +18,51 @@ import pandas as pd
 from common.meta import GEOFILES
 
 MEASUREMENTS = {
-    "1002": {
-        "MeasID": "8in_198ch_2019_1002_65E13_neg40_annealed68min_October2020_chucktempcorrected",
-        "Campaign": "October2020_ALPS", 
-        "SensorType": "LD",
-        "zmax": 1.35,
-        "Title": "LD, 300 #mum, 0.7E15 neq/cm^{2}"
-    },
-    "3003": {
-        "MeasID": "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected",
-        "Campaign": "Winter2021", 
-        "SensorType": "HD",
-        "zmax": 2.85,
-        "Title": "HD, 120 #mum, 11.0E15 neq/cm^{2}"
-    },
-    "2004": {
-        "MeasID": "8in_198ch_2019_2004_25E14_neg40_80minAnnealing_chucktempcorrected",
-        "Campaign": "Spring2021_ALPS", 
-        "SensorType": "LD",
-        "zmax": 3.75,
-        "Title": "LD, 200 #mum, 2.35E15 neq/cm^{2}"
-    },
-    "3009": {
+    "3009_annealed": {
         "MeasID": "8in_432_3009_5E15_neg40_post80minAnnealing_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "HD",
-        "zmax": 2.15,
-        "Title": "HD, 120 #mum, 4.2E15 neq/cm^{2}"
+        "zmax": 2.12,
+        "Title": "after additional annealing"
     },
-    "1013": {
+    "1013_annealed": {
         "MeasID": "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
-        "zmax": 1.65,
-        "Title": "LD, 300 #mum, 0.82E15 neq/cm^{2}"
+        "zmax": 1.62,
+        "Title": "after additional annealing"
     },
-    "0541_04": {
+    "0541_04_annealed": {
         "MeasID": "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
         "zmax": 3.25,
-        "Title": "LD, 200 #mum, 1.9E15 neq/cm^{2}"
+        "Title": "after additional annealing"
     },
+    "3009": {
+        "MeasID": "8in_432_3009_5E15_neg40_chucktempcorrected",
+        "Campaign": "June2021_ALPS", 
+        "SensorType": "HD",
+        "zmax": 2.12,
+        "Title": "HD, 120 #mum, ~4.2E15 neq/cm^{2}"
+    },
+    "1013": {
+        "MeasID": "8in_198ch_2019_1013_1E15_neg40_chucktempcorrected",
+        "Campaign": "June2021_ALPS", 
+        "SensorType": "LD",
+        "zmax": 1.62,
+        "Title": "LD, 300 #mum, ~0.8E15 neq/cm^{2}"
+    },
+    "0541_04": {
+        "MeasID": "8in_198ch_2019_N0541_04_25E14_neg40_chucktempcorrected",
+        "Campaign": "June2021_ALPS", 
+        "SensorType": "LD",
+        "zmax": 3.25,
+        "Title": "LD, 200 #mum, ~1.9E15 neq/cm^{2}"
+    }    
+}
+'''
+MEASUREMENTS = {
     "3005": {
         "MeasID": "8in_432_3005_25E14_neg40_postAnnealing_TTU",
         "Campaign": "TTU_October2021", 
@@ -87,8 +90,9 @@ MEASUREMENTS = {
         "SensorType": "HD",
         "zmax": 1.15,
         "Title": "HD, 120 #mum, 1.65E15 neq/cm^{2}"
-    }    
+    }  
 }
+'''  
 EVALVOLTAGE = 600
 
 HEXPLOTCOMMAND = "<HEXPLOTDIR>/bin/HexPlot \
@@ -107,7 +111,7 @@ HEXPLOTCOMMAND = HEXPLOTCOMMAND.replace("<COLORPALETTE>", "57")
 HEXPLOTCOMMAND = HEXPLOTCOMMAND.replace("<UNIT>", "#muA")
 HEXPLOTCOMMAND = HEXPLOTCOMMAND.replace("<FORMAT>", "PADNUM:SELECTOR:VAL")
 HEXPLOTCOMMAND = HEXPLOTCOMMAND.replace("<DEF>", "I_{pad, -40^{#circ} C}")
-HEXPLOTCOMMAND = HEXPLOTCOMMAND.replace("<ZMIN>", "0.5")
+HEXPLOTCOMMAND = HEXPLOTCOMMAND.replace("<ZMIN>", "0.25")
 
 
 for ID in MEASUREMENTS:
