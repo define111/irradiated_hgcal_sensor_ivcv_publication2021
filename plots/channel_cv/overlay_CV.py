@@ -90,7 +90,7 @@ if args.type == "channels":
     legend.SetHeader(_label_text)
 
 
-frequency_label = ROOT.TLatex(0.7, 0.17, "f_{LCR} = 2 kHz")
+frequency_label = ROOT.TLatex(0.7, 0.20, "f_{LCR} = 2 kHz")
 cm.setup_label(frequency_label, {"TextFont": 73, "TextColor": ROOT.kBlack})
 frequency_label.Draw()
 

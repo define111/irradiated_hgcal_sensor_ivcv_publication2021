@@ -52,9 +52,9 @@ pad.cd()
 
 #prepare the legend
 if args.type == "channels":
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.50, x2=0.87, y2=0.45))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.22, x2=0.77, y2=0.92))
 else:
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.50, x2=1.03, y2=0.48))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.22, x2=0.93, y2=0.92))
 cm.setup_legend(legend)
 
 fits = []
@@ -72,7 +72,7 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
     scale_graph(gr, scale)
     yshift_graph(gr, yshift)
     gr.SetMinimum(0.8325)
-    gr.SetMaximum(1.009)
+    gr.SetMaximum(1.059)
 
     fit_draw = ROOT.TF1("fit_draw_%s" % _id, fit_function_linearintersection, 0., 900., 4)
     fit_draw.SetParameter(0, fit.GetParameter(0))
@@ -123,7 +123,7 @@ if args.type == "channels":
     #label.Draw()
     legend.SetHeader(_label_text)
 
-frequency_label = ROOT.TLatex(0.7, 0.17, "f_{LCR} = 2 kHz")
+frequency_label = ROOT.TLatex(0.7, 0.20, "f_{LCR} = 2 kHz")
 cm.setup_label(frequency_label, {"TextFont": 73, "TextColor": ROOT.kBlack})
 frequency_label.Draw()
 
