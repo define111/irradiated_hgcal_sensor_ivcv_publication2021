@@ -34,7 +34,7 @@ pad.cd()
 if args.type == "channels":
     legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.52, x2=0.92, y2=0.49))
 else:
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.13, x2=0.58, y2=0.92))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.13, x2=0.58, y2=0.92))
 cm.setup_legend(legend)
 
 # load the graphs
