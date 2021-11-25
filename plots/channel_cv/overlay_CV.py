@@ -33,7 +33,7 @@ pad.cd()
 
 #prepare the legend
 if args.type == "channels":
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.30, x2=0.82, y2=0.89))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.30, x2=0.82, y2=0.93))
 else:
     legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.30, x2=0.93, y2=0.92))
 cm.setup_legend(legend)
@@ -90,7 +90,7 @@ if args.type == "channels":
     legend.SetHeader(_label_text)
 
 
-frequency_label = ROOT.TLatex(0.85, 0.17, "f_{LCR} = 2 kHz")
+frequency_label = ROOT.TLatex(0.7, 0.17, "f_{LCR} = 2 kHz")
 cm.setup_label(frequency_label, {"TextFont": 73, "TextColor": ROOT.kBlack})
 frequency_label.Draw()
 
