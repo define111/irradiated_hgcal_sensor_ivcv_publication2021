@@ -12,7 +12,6 @@ action() {
     cd "$src_dir"
     (
         python3 total_iv/overlay.py --type good;
-        python3 total_iv/overlay.py --type bad;
     ) 
     (
         python3 channel_iv/overlay.py --type sensors;

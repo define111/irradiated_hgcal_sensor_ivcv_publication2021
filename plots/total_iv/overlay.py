@@ -36,15 +36,15 @@ cm.setup_pad(pad)
 pad.cd()
 
 #prepare the legend
-X2 = 0.9
+X2 = 0.65
 if args.type == "bad":
     X2 = 0.99
-legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.12, x2=X2, y2=0.38))
+legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.15, x2=X2, y2=0.38))
 cm.setup_legend(legend)
 
 compliance_line = ROOT.TF1("compliance", "2000", 0., 900.)
-cm.setup_graph(compliance_line, {"LineWidth": 3, "LineStyle": 3, "LineColor": ROOT.kRed+1})
-legend.AddEntry(compliance_line, "2 mA I_{tot} compliance", "l")
+cm.setup_graph(compliance_line, {"LineWidth": 3, "LineStyle": 1, "LineColor": ROOT.kRed+1})
+legend.AddEntry(compliance_line, "2 mA system compliance", "l")
 
 # load the graphs
 for draw_index, _id in enumerate(Dataset.GetIDs()):
@@ -75,10 +75,10 @@ cms_labels = cm.create_cms_labels()
 cms_labels.Draw()
 
 # campaign label
-campaign_label = cm.create_campaign_label()
+campaign_label = cm.create_campaign_label("2020/21 irradiation at RINSC")
 campaign_label.Draw()
 
 pad.SetLogy(True)
-#pad.SetGrid(True)
+pad.SetGrid(True)
 #save pdf
 canvas.Print(os.path.join(thisdir, "{}.pdf".format(name)))
