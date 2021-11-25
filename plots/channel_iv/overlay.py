@@ -32,9 +32,9 @@ pad.cd()
 
 #prepare the legend
 if args.type == "channels":
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.52, x2=0.92, y2=0.49))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.52, x2=0.92, y2=0.49))
 else:
-    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs()), x1=0.13, x2=0.58, y2=0.92))
+    legend = ROOT.TLegend(*cm.calc_legend_pos(len(Dataset.GetIDs())+1, x1=0.13, x2=0.58, y2=0.92))
 cm.setup_legend(legend)
 
 # load the graphs
@@ -69,6 +69,7 @@ for draw_index, _id in enumerate(Dataset.GetIDs()):
         gr.Draw("ALP")
     else:
         gr.Draw("LP")
+
 legend.Draw()
 
 
@@ -82,9 +83,11 @@ campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
 if args.type == "channels":
-    label = ROOT.TLatex(0.48, 0.89, "LD, 200 #mum, ~1.9E15 neq")
+    _label_text = "LD, 200 #mum, ~1.9E15 neq/cm^{2}"
+    label = ROOT.TLatex(0.88, 0.53, _label_text)
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
-    label.Draw()
+    #label.Draw()
+    legend.SetHeader(_label_text)
 
 pad.SetGrid(True)
 #save pdf
