@@ -157,9 +157,9 @@ pol1_fits = []
 legend_graphs = ROOT.TLegend(*cm.calc_legend_pos(len(PAIRS)+1, x1=0.15, x2=0.52, y2=0.94))
 cm.setup_legend(legend_graphs)
 
-legend_fits = ROOT.TLegend(*cm.calc_legend_pos(1.35, x1=0.15, x2=0.93, y2=0.185))
+legend_fits = ROOT.TLegend(*cm.calc_legend_pos(2.35, x1=0.30, x2=0.93, y2=0.245))
 cm.setup_legend(legend_fits)
-legend_fits.SetTextSize(45)
+legend_fits.SetTextSize(35)
 
 pol1_fits = []
 for draw_index, iv_vs_fluence_gr in enumerate(iv_vs_fluence_graphs):
@@ -209,6 +209,7 @@ legend_fits.AddEntry(pol1_fit, "#alpha_{600V}(+20^{#circ}C)=(%.1f#pm%.1f^{+%.1f}
 
 legend_graphs.SetHeader("Process variation:")
 legend_graphs.Draw()
+legend_fits.SetHeader("After 80min at +60^{#circ}C:")
 legend_fits.Draw()
 
 canvas.cd()
