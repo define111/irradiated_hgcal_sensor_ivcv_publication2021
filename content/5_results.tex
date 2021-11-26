@@ -148,5 +148,53 @@
 	}
 \end{figure}
 
-%todo: add channels cv, sensors c-2v
+\begin{figure}
+	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=0.999\textwidth]{plots/channel_cv/channel_CV_sensors_channels.pdf}
+		\subcaption{
+		}
+		\label{plot:pad_CV_channels}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=0.999\textwidth]{plots/channel_cv/channel_invCV_sensors_sensors.pdf}
+		\subcaption{
+		}
+		\label{plot:pad_invCV_sensor}
+	\end{subfigure}
+	\caption{
+		(a) Area-normalised capacitances as a function of the effective bias voltage for different pads with different geometries on one example sensor.
+		(b) Normalised squared-inverse capacitances as a function of the effective bias voltage for estimating the sensor depletion voltage for one central pad on three example sensors from different irradiation rounds.
+		The LCR frequency in these measurements was \SI{2}{\kilo\hertz}.
+	}
+\end{figure}
+
+
+
+\begin{figure}
+	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=0.99\textwidth]{plots/Vdep_hexplots/0541_04.pdf}
+		\subcaption{
+			}
+			\label{plot:Vdep_hexplot_0541_04}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=0.999\textwidth]{plots/Vdep_vs_fluence/Vdep_vs_current_5414.pdf}
+		\subcaption{
+			}
+			\label{plot:Vdep_vs_current_5414}
+	\end{subfigure}
+	\caption{
+		(a) Per-pad depletion voltage estimates for a \SI{200}{\micron} LD example sensor irradiated to 1.9E+15$~$neq/cm$^{2}$, and 
+		(b) their correlation to the per-pad leakage current, as proxy for the fluence.
+	}
+\end{figure}
+
 %todo: vdep hexplot after annealing, vdep vs fluence
