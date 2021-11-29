@@ -143,8 +143,8 @@ if UREF > 0:
     name = "alpha_%iV" % UREF
 else:
     name = "alpha_Udep"
-canvas_width = cm.default_canvas_width
-canvas_height = cm.default_canvas_height
+canvas_width = 1600
+canvas_height = 900
 canvas = ROOT.TCanvas("Canvas" + name, "canvas" + name, canvas_width, canvas_height)
 cm.setup_canvas(canvas, canvas_width, canvas_height)
 canvas.Divide(1)
@@ -154,10 +154,10 @@ pad.cd()
 
 
 pol1_fits = []
-legend_graphs = ROOT.TLegend(*cm.calc_legend_pos(len(PAIRS)+1, x1=0.15, x2=0.52, y2=0.94))
+legend_graphs = ROOT.TLegend(*cm.calc_legend_pos(len(PAIRS)+1, x1=0.15, x2=0.45, y2=0.94))
 cm.setup_legend(legend_graphs)
 
-legend_fits = ROOT.TLegend(*cm.calc_legend_pos(2.35, x1=0.30, x2=0.93, y2=0.245))
+legend_fits = ROOT.TLegend(*cm.calc_legend_pos(2.35, x1=0.450, x2=0.93, y2=0.245))
 cm.setup_legend(legend_fits)
 legend_fits.SetTextSize(35)
 
