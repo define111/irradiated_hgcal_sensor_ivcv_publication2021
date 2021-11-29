@@ -33,22 +33,20 @@
     \end{subfigure}
 
 	\caption{
-		(a) Two representative full-wafer leakage currents after irradiation (without additional annealing). Measurements were taken at \SI{-40}{\celsius} ($\text{I}_\text{tot, \SI{-40}{\celsius}}$) and for different effective bias voltages ($\text{U}_\text{bias}$). 
-        (b) Per-pad leakage currents as a function of the effective bias voltage for different pads with different geometries on one example sensor normalised to the area of full hexagonal pads.
+		(a) Total leakage currents after irradiation (without additional annealing) for two representative example sensors. 
+		Currents were measured at \SI{-40}{\celsius} ($\text{I}_\text{tot, \SI{-40}{\celsius}}$) and at different effective bias voltages ($\text{U}_\text{bias}$). 
+        (b) Per-pad leakage currents normalised to the area of full hexagonal pads as a function of the effective bias voltage for different pads with different geometries on one example sensor.
 	}
 \end{figure}
 
-
-\begin{itemize}
-	\item Total leakage current well below system compliance of \SI{2}{\milli\ampere} for most of tested sensors
-	\item handful sensors with sudden increases, driven by single cell discharges, cf.~\ref{plot:tot_IV_bad}, all of them with pre-existing mechanical defects, not discussed here anymore 
-\end{itemize}
-
-\begin{itemize}
-	\item Relative current increase from \SI{600}{\volt} to \SI{850}{\volt} does not exceed limitations
-	\item Current normalised by area constant, cf.~\ref{plot:pad_IV_channels}
-\end{itemize}
-
+The total leakage current is defined as the current flowing through R$_\text{HV}$ in \ref{fig:switchprobecard_CAD} and can be understood as the dark current of a full silicon wafer.
+As it is exemplified for two prototype sensors in \ref{plot:tot_IV_good}, the total leakage current did not exhibit exponential growth and stayed well below the ARRAY system compliance of \SI{2}{\milli\ampere} for most of the irradiated sensors that were tested up to \SI{850}{\volt} at \SI{-40}{\celsius}.
+Irreversible discharges occurred only for a handful of the tested sensors.
+There, the total leakage current during electrical characterisation suddenly increased and exceeded the \SI{2}{\milli\ampere} limitation.
+Whereas one half of those instances could be traced back to pre-existing conditions such as mechanical damages induced during the irradiation or the transport, the other half lead to a design modification of the HGCAL silicon sensors which should minimise the risk of discharges in the future\footnote{More than 20 prototype sensors with the improved design have been characterized with voltages up to \SI{850}{\volt} in the meantime. None have shown discharges thus far.}.
+Results of the affected sensors are not discussed further in this section.\newline
+\ref{plot:pad_IV_channels} shows the per-pad leakage current as a function of the effective bias voltage (\emph{IV}) for adjacent pads on one representative sensor irradiated to intermediate fluences.
+In general, our data demonstrate that the leakage current of a pad after irradiation scales with its volume, and that the relative increase from \SI{600}{\volt} to \SI{800}{\volt} remains well below \SI{150}{\percent}.
 
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
