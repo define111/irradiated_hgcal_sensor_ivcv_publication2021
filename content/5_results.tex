@@ -10,11 +10,11 @@
 	\item \SI{80}{\minute} at \SI{60}{\celsius} corresponds to xx at yy or cc at bb (best-case scenario)
 	\item Characterisation measurements discussed here performed at \SI{-40}{\celsius} and at very low humidity
 	\item Overall: Characteristics as expected after irradiation, and after annealing
+	\item Show pecularity of irradiation of large scale objects
 \end{itemize}
 
 \subsection{Leakage Current}
 \label{subsec:leakagecurrents}
-
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -38,16 +38,16 @@
         (b) Per-pad leakage currents normalised to the area of full hexagonal pads as a function of the effective bias voltage for different pads with different geometries on one example sensor.
 	}
 \end{figure}
-
 The total leakage current is defined as the current flowing through R$_\text{HV}$ in \ref{fig:switchprobecard_CAD} and can be understood as the dark current of a full silicon wafer.
 As it is exemplified for two prototype sensors in \ref{plot:tot_IV_good}, the total leakage current did not exhibit exponential growth and stayed well below the ARRAY system compliance of \SI{2}{\milli\ampere} for most of the irradiated sensors that were tested up to \SI{850}{\volt} at \SI{-40}{\celsius}.
-Irreversible discharges occurred only for a handful of the tested sensors.
+Irreversible discharges are undesired but in fact occurred for a handful of the tested sensors.
 There, the total leakage current during electrical characterisation suddenly increased and exceeded the \SI{2}{\milli\ampere} limitation.
 Whereas one half of those instances could be traced back to pre-existing conditions such as mechanical damages induced during the irradiation or the transport, the other half lead to a design modification of the HGCAL silicon sensors which should minimise the risk of discharges in the future\footnote{More than 20 prototype sensors with the improved design have been characterized with voltages up to \SI{850}{\volt} in the meantime. None have shown discharges thus far.}.
 Results of the affected sensors are not discussed further in this section.\newline
 \ref{plot:pad_IV_channels} shows the per-pad leakage current as a function of the effective bias voltage (\emph{IV}) for adjacent pads on one representative sensor irradiated to intermediate fluences.
-In general, our data demonstrate that the leakage current of a pad after irradiation scales with its volume, and that the relative increase from \SI{600}{\volt} to \SI{800}{\volt} remains well below \SI{150}{\percent}.
-
+In general, our data demonstrate that the leakage current of a pad after irradiation scales with its volume, and that the relative increase from \SI{600}{\volt} to \SI{800}{\volt} remains well below \SI{150}{\percent}.\newline
+The beneficial effect of annealing on the leakage current has been studied in more detail for a sensor which was not exposed to high temperatures and with it was not affected by significant annealing during irradiation.
+The measured IV curves after different annealing times are shown for a representative pad in \ref{plot:annealing_IV}.
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -67,21 +67,29 @@ In general, our data demonstrate that the leakage current of a pad after irradia
 
 	\caption{
 		(a) IV-curves of a representative full hexagonal pad for different annealing scenarios for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to approximately 2.4$~$E15 1-MeV-neutron equivalents/cm$^{2}$.
-        (b) Decrease of the per-pad leakage current (interpolated to $U_\text{bias}=U_\text{dep}$) as a function of the additional annealing time at \SI{60}{\celsius} for a subset of full hexagonal pads.
+        (b) Decrease of the per-pad leakage current (interpolated to $U_\text{bias}=\SI{600}{\volt}$) as a function of the annealing time at \SI{60}{\celsius} for a subset of full hexagonal pads that are uniformly distributed over the full wafer.
 	}
 \end{figure}
-
-\begin{itemize}
-	\item \ref{plot:annealing_IV}: illustrate the improvement in leakage current with annealing (study a sensor with minimal additional annealing during irradiation)
-	\item IV curves lowered especially at high bias voltages beyond full depletion where bulk currents dominate
-	\item Note that current at \SI{600}{\volt} reduced by approximately 25$~\%$ for all pads after \SI{80}{\min}
-	\item Benefitting from both leakage current decrease and depletion voltage decrease = \ref{plot:annealing_current}: Current at depletion voltage reduced by approximately 35$~\%$ for all pads
-\end{itemize}
-
-
-
-
-
+For bias voltages beyond full depletion, per-pad leakage currents at \SI{600}{\volt} are reduced systematically by \SI{25}{\percent} after \SI{80}{\minute} at \SI{60}{\celsius}, cf. \ref{plot:annealing_current}.
+Given the simultaneous reduction in the depletion voltage, cf. \ref{plot:annealing_CV}, leakage currents around full depletion are even reduced by \SI{35}{\percent} (not shown).\newline
+After annealing all sensors to an equivalent of \SI{80}{\minute} at \SI{60}{\celsius}, we observe the expected proportionality of the per-pad leakage current density to the anticipated fluence that the sensors was exposed to.
+The proportionality for current densities interpolated to an effective bias voltage of \SI{600}{\volt} and extrapolated to \SI{20}{\celsius} is displayed in \ref{plot:alpha_600}.
+\begin{figure}
+	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
+	\centering
+    \includegraphics[width=0.69\textwidth]{plots/alpha/alpha_600V.pdf}
+    \label{plot:alpha_600}
+	\caption{
+	    Volume-normalised per-pad leakage currents interpolated to an effective bias voltage of \SI{600}{\volt} after different irradiation fluences.
+        Currents were measured after additional annealing at \SI{60}{\celsius} at CERN or at Texas Tech University (TTU).
+		Measured leakage currents are scaled to a room-temperature of \SI{20}{\celsius}.
+	}
+\end{figure}
+The current-related damage rate ($\alpha$) is found to be independent of the silicon material properties investigated in this work which is consistent with previous findings, e.g.~\cite{MOLL199987}.
+However, the numerical result for $\alpha$ is \SI{10}{\percent} smaller than the literature value~\cite{moll:SiDamages}, hereby potentially indicating a systematic overestimate of the fluence at the RINSC irradiation facility. \newline
+Even after correction for the chuck temperature non-uniformity, per-pad leakage current densities on a sensor at a fixed voltage differ by up to \SI{20}{\percent}.
+The associated current profiles are present both before (\ref{plot:iv_hexplot_3009,plot:iv_hexplot_0541_04,plot:iv_hexplot_1013}) and after additional annealing (\ref{plot:iv_hexplot_3009_annealed,plot:iv_hexplot_0541_04_annealed,plot:iv_hexplot_1013_annealed}), are continuous, and are identical for sensors that had been irradiated simultaneously in the same puck.
+These findings are interpreted as evidence for the presence of a gaussian-like ($\sigma\approx\mathcal{O}(\SI{10}{\centi\metre})$) fluence profile within the beamport of the RINSC irradiation facility.
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -126,42 +134,14 @@ In general, our data demonstrate that the leakage current of a pad after irradia
 		}
 		\label{plot:iv_hexplot_1013_annealed}
 	\end{subfigure}    
+	\caption{
+		Per-pad leakage currents interpolated to an effective bias voltage of \SI{600}{\volt} for three representative sensors from different irradiation rounds before (a-c) and after additional annealing (d-f).
+		Red- or white-colored edge pads correspond to well-understood measurement effects, e.g. insufficient contact between the pogo pins and the pads.
+		}
 	\label{plot:iv_hexplot}
-	\caption{
-		Per-pad leakage currents interpolated to an effective bias voltage of \SI{600}{\volt} for three representative sensors from different irradiation rounds before (a-c) and after additional annealing (d-e).
-		The chuck temperature profile is corrected for, cf.~\ref{appendix:chuck_temp}.
-		Red- or white-colored edge pads correspond to well-understood (however undesired) measurement peculiarities, e.g. unconnected pogo pins.
-		Note the different leakage current colour scales.
-	}
 \end{figure}
 
-\begin{itemize}
-	\item Per-pad currents interpolated to \SI{600}{\volt} for representative good sensors shown in~\ref{plot:iv_hexplot_3003,plot:iv_hexplot_3009,plot:iv_hexplot_0541_04,plot:iv_hexplot_2004,plot:iv_hexplot_1013,plot:iv_hexplot_1002}
-	\item Provide table of approximate leakage currents
-	\item Profile is visible, is attributed to fluence profile
-\end{itemize}
 
-
-\begin{figure}
-	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
-	\centering
-    \includegraphics[width=0.69\textwidth]{plots/alpha/alpha_600V.pdf}
-    \label{plot:alpha_600}
-	\caption{
-	    Volume-normalised per-pad leakage current for different fluences at a bias voltage of \SI{600}{\volt}.
-        Prototype sensors were characterised after additional annnealing at \SI{60}{\celsius} at CERN and at Texas Tech University (TTU).
-		Measured leakage currents are scaled to a room-temperature of \SI{+20}{\celsius}.
-        The current-relate damage rate ($\alpha$) is found to be independent of the sensor production parameters investigated in this work.
-	}
-\end{figure}
-
-\begin{itemize}
-	\item Leakage currents normalised by volume, scaled to \SI{-20}{\celsius}, cf.~\ref{eq:temp_scaling}
-	\item Observe: Proportionality, constant referred to as $\alpha$, cf.~\ref{plot:alpha_Udep,plot:alpha_600}
-	\item Report three different alpha values: one around full depletion, one at \SI{600}{\volt} and the third at highest bias voltage of \SI{800}{\volt} (corresponding to end of HGCAL lifetime)
-	\item Observe: Independence on sensor production parameters, consistent with previous findings, e.g.~\cite{moll:SiDamages}
-	\item All $\alpha$ constants underestimated, w.r.t. literature values, fluence monitoring not yet satisfactory yet.
-\end{itemize}
 
 
 \subsection{Capacitance and Depletion Voltage}
