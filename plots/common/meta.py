@@ -116,7 +116,7 @@ MEASUREMENTS["3009"] = {
     "p-stop": "ind.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 42,                  #round 8
+    "fluence": 50,                  #round 8
     "annealing": 80
 }
 MEASUREMENTS["3010"] = {
@@ -127,7 +127,7 @@ MEASUREMENTS["3010"] = {
     "p-stop": "ind.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 42,                  #round 8
+    "fluence": 50,                  #round 8
     "annealing": 80
 }
 MEASUREMENTS["3109"] = {
@@ -138,7 +138,7 @@ MEASUREMENTS["3109"] = {
     "p-stop": "comm.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 42,                  #round 8
+    "fluence": 50,                  #round 8
     "annealing": 80
 }
 MEASUREMENTS["3110"] = {
@@ -149,7 +149,7 @@ MEASUREMENTS["3110"] = {
     "p-stop": "comm.",
     "thickness": 120,
     "Vfb": -2, 
-    "fluence": 42,                  #round 8
+    "fluence": 50,                  #round 8
     "annealing": 80
 }
 MEASUREMENTS["1013"] = {
