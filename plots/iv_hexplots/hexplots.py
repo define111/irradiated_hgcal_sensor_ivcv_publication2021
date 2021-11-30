@@ -59,8 +59,38 @@ MEASUREMENTS = {
         "SensorType": "LD",
         "zmax": 3.25,
         "Title": "LD, 200 #mum, ~1.9E15 neq/cm^{2}"
+    },
+    "1105": {
+        "MeasID": "8in_198ch_2019_1105_15E14_neg40_postAnnealing_TTU",
+        "Campaign": "TTU_October2021",
+        "SensorType": "LD",
+        "zmax": 2.0,
+        "Title": ""
+    },
+    "1003": {
+        "MeasID": "8in_198ch_2019_1003_15E14_neg40_postAnnealing_TTU",
+        "Campaign": "TTU_October2021",
+        "SensorType": "LD",
+        "zmax": 2.0,
+        "Title": ""
+    },
+    "1113": {
+        "MeasID": "8in_198ch_2019_1113_15E14_neg40_postAnnealing_TTU",
+        "Campaign": "TTU_October2021",
+        "SensorType": "LD",
+        "zmax": 2.0,
+        "Title": ""
+    },
+    "N0541_17": {
+        "MeasID": "8in_198ch_2019_N0541_17_15E14_neg40_postAnnealing_TTU",
+        "Campaign": "TTU_October2021",
+        "SensorType": "LD",
+        "zmax": 2.0,
+        "Title": ""
     }    
 }
+
+
 '''
 MEASUREMENTS = {
     "3005": {

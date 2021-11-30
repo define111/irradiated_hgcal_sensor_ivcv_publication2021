@@ -259,6 +259,57 @@ MEASUREMENTS["3107"] = {
 }
 
 
+MEASUREMENTS["1105"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "LD",
+    "Cells": [88, 103, 104],
+    "ID": "8in_198ch_2019_1105_15E14_neg40_postAnnealing_TTU",
+    "p-stop": "comm.",
+    "thickness": 300,
+    "Vfb": -5,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "fluence": 13.5,             #round 9
+    "annealing": 80
+}
+
+MEASUREMENTS["1003"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "LD",
+    "Cells": [88, 103, 104],
+    "ID": "8in_198ch_2019_1003_15E14_neg40_postAnnealing_TTU",
+    "p-stop": "ind.",
+    "thickness": 300,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "fluence": 13.5,             #round 9
+    "annealing": 80
+}
+
+
+MEASUREMENTS["1113"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "LD",
+    "Cells": [88, 103, 104],
+    "ID": "8in_198ch_2019_1113_15E14_neg40_postAnnealing_TTU",
+    "p-stop": "comm.",
+    "thickness": 300,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "fluence": 13.5,             #round 9
+    "annealing": 80
+}
+
+MEASUREMENTS["54117"] = {
+    "Campaign": "TTU_October2021",
+    "Design": "LD",
+    "Cells": [88, 103, 104],
+    "ID": "8in_198ch_2019_N0541_17_15E14_neg40_postAnnealing_TTU",
+    "p-stop": "ind.",
+    "thickness": 300,
+    "Vfb": -5,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "fluence": 13.5,             #round 9
+    "annealing": 80
+}
+
+
+
 class Dataset:
     def __init__(self):
         self.dict = {}
