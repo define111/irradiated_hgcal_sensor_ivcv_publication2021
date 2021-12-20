@@ -69,8 +69,8 @@ The measured IV curves after different annealing times are shown for a represent
         (b) Decrease of the per-pad leakage current (interpolated to $U_\text{bias}=\SI{600}{\volt}$) as a function of the annealing time at \SI{60}{\celsius} for a subset of full hexagonal pads that are uniformly distributed over the full wafer.
 	}
 \end{figure}
-For bias voltages beyond full depletion, per-pad leakage currents at \SI{600}{\volt} are reduced systematically by \SI{25}{\percent} after \SI{80}{\minute} at \SI{60}{\celsius}, cf. \ref{plot:annealing_current}.
-Given the simultaneous reduction in the depletion voltage, cf. \ref{plot:annealing_CV}, leakage currents around full depletion are even reduced further, namely by \SI{35}{\percent} (not shown).
+For bias voltages beyond full depletion, per-pad leakage currents at \SI{600}{\volt} are reduced systematically by \SI{25}{\percent} after \SI{80}{\minute} at \SI{60}{\celsius}, cf.~\ref{plot:annealing_current}.
+Given the simultaneous reduction in the depletion voltage, cf.~\ref{plot:annealing_CV}, leakage currents around full depletion are even reduced further, namely by \SI{35}{\percent} (not shown).
 After annealing all sensors to an equivalent of \SI{80}{\minute} at \SI{60}{\celsius}, we observe the expected proportionality of the per-pad leakage current density to the anticipated fluence that the sensors was exposed to.
 The proportionality for current densities interpolated to an effective bias voltage of \SI{600}{\volt}, which is well above full depletion for the investigated sensors, and extrapolated to \SI{20}{\celsius} is displayed in \ref{plot:alpha_600}.
 \begin{figure}
@@ -141,22 +141,19 @@ These findings are interpreted as evidence for the presence of a gaussian-like (
 \end{figure}
 
 
-
-
 \subsection{Capacitance and Depletion Voltage}
 \label{subsec:Udep}
 
-The measured per-channel complex impedances are open-corrected by subtracting the impedances of the ARRAY system with floating pins.
-Subsequently, the sensor pad capacitances are computed assuming a serial circuitry model.
-Due to the finite mobility of the sensor defects, the frequency at which the impedance is measured may have sizeable impact on the hereby derived capacitances and depletion voltages for irradiated silicon pad sensors, cf. Ref.~\cite{Li1991}.
+The measured per-channel complex impedances are open-corrected by subtracting the impedance of the ARRAY system.
+Subsequently, the sensor pad capacitances are computed assuming an underlying serial circuitry.
+Due to the finite mobility of the sensor defects, the frequency at which the impedance is measured may, in principle, have sizeable impact on the capacitances and on the hereby derived depletion voltages for irradiated silicon pad sensors, cf. Ref.~\cite{Li1991}.
 The impedance measurement for the results presented in this section was conducted at an LCR-frequency ($f_\text{LCR}$) of \SI{2}{\kilo\hertz}.
-Experimental follow-up studies indicate a \SI{2}{\percent} impact on the end-capacitance and a \SI{10}{\percent} reduction of the depletion voltage estimates when reducing $f_\text{LCR}$ to \SI{500}{\hertz}.
-This capacitance and depletion voltage dependence on $f_\text{LCR}$ should not alter the interpretations presented in the following.
-As illustrated by \ref{plot:annealing_CV}, the saturation of the squared reciprocal of the pad capacitance ($C^{-2}$) is shifted to lower bias voltages ($V$) the more annealing occurs. 
-The depletion voltage in this work is estimated from the intersection of a straight-line fitted to the rising part of the $C^{-2}V$ curves and of a line fitted to its plateau.
-Since such a plateau is not always reached within the tested bias voltage range for all sensors prior to annealing (see black line in \ref{plot:annealing_CV}), the discussion below is based on the sensors characterisations after annealing for \SI{80}{\min} at \SI{60}{\celsius}. 
-
-
+Experimental follow-up studies indicate a negligible impact of \SI{2}{\percent} on the asymptotic capacitance and a \SI{10}{\percent} reduction of the depletion voltage when decreasing $f_\text{LCR}$ to \SI{500}{\hertz}.
+This dependence of the capacitance and the depletion voltage on $f_\text{LCR}$ has no practical implications on the following discussion.
+The depletion voltage for each pad is assessed from the saturation of its squared reciprocal pad capacitance ($C^{-2}$) with respect to the effective bias voltage ($V$). 
+It is defined as the intersection of a straight-line fitted to the rising part of the $C^{-2}-V$ with a line fitted to its plateau.
+Prior to additional annealing, such a plateau could not always be reached within the tested bias voltage range for all sensors, c.f. the black line in \ref{plot:annealing_CV}. 
+Thus, only results from sensors after additional annealing to \SI{80}{\min} at \SI{60}{\celsius}, where the estimated depletion voltage has been reduced by about a third with respect to the case without annealing, cf.~\ref{plot:annealing_Vdep}, are discussed below. 
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -179,17 +176,6 @@ Since such a plateau is not always reached within the tested bias voltage range 
 		(b) Relative decrease of the depletion voltage estimate ($U_\text{dep}$) as a function of the additional annealing time at \SI{60}{\celsius} for a subset of full pads.
 	}
 \end{figure}
-
-
-\begin{itemize}
-	\item Capacitance dominated by bulk, area-normalised capacitance on one sensor = stable within 5 percent, interpad contributions can explain differences?, cf.~\ref{plot:pad_CV_channels}
-	\item Depletion voltage, i.e. where final capacitance is reached, clearly differs between fluence scenarios and thicknesses, cf.~\ref{plot:pad_invCV_sensor}, provide table?
-	\item Estimate depends on choice of voltage steps, limited time
-	\item Mention inter-pad capacitance from TTU
-	\item Depletion voltage hexplot shows profile, matches leakage current profile
-\end{itemize}
-
-
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -212,9 +198,6 @@ Since such a plateau is not always reached within the tested bias voltage range 
 		The LCR frequency in these measurements was \SI{2}{\kilo\hertz}.
 	}
 \end{figure}
-
-
-
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -238,11 +221,11 @@ Since such a plateau is not always reached within the tested bias voltage range 
 		(b) their correlation to the per-pad leakage current, as proxy for the fluence.
 	}
 \end{figure}
-
-\begin{itemize}
-	\item Unlike leakage current: Depletion voltage vs. fluence do not agree between different sensors (as expected). Reason: sizable dependence on production parameters, e.g. active thickness
-	\item To test impact of fluence on $U_\text{dep}$: Exploit leakage current profile (taken proportional to fluence profile) to demonstrate positive correlation of depletion voltage to fluence.
-	\item Use per-pad leakage current at \SI{600}{\volt} as proxy for fluence
-	\item In fact: Observe positive correlation, cf.~\ref{plot:Vdep_vs_current_5414}
-	\item Proportionality constant depends on thickness but is consistent between sensors with same thicknesses
-\end{itemize}
+We find that the per-pad capacitance after irradiation still scales reasonably well with the area of the pad, cf.~\ref{plot:annealing_CV}.
+Deviations from this scaling amount to less than \SI{5}{\percent} which can likely be explained by different inter-pad capacitances between the pads (measured to be \SI{2}{\pico\farad} between full pads).
+Verification of this hypothesis is beyond the scope of this paper. 
+\ref{plot:pad_invCV_sensor} illustrates that the estimated depletion voltages in this work scale primarily with the associated thickness of the depleted zone. 
+Secondarily, the depletion voltage increases with the irradiation fluence which is displayed in~\ref{plot:Vdep_vs_current_5414}.
+It demonstrates positive correlation between the depletion voltage estimates for an example sensor (cf. \ref{plot:Vdep_hexplot_0541_04}) with the leakage currents, taken as proxy for the fluence.
+In fact, the obtained correlation coefficient is positive for all tested sensors. 
+Among all the different sensor production parameters, the numerical value for the proportionality constant is found to depend only on the thickness of the sensor's depleted zone.
