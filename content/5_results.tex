@@ -145,8 +145,15 @@ These findings are interpreted as evidence for the presence of a gaussian-like (
 
 \subsection{Capacitance and Depletion Voltage}
 \label{subsec:Udep}
+
+The measured per-channel complex impedances are open-corrected by subtracting the impedances of the ARRAY system with floating pins.
+Subsequently, the sensor pad capacitances are computed assuming a serial circuitry model.
+Due to the finite mobility of the sensor defects, the frequency at which the impedance is measured may have sizeable impact on the hereby derived capacitances and depletion voltages for irradiated silicon pad sensors, cf. Ref.~\cite{Li1991}.
+The impedance measurement for the results presented in this section was conducted at an LCR-frequency ($f_\text{LCR}$) of \SI{2}{\kilo\hertz}.
+Experimental follow-up studies indicate a \SI{2}{\percent} impact on the end-capacitance and a \SI{10}{\percent} reduction of the depletion voltage estimates when reducing $f_\text{LCR}$ to \SI{500}{\hertz}.
+This capacitance and depletion voltage dependence on $f_\text{LCR}$ should not alter the interpretations presented in the following.
+
 \begin{itemize}
-	\item Capacitances are open-corrected, serial definition, LCR frequency = 2kHz (reminder)
 	\item Systematic measurements of capacitances after annealing only --> limitations (should not be used for extrapolation to CMS scenario)
 \end{itemize}
 
