@@ -1,17 +1,12 @@
 \section{Results}
 \label{sec:results}
-
-\begin{itemize}
-	\item Irradiation worsens electrical properties of silicon sensors.
-	\item Bulk-dominated leakage current per volumne expected to increase proportionally with fluence, investigated in~\ref{subsec:irradiation_alpha}.
-	\item Depletion voltage expected to increase, shown in~\ref{subsec:irradiation_Vdep}.		
-	\item Characterisation measurements discussed here are before after additional annealing
-	\item Annealing, i.e. heating up, during long shutdowns
-	\item \SI{80}{\minute} at \SI{60}{\celsius} corresponds to xx at yy or cc at bb (best-case scenario)
-	\item Characterisation measurements discussed here performed at \SI{-40}{\celsius} and at very low humidity
-	\item Overall: Characteristics as expected after irradiation, and after annealing
-	\item Show pecularity of irradiation of large scale objects
-\end{itemize}
+Exposing silicon sensors to radiation introduces defects in the bulk and with it worsens their electrical properties in view of their application as particle detectors.
+In particular, the bulk-dominated leakage current density is expected to increase proportionally with the fluence, and sensors are expected to deplete at higher bias voltages with increasing fluence levels.
+Annealing can cure radiation-induced defects to some extent, hereby reducing the degradation of the leakage current and the depletion voltage.
+In this section, these behaviors are experimentally verified for full CMS HGCAL prototype silicon sensors for the first time.
+Their electrical characterisation was performed both before and after a beneficial annealing for \SI{80}{\min} at \SI{60}{\celsius}\footnote{Corresponding to about 14$~$days at room temperature.}, and always at a temperature of \SI{-40}{\celsius}.
+In summary, our results are overall consistent with previous R$\&$D on irradiated silicon sensors, hence demonstrating the intended radiation-hardness of the HGCAL silicon sensors.
+Simultaneously, our results contribute towards the qualification of the RINSC neutron-irradiation facility, cf.~\ref{sec:irradiation}, as a reliable irradiation facility for $\mathcal{O}(\SI{10}{\centi\metre})$ large silicon wafers.
 
 \subsection{Leakage Current}
 \label{subsec:leakagecurrents}
@@ -227,5 +222,4 @@ Verification of this hypothesis is beyond the scope of this paper.
 \ref{plot:pad_invCV_sensor} illustrates that the estimated depletion voltages in this work scale primarily with the associated thickness of the depleted zone. 
 Secondarily, the depletion voltage increases with the irradiation fluence which is displayed in~\ref{plot:Vdep_vs_current_5414}.
 It demonstrates positive correlation between the depletion voltage estimates for an example sensor (cf. \ref{plot:Vdep_hexplot_0541_04}) with the leakage currents, taken as proxy for the fluence.
-In fact, the obtained correlation coefficient is positive for all tested sensors. 
-Among all the different sensor production parameters, the numerical value for the proportionality constant is found to depend only on the thickness of the sensor's depleted zone.
+In fact, the obtained correlation coefficient is positive for all tested sensors.
