@@ -1,12 +1,7 @@
 \section{Results}
 \label{sec:results}
-Exposing silicon sensors to radiation introduces defects in the bulk and with it worsens their electrical properties in view of their application as particle detectors.
-In particular, the bulk-dominated leakage current density is expected to increase proportionally with the fluence, and sensors are expected to deplete at higher bias voltages with increasing fluence levels.
-Annealing can cure radiation-induced defects to some extent, hereby reducing the degradation of the leakage current and the depletion voltage.
-In this section, these behaviors are experimentally verified for full CMS HGCAL prototype silicon sensors for the first time.
-Their electrical characterisation was performed both before and after a beneficial annealing for \SI{80}{\min} at \SI{60}{\celsius}\footnote{Corresponding to about 14$~$days at room temperature.}, and always at a temperature of \SI{-40}{\celsius}.
-In summary, our results are overall consistent with previous R$\&$D on irradiated silicon sensors, hence demonstrating the intended radiation-hardness of the HGCAL silicon sensors.
-Simultaneously, our results contribute towards the qualification of the RINSC neutron-irradiation facility, cf.~\ref{sec:irradiation}, as a reliable irradiation facility for $\mathcal{O}(\SI{10}{\centi\metre})$ large silicon wafers.
+This section deals with the results of electrical characterisation of the neutron-irradiated CMS HGCAL prototype silicon sensors. 
+\ref{subsec:leakagecurrents} focuses on the discussion of leakage currents (IV) whereas \ref{subsec:Udep} addresses the findings of the capacitance and depletion voltage assessments. 
 
 \subsection{Leakage Current}
 \label{subsec:leakagecurrents}
@@ -139,9 +134,9 @@ These findings are interpreted as evidence for the presence of a gaussian-like (
 \subsection{Capacitance and Depletion Voltage}
 \label{subsec:Udep}
 
-The measured per-channel complex impedances are open-corrected by subtracting the impedance of the ARRAY system.
-Subsequently, the sensor pad capacitances are computed assuming an underlying serial circuitry.
-Due to the finite mobility of the sensor defects, the frequency at which the impedance is measured may, in principle, have sizeable impact on the capacitances and on the hereby derived depletion voltages for irradiated silicon pad sensors, cf. Ref.~\cite{Li1991}.
+The measured per-channel complex impedance is open-corrected by subtracting the impedance of the ARRAY system.
+Subsequently, the sensor pad capacitance is computed assuming an underlying serial circuitry.
+Due to the finite mobility of the sensor defects, the frequency at which the impedance is measured may, in principle, have sizeable impact on the capacitance and on the hereby derived depletion voltages for irradiated silicon pad sensors, cf. Ref.~\cite{Li1991}.
 The impedance measurement for the results presented in this section was conducted at an LCR-frequency ($f_\text{LCR}$) of \SI{2}{\kilo\hertz}.
 Experimental follow-up studies indicate a negligible impact of \SI{2}{\percent} on the asymptotic capacitance and a \SI{10}{\percent} reduction of the depletion voltage when decreasing $f_\text{LCR}$ to \SI{500}{\hertz}.
 This dependence of the capacitance and the depletion voltage on $f_\text{LCR}$ has no practical implications on the following discussion.
@@ -226,3 +221,12 @@ In fact, the obtained correlation coefficient is positive for all tested sensors
 
 \subsection{Discussion}
 \label{subsec:discussion}
+In this work, leakage currents exhibit both qualitative and quantitative consistency with previous R$\&$D on irradiated silicon sensors, and in particular they are found to be independent on the silicon fabrication process.
+On the other hand, random variations in the derived pad capacitance and inferred depletion voltage between different fabrication processes could be observed. 
+It should be remarked that the voltage sequence, the modelling of a serial circuitry for the conversion of impedance into capacitance, the open correction, the choice of f$_\text{LCR}$ or of R$_\text{bias}$ on the switch card may not have been optimal for the precise assessment of these quantities for irradiated sensors.
+Further simulation-based studies might be needed in the future for this purpose.
+Nonetheless, unchanged end-capacitances and reduced depletion voltages after beneficial annealing are quantitatively consistent with previous R$\&$D.
+In summary, we experimentally verified the radiation-hardness of full HGCAL prototype silicon wafers.
+By implication, proper operation of the RINSC neutron-irradiation facility for the irradiation of $\mathcal{O}(\SI{10}{\centi\metre})$ large silicon wafers could be demonstrated for the first time.
+However, more accurate studies on the electrical sensor properties after neutron-irradiation would need to incorporate the systematic uncertainty on the effective annealing that is due to the temperature evolution and lateral profile inside the reactor's beam port.
+Similarly, an accurate assessment of the actual fluence at each pad would have to address the neutron flux profile, for whose existence this work has provided first evidence.
