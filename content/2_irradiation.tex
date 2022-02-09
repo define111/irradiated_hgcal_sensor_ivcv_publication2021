@@ -45,7 +45,7 @@ The hockey pucks have been made from a variety of different materials including 
     \includegraphics[width=0.99\textwidth]{figures/figures_edited_002.jpeg}
     \caption{(a) Sample containers ('hockey pucks') holding HGCAL silicon sensors for neutron irradiation at RINSC. 
     The deployed materials were wood (oak), acrylic, and PEEK.
-    (b) An 8'' high-density HGCAL prototype silicon sensor inside an acrylic puck closed with a Kapton\texttrademark foil.}
+    (b) An 8'' high-density HGCAL prototype silicon sensor inside an acrylic puck closed with a Kapton\texttrademark$~$foil.}
     \label{fig:Pucks_Arrayed}
   \end{center}
 \end{figure}
@@ -54,9 +54,9 @@ Its interior of the puck is milled out in the profile of the silicon sensors wit
 With these constraints the thinnest sections of the wall of the puck are slightly over \SI{1}{\milli\metre} thick which provides a difficult machining challenge.
 The puck has a lid, made from the same material as the base, that matches the outer diameter of the base and provides a way to close the puck during handling.
 Matching through holes in the base and lid allow for using nylon threaded rods and nuts to fasten the puck together. \newline
-Kapton\texttrademark foils were used to separate sensors in a stack such that no sensors are in direct contact with any rough surfaces (cf.~\ref{fig:Pucks_Arrayed}b).
+Kapton\texttrademark$~$foils were used to separate sensors in a stack such that no sensors are in direct contact with any rough surfaces (cf.~\ref{fig:Pucks_Arrayed}b).
 In addition, antistatic foam is used for mechanical protection of the sensors inside the puck.
-Sensors were irradiated in batches of four, which required ten layers of Kapton\texttrademark foils and three to four layers of antistatic foam. 
+Sensors were irradiated in batches of four, which required ten layers of Kapton\texttrademark$~$foils and three to four layers of antistatic foam. 
 After preparation of the puck it was inserted into the delivery cylinder.
 In general, sensors should ideally be kept at low temperatures during the irradiation in order to limit unwanted annealing.
 For this purpose, the cylinder was filled with 15-\SI{18}{\kilo\gram} of dry ice.
@@ -84,7 +84,7 @@ After \SI{24}{\hour} in the beamport after irradiation, the cylinder activity de
 \subsection{Fluence Assessment}
 
 In addition to the sensors, mechanical packing material, and RTDs, each puck contains a number of reference objects for measuring the fluence achieved during an irradiation. 
-\iffalse
+\textcolor{red}{The following in this chapter is still to be edited.}\newline
 Three different objects were used to measure the fluences during this campaign: leftover silicon diodes from the D0 experiment, commercially available pin diodes, and ultrapure iron foils. 
 After irradiation the iron foils are counted at RINSC and the fluence is calculated based off of the gamma spectrum data.
 The irradiated D0 and pin diodes are returned to Brown and measured.
@@ -103,30 +103,20 @@ A table showing the extrapolated fluences from the D0 diodes and iron foils can 
 Future irradiations will include iron foils inside the pucks to allow for a more direct comparison with both the irradiated diodes and full sensors. 
 Additional test structures will also be included for additional fluence monitoring points.
 
-\subsection{List of Neutron-Irradiated Sensors}
+%question: 
+%- inner and outer diameter of Al cylinder?
+%- location of dry ice, front and back?
+%- where are foam cushions?
 
+\subsection{List of Neutron-Irradiated Sensors}
 %this could be part of an appendix
 \label{subsec:sensors_irradiation}
-"Which sensors were irradiated"? \textcolor{red}{Responsible: Thorben}
-\begin{itemize}
-  \item full table of sensors irradiated in first campaign (see .~\ref{fig:Irradiation_Schedule}). Do we want to include sensors irradiated prior to the main campaign? On the order of 10 or so sensors irradiated prior to this campaign.
-\end{itemize}
 
 \begin{figure}[!hbt]
   \begin{center}
     \includegraphics[width=0.90\textwidth]{figures/Completed_Irradiation_Schedule_at_RINSC}
     \caption{Completed irradiation schedule for all sensors irradiated in this campaign.}
     \label{fig:Irradiation_Schedule}
-  \end{center}
-\end{figure}
-
-
-
-\begin{figure}[!hbt]
-  \begin{center}
-    \includegraphics[width=0.80\textwidth]{figures/Round_10_Temperature_Profile}
-    \caption{Temperature profile for sensor irradiation round 10. The blue arrow indicates the time at when the reactor was turned on, and the green arrow indicates at what time the reactor was shut off.}
-    \label{fig:Round_10_Temperature_Profile}
   \end{center}
 \end{figure}
 
@@ -137,31 +127,3 @@ Additional test structures will also be included for additional fluence monitori
     \label{fig:Round_1_Achieved_Fluences}
   \end{center}
 \end{figure}
-
-\begin{itemize}
-    \item \ref{fig:RINSC_Facility} - image(s) of reactor core, beamport (see .~\ref{fig:RINSC_Facility})
-    %what other details are useful here?
-    %Is it better to omit the sample irradiation options that are not being used?
-    \item \ref{fig:Pucks_Arrayed} - puck design/layout, real pucks (see .~\ref{fig:Pucks_Arrayed})
-    %\item Fig 3 - puck layout, packing (see .~\ref{fig:Puck_Packing}), how much detail about packing materials? (see .~\ref{fig:Cylinder_Details})
-    %\item Fig 4 - other hardware, cylinder, temp monitoring setup (see .~\ref{fig:Temperature_Monitoring_Setup})
-    %Keithley 2400 for temperature readout (along with 20-channel input board), RTDs instrumented with 20' of radiation-resistant wire (McMaster), laptop with GPIB connection to keithely, and custom LabVIEW code for readout.
-    %\item Fig 5 - schemaitc of experimental setup? Is this needed?
-    %\item describe sample removal/storage after irradiation - need for full day for activity levels to decay to the point that reactor staff can transfer cylinder from beamport to freezer. Chest freezer has been installed a few steps away from the beamport with enough storage capacity for 3 cylinders.
-    %\item Fig 6 describe fluence measurement setup/procedure at Brown? IV of D0 diodes prior to irradiation, then cold (-20C) measurement of irradiated diodes with current scaled up to 20C. Also include pin diodes but they have not been found to be useful at fluences above 1e15. (see .~\ref{fig:Fluence_Measurement_Setup})
-    \begin{itemize}
-  \item Puck and other hardware for placement of the sensors into the beamport
-  \item Temperature (!) as it may cause annealing (affecting the IV+CV results). Usage of dry ice.
-  \item Temperature monitoring essential. Show illustrative temperature-vs-time graph during irradiation round. 
-\end{itemize}
-\end{itemize}
-
-\begin{figure}[!hbt]
-  \begin{center}
-    \includegraphics[width=0.70\textwidth]{figures/Hockey_Pucks_Arrayed}
-    \caption{Sample containers ('hockey pucks') for sensors to be irradiated in the beamport at RINSC. The materials are wood (oak), acrylic, and PEEK.}
-    \label{fig:Pucks_Arrayed}
-  \end{center}
-\end{figure}
-
-\fi
