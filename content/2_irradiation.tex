@@ -70,7 +70,9 @@ A representative temperature recording during irradiation is shown in~\ref{fig:R
   \begin{center}
     \includegraphics[width=0.60\textwidth]{figures/Round_10_Temperature_Profile}
     \caption{Representative temperature recording during one of the irradiation rounds. 
-    The blue arrow indicates the time at when the reactor was turned on, and the green arrow indicates the moment that the reactor was shut off.}
+    The blue arrow indicates the time at when the reactor was turned on, and the green arrow indicates the moment that the reactor was shut off.
+    \textcolor{red}{Bigger labels?}
+    }
     \label{fig:Round_10_Temperature_Profile}
   \end{center}
 \end{figure}
@@ -79,51 +81,31 @@ Once the reactor operated at full capacities, the recorded temperature increased
 As a result, the annealing of the silicon sensors inside the beam port was in fact not negligible.
 It varied for the neutron-irradiated sensors between a few minutes to a few hundred minutes equivalent to \SI{60}{\celsius}.
 Only after shutdown of the reactor, the temperature decreased again.
-After \SI{24}{\hour} in the beamport after irradiation, the cylinder activity decayed sufficiently in order to safely transfer into a storage freezer.
+After \SI{24}{\hour} in the beamport after irradiation, the cylinder's radioactive levels have decayed sufficiently such that it could safely be transferred into a storage freezer.
 
 \subsection{Fluence Assessment}
+In addition to the sensors, mechanical packing material, and temperature sensors, each puck contained a number of reference objects for measuring the fluence achieved during an irradiation round. 
+Two different objects were found appropriate for measuring the fluences during this campaign: 
+\begin{itemize}
+  \item Reference silicon diodes from the D0 experiment, 
+  \item and ultrapure iron foils. 
+\end{itemize}  
+The diodes were included inside the puck as close to the sensors as possible by encasing them in small plastic bags and taping them to the inside faces of the puck. 
+By contrast, the iron foils were attached to the exterior of the cylinder for ease of removal and rapid counting. \newline
+After irradiation, gamma spectra of the iron foils are measured at RINSC and the fluence was derived from this data.
+In addition, CV and IV measurements of the irradiated diodes were performed at Brown university to assess the depletion voltage, the associated dark current and ultimately the fluence assuming the literature value for the current-related leakage current rate.\newline
+%It was found empirically that the usage of commercially-available pin diodes saturated already at low fluences and thus were not found to be particularly useful. 
+The reference silicon diodes are most useful up to medium-range fluences where the depletion voltage was well within the measurement range.
+For high fluences, the iron foils are considered most appropriate.
+\ref{table:irrads} in~\ref{appendix:irrad_rounds} shows the estimated actual fluences from those reference structures.
 
-In addition to the sensors, mechanical packing material, and RTDs, each puck contains a number of reference objects for measuring the fluence achieved during an irradiation. 
-\textcolor{red}{The following in this chapter is still to be edited.}\newline
-Three different objects were used to measure the fluences during this campaign: leftover silicon diodes from the D0 experiment, commercially available pin diodes, and ultrapure iron foils. 
-After irradiation the iron foils are counted at RINSC and the fluence is calculated based off of the gamma spectrum data.
-The irradiated D0 and pin diodes are returned to Brown and measured.
-CV and IV measurements are performed to find the depletion voltage and current, then fluence can be estimated using the volume of the diodes and the damage factor of silicon.
+In order to improve the reliability of those reference fluence measurements, future irradiations of HGCAL silicon wafers at RINSC will include iron foils inside the puck as well as additional test structures of HGCAL silicon sensors.
 
-The D0 and pin diodes were included inside the puck to measure the fluence as close to the sensors as possible.
-To achieve this the diodes were encased in small plastic bags and were taped to the inside faces of the puck. 
-The iron foils were attached to the exterior of the cylinder for ease of removal and rapid counting. 
-
-The experience from this campaign has shown that the pin diodes used saturate at low fluences and were not found to be particularly useful in this effort. 
-The D0 diodes are most useful at medium-range fluences where the depletion voltage can be measured. 
-Many of the D0 diodes irradiated to high fluences did not deplete before 1100V, which is the limit of the power supply used in the measurement setup. 
-The iron foils were useful at both the medium and high fluences, but their distance from the silicon made them useful as boundary conditions. 
-A table showing the extrapolated fluences from the D0 diodes and iron foils can be found in figure (.~\ref{fig:Round_1_Achieved_Fluences}).
-
-Future irradiations will include iron foils inside the pucks to allow for a more direct comparison with both the irradiated diodes and full sensors. 
-Additional test structures will also be included for additional fluence monitoring points.
-
-%question: 
+%questions: 
 %- inner and outer diameter of Al cylinder?
 %- location of dry ice, front and back?
 %- where are foam cushions?
-
-\subsection{List of Neutron-Irradiated Sensors}
-%this could be part of an appendix
-\label{subsec:sensors_irradiation}
-
-\begin{figure}[!hbt]
-  \begin{center}
-    \includegraphics[width=0.90\textwidth]{figures/Completed_Irradiation_Schedule_at_RINSC}
-    \caption{Completed irradiation schedule for all sensors irradiated in this campaign.}
-    \label{fig:Irradiation_Schedule}
-  \end{center}
-\end{figure}
-
-\begin{figure}[!hbt]
-  \begin{center}
-    \includegraphics[width=0.80\textwidth]{figures/Round_1_Achieved_Fluences}
-    \caption{Table of extrapolated fluences from D0 diodes irradiated alongside full sensors throughout this campaign. Empty cells indicate monitoring diodes or foils that were damaged during handling or not included in specific runs.}
-    \label{fig:Round_1_Achieved_Fluences}
-  \end{center}
-\end{figure}
+%- side cushions?
+%- when is dry ice evaporated?
+%- reference for derivation of fluence from gamma ray data?
+%- pin diodes useful at lowest target fluences?, reference to D0 diodes?
