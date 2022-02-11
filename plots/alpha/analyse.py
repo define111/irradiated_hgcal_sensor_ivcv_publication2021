@@ -29,9 +29,13 @@ DELTAUREF = 0.0 if UREF > 0 else 0.1
 def compute_errors(measurement_meta, current):
     fluence = measurement_meta["fluence"]
     Campaign = measurement_meta["Campaign"]
-    #2. fluence uncertainty is assumed to be 10%
-    x_err_up =  0.10 * fluence
-    x_err_down = 0.10 * fluence 
+    #2. fluence uncertainty is assumed to be 15% for Si diodes, 25% for Fe foils
+    if fluence < 30:
+        x_err_up =  0.15 * fluence
+        x_err_down = 0.15 * fluence 
+    else:
+        x_err_up =  0.25 * fluence
+        x_err_down = 0.25 * fluence 
 
     # 3. +/- 0.5 deg C temperature variation at CERN, +/- 1.5 deg C at TTU
     DELTAT = 0.5
@@ -61,7 +65,7 @@ def compute_errors(measurement_meta, current):
 if UREF == -1:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"], ["1101", "2105"]]
 elif UREF <= 600:
-    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013", "3008"], ["1102", "2114", "3103", "3109", "3110", "1114", "3104"], ["2004", "5414"], ["1101", "2105"]]  
+    PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013", "3008", "1003_xcheck"], ["1102", "2114", "3103", "3109", "3110", "1114", "3104"], ["2004", "5414"], ["1101", "2105", "1105_xcheck"]]  
 else:
     PAIRS = [["1002", "2002", "3003", "3009", "3010", "1013"], ["1102", "2114", "3103", "3109", "3110", "1114"], ["2004", "5414"]]
 iv_vs_fluence_graphs = []
@@ -93,7 +97,7 @@ for _pair in PAIRS:
             else:
                 Uref = UREF 
             gr = infile.Get("IV_uncorrected_channel%i" % _channel)
-            scale_graph(gr, TemperatureScaling(-40., 20.))
+            scale_graph(gr, TemperatureScaling(-40., -30.))
 
             lfti_up = ROOT.TF1("pol1_up", "pol1", (1.+DELTAUREF)*Uref-105., (1.+DELTAUREF)*Uref+105.)
             lfti_down = ROOT.TF1("pol1_down", "pol1", (1.-DELTAUREF)*Uref-105., (1.-DELTAUREF)*Uref+105.)
@@ -164,11 +168,11 @@ legend_fits.SetTextSize(35)
 pol1_fits = []
 for draw_index, iv_vs_fluence_gr in enumerate(iv_vs_fluence_graphs):
     cm.setup_graph(iv_vs_fluence_gr, {"MarkerStyle": [20, 25, 22, 32, 28][draw_index], "LineStyle": 1, "MarkerSize": 4})
-    iv_vs_fluence_gr.GetYaxis().SetRangeUser(9.0E3, 5.0E5)
+    iv_vs_fluence_gr.GetYaxis().SetRangeUser(85., 2400.)
     cm.setup_x_axis(iv_vs_fluence_gr.GetXaxis(), pad, {"Title": "Irradiation fluence (1E14 neq/cm^{2})"})
-    y_title = "I_{pad, +20^{#circ}C}(U=%i) / V (#muA/cm^{3})" % UREF
+    y_title = "I_{pad, -30^{#circ}C}(U=%i) / V (#muA/cm^{3})" % UREF
     if UREF < 0:
-        y_title = "I_{pad, +20^{#circ}C}(U=U_{dep}) / V (#muA/cm^{3})"
+        y_title = "I_{pad, -30^{#circ}C}(U=U_{dep}) / V (#muA/cm^{3})"
     cm.setup_y_axis(iv_vs_fluence_gr.GetYaxis(), pad, {"Title": y_title})
 
     iv_vs_fluence_gr.SetLineColor([ROOT.kBlue+1, ROOT.kOrange+1, ROOT.kBlack, ROOT.kGreen+2, ROOT.kGray][draw_index])
@@ -204,8 +208,13 @@ pol1_fit.SetLineColor(ROOT.kRed)
 pol1_fit.SetLineStyle(2)
 pol1_fit.SetLineWidth(4)    
 pol1_fit.Draw("SAME")
-legend_fits.AddEntry(pol1_fit, "#alpha_{600V}(+20^{#circ}C)=(%.1f#pm%.1f^{+%.1f}_{ -0.0})x10^{-17} A/cm" % (alpha_mean*(1E-3), alpha_error*(1E-3), alpha_mean*(1E-3)*0.2), "l")
+alpha_error_temp = alpha_mean*deltaI_relative(0.5, -40)
+legend_fits.AddEntry(pol1_fit, "#alpha_{600V}(-30^{#circ}C)=(%.1f#pm%.1f#pm%.1f)x10^{-19} A/cm" % (alpha_mean*(1E-1), alpha_error*(1E-1), alpha_error_temp*(1E-1)), "l")
 
+line300_200 = ROOT.TLine(15., 85., 15., 2400.)
+line200_120 = ROOT.TLine(35., 85., 35., 2400.)
+line300_200.Draw()
+line200_120.Draw()
 
 legend_graphs.SetHeader("Process variation:")
 legend_graphs.Draw()
@@ -229,14 +238,21 @@ if UREF == 600:
     location_label_text = ROOT.TText()
     location_label_text.SetTextColor(ROOT.kGray)
     location_label_text.SetTextSize(0.03)
-    location_label_text.DrawText(0.23, 0.24, "CERN")
-    location_label_text.DrawText(0.3, 0.29, "CERN")
-    location_label_text.DrawText(0.44, 0.42, "TTU")
-    location_label_text.DrawText(0.49, 0.48, "CERN")
-    location_label_text.DrawText(0.57, 0.54, "CERN")
-    location_label_text.DrawText(0.65, 0.76, "CERN")
-    location_label_text.DrawText(0.87, 0.78, "CERN")
+    #location_label_text.DrawText(0.23, 0.24, "CERN")
+    #location_label_text.DrawText(0.3, 0.29, "CERN")
+    location_label_text.DrawText(0.45, 0.34, "TTU")
+    #location_label_text.DrawText(0.44, 0.38, "CERN")
+    #location_label_text.DrawText(0.49, 0.48, "CERN")
+    #location_label_text.DrawText(0.57, 0.54, "CERN")
+    #location_label_text.DrawText(0.65, 0.76, "CERN")
+    #location_label_text.DrawText(0.87, 0.78, "CERN")
 
+    type_label_text = ROOT.TLatex()
+    type_label_text.SetTextColor(ROOT.kBlack)
+    type_label_text.SetTextSize(0.04)
+    type_label_text.DrawLatex(0.25, 0.56, "300 #mum, LD")
+    type_label_text.DrawLatex(0.48, 0.56, "200 #mum, LD")
+    type_label_text.DrawLatex(0.74, 0.56, "120 #mum, HD")
 
 #save pdf
 canvas.Print(os.path.join(thisdir, "{}.pdf".format(name)))
