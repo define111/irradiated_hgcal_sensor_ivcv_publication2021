@@ -29,12 +29,15 @@ action() {
         python3 annealing_Vdep/overlay_cv_curve.py;
     )  
     (
+        python3 alpha/analyse_internal.py --UREF 600;
         python3 alpha/analyse.py --UREF 600;
-        python3 alpha/analyse.py --UREF -1;
     )
     (
         python3 iv_temp_scaling/overlay.py;
     )  
+    (
+        python3 RINSC_temp/plot.py;
+    )      
     cd "$origin"
 }
 action "$@"  

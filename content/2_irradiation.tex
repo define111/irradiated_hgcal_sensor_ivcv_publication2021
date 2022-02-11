@@ -19,7 +19,7 @@ A sketch and a photo of the inside of this beamport are shown in \ref{fig:Beampo
     \label{fig:Beamport_Schematic}
   \end{center}
 \end{figure}
-It measures about \SI{4}{\metre} from the opening to the termination near to the reactor core, and it can accommodate samples with diameters of up to \SI{19.4}{\centi\metre} and a depth of about \SI{90}{\centi\metre}.
+It measures about \SI{4}{\metre} from the opening to the termination near to the reactor core, and it can accommodate samples with diameters of up to \SI{20}{\centi\metre} and a depth of about \SI{90}{\centi\metre}.
 A shutter assembly sits \SI{3}{\metre} from the opening of the beamport, which must be raised to allow for the insertion of the experimental setup and closed prior to the start of the reactor.
 A \SI{85}{\centi\metre}-long lead plug serves as a radiation shield that has to be inserted into the opening of the beamport prior to the start of irradiation.
 
@@ -35,7 +35,7 @@ This new sample delivery allows for:
 \end{itemize}
 Two compatible pieces of hardware were developed for the irradiation of these silicon sensors: a sensor container, referred to as a hockey puck, and a sample delivery cylinder (see~\ref{fig:Beamport_Schematic}c). 
 The former is used to protect, orient, and store the sensors during irradiation while the latter is used to protect and locate the hockey puck inside the beamport.\newline
-The cylinder is made from 6061 aluminum, has an outer diameter of \SI{19.5}{\centi\metre} fitting into the beamport, and the inner diameter of the cylinder \SI{18.8}{\centi\metre} allowing for smooth insertion and removal of the hockey pucks.
+The cylinder is made from 6061 aluminum, has an outer diameter of \SI{19.8}{\centi\metre} fitting into the beamport, and the inner diameter of the cylinder \SI{19.1}{\centi\metre} allowing for smooth insertion and removal of the hockey pucks.
 The cylinder has a welded cap on the end that faces the reactor core and a removable cap with threaded holes for 8 to 32 countersunk flat head machine screws that are flush with the outer wall of the cylinder. 
 Both the welded cap and removable cap have vent holes to allow for air to flow into and out of the cylinder.
 An eye bolt is screwed into the removable cap to facilitate removing the cylinder from the beamport after irradiations.\newline
@@ -55,11 +55,11 @@ With these constraints the thinnest sections of the wall of the puck are slightl
 The puck has a lid, made from the same material as the base, that matches the outer diameter of the base and provides a way to close the puck during handling.
 Matching through holes in the base and lid allow for using nylon threaded rods and nuts to fasten the puck together. \newline
 Kapton\texttrademark$~$foils were used to separate sensors in a stack such that no sensors are in direct contact with any rough surfaces (cf.~\ref{fig:Pucks_Arrayed}b).
-In addition, antistatic foam is used for mechanical protection of the sensors inside the puck.
+In addition, antistatic foam was used for covering the top and bottom of sensor-Kapton\texttrademark stack serving as a cushion  against the walls inside the puck.
 Sensors were irradiated in batches of four, which required ten layers of Kapton\texttrademark$~$foils and three to four layers of antistatic foam. 
 After preparation of the puck it was inserted into the delivery cylinder.
 In general, sensors should ideally be kept at low temperatures during the irradiation in order to limit unwanted annealing.
-For this purpose, the cylinder was filled with 15-\SI{18}{\kilo\gram} of dry ice.
+For this purpose, the rest of the cylinder was filled with 15-\SI{18}{\kilo\gram} of dry ice.
 However, it was found empirically that most of the dry ice is eventually consumed during irradiation.
 Therefore, PT1000 resistance temperature detectors (RTD) were inserted into the puck, at the front or back face, to record the temperature throughout the irradiation for assessment of the expected sensor annealing during irradiation.
 Before the cylinder was closed, the RTD wires were routed through the vent holes in the removable cap, and were connected to a dedicated temperature readout system outside the beamport.\newline 
@@ -68,10 +68,10 @@ It was then pushed all the way inside, the shutter was lowered, the lead plug wa
 A representative temperature recording during irradiation is shown in~\ref{fig:Round_10_Temperature_Profile}.
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.60\textwidth]{figures/Round_10_Temperature_Profile}
-    \caption{Representative temperature recording during one of the irradiation rounds. 
-    The blue arrow indicates the time at when the reactor was turned on, and the green arrow indicates the moment that the reactor was shut off.
-    \textcolor{red}{Bigger labels?}
+    \includegraphics[width=0.69\textwidth]{plots/RINSC_temp/RINSC_temp.pdf}
+    \caption{Representative temperature recordings during two of the RINSC irradiation rounds of HGCAL prototype silicon sensors. 
+    The time when the irradiation was started and when it ended is indicated.
+    The increase of the temperature towards its plateau coincides with the evaporation of the dry ice inside the delivery cylinder.
     }
     \label{fig:Round_10_Temperature_Profile}
   \end{center}
@@ -85,27 +85,13 @@ After \SI{24}{\hour} in the beamport after irradiation, the cylinder's radioacti
 
 \subsection{Fluence Assessment}
 In addition to the sensors, mechanical packing material, and temperature sensors, each puck contained a number of reference objects for measuring the fluence achieved during an irradiation round. 
-Two different objects were found appropriate for measuring the fluences during this campaign: 
-\begin{itemize}
-  \item Reference silicon diodes from the D0 experiment, 
-  \item and ultrapure iron foils. 
-\end{itemize}  
+Two different objects were found appropriate for measuring the fluences during this campaign: Reference silicon diodes from the D0 experiment, and ultrapure iron foils. 
 The diodes were included inside the puck as close to the sensors as possible by encasing them in small plastic bags and taping them to the inside faces of the puck. 
 By contrast, the iron foils were attached to the exterior of the cylinder for ease of removal and rapid counting. \newline
 After irradiation, gamma spectra of the iron foils are measured at RINSC and the fluence was derived from this data.
 In addition, CV and IV measurements of the irradiated diodes were performed at Brown university to assess the depletion voltage, the associated dark current and ultimately the fluence assuming the literature value for the current-related leakage current rate.\newline
-%It was found empirically that the usage of commercially-available pin diodes saturated already at low fluences and thus were not found to be particularly useful. 
-The reference silicon diodes are most useful up to medium-range fluences where the depletion voltage was well within the measurement range.
-For high fluences, the iron foils are considered most appropriate.
-\ref{table:irrads} in~\ref{appendix:irrad_rounds} shows the estimated actual fluences from those reference structures.
-
+%It was found empirically that the usage of commercially-available pin diodes saturated already at low fluences (below 4E14) and thus were not found to be particularly useful. 
+The reference silicon diodes are most useful up for the lower to medium range of the targeted fluences,  where their depletion voltage was well within the measurement range ($<\SI{1000}{\volt}$).
+For higher fluences, full depletion of the silicon diodes could not be reached, and the gamma ray spectra derived from the iron foils are considered more reliable.
+\ref{table:irrads} in~\ref{appendix:irrad_rounds} shows the estimated actual fluences from those reference structures.\newline
 In order to improve the reliability of those reference fluence measurements, future irradiations of HGCAL silicon wafers at RINSC will include iron foils inside the puck as well as additional test structures of HGCAL silicon sensors.
-
-%questions: 
-%- inner and outer diameter of Al cylinder?
-%- location of dry ice, front and back?
-%- where are foam cushions?
-%- side cushions?
-%- when is dry ice evaporated?
-%- reference for derivation of fluence from gamma ray data?
-%- pin diodes useful at lowest target fluences?, reference to D0 diodes?
