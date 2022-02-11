@@ -22,8 +22,10 @@ CHANNEL = 24
 colors = [ROOT.kRed, ROOT.kBlack, ROOT.kBlue]
 
 name = "iv_overlay_ch%i" % CHANNEL
-canvas = ROOT.TCanvas("Canvas" + name, "canvas" + name, cm.default_canvas_width, cm.default_canvas_height)
-cm.setup_canvas(canvas, cm.default_canvas_width, cm.default_canvas_height)
+canvas_width = 1600
+canvas_height = 900
+canvas = ROOT.TCanvas("Canvas" + name, "canvas" + name, canvas_width, canvas_height)
+cm.setup_canvas(canvas, canvas_width, canvas_height)
 canvas.Divide(1)
 pad = canvas.GetPad(1)
 cm.setup_pad(pad)
@@ -89,7 +91,7 @@ campaign_label.Draw()
 
 pad.SetGrid(True)
 
-label = ROOT.TLatex(0.48, 0.89, "LD, 300 #mum, 0.9E15 neq")
+label = ROOT.TLatex(0.40, 0.89, "LD, 300 #mum, 0.9E15 neq")
 cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
 label.Draw()
 
