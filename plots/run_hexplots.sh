@@ -31,6 +31,10 @@ action() {
         python3 chuck_temp_correction/chuckTemp.py;
         python3 chuck_temp_correction/chuckTemp_profile.py;
     )     
+    (
+        python3 ch_mapping/channel_mapping.py --geometry LD;
+        python3 ch_mapping/channel_mapping.py --geometry HD;
+    )    
     cd "$origin"
 }
 action "$@"  

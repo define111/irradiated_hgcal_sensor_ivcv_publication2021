@@ -10,15 +10,26 @@ All pads on a wafer are enclosed and protected from external disturbance by a gu
 In this work, full-hexagonal wafer prototype sensors of the so-called low-density (LD) and high-density (HD) designs were irradiated with neutrons and electrically qualified.
 Their design is illustrated in~\ref{fig:Sensors}.
 
-\begin{figure}[h]
+\begin{figure}
+	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/sensor_layouts.png}
+	\begin{subfigure}[b]{0.50\textwidth}
+		\includegraphics[width=0.999\textwidth]{plots/ch_mapping/LD.pdf}
+		\subcaption{
+		}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\includegraphics[width=0.999\textwidth]{plots/ch_mapping/HD.pdf}
+		\subcaption{
+		}
+	\end{subfigure}    
 	\caption{
-        Layout of the tested 8'' prototype silicon sensors with the low-density (left) and the right-density design (right).
-        The test structures at the edges are not relevant for this work and were removed.
+        Layout of the tested 8'' prototype silicon sensors with the low-density (a) and the high-density design (b).
 	}
 	\label{fig:Sensors}
 \end{figure}
+
 
 The LD sensors were produced from physically thinned p-type float zone silicon wafers.
 They are segmented into 198 pads, where full hexagonal pads are about \SI{1.2}{\centi\metre\squared} large, and have an active thickness of \SI{200}{\micro\meter} or \SI{300}{\micro\meter}.
