@@ -44,7 +44,7 @@ MEASUREMENTS = {
         "Campaign": "June2021_ALPS", 
         "SensorType": "HD",
         "zmax": 2.12,
-        "Title": "HD, 120 #mum, ~4.2E15 neq/cm^{2}"
+        "Title": "HD, 120 #mum, ~5.0E15 neq/cm^{2}"
     },
     "1013": {
         "MeasID": "8in_198ch_2019_1013_1E15_neg40_chucktempcorrected",
