@@ -409,7 +409,7 @@ class TotalIV(Dataset):
         
             # specify style
             self.update("3003", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, ~11.0E15 neq/cm^{2}", "Priority": 1})
-            #self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 4.2E15 neq, after annealing", "Priority": 2})
+            #self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 5.0E15 neq, after annealing", "Priority": 2})
             #self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 1.5E15 neq", "Priority": 3})
             #self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.3E15 neq", "Priority": 4})
             #self.update("1013", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 300 #mum, 0.8E15 neq, after annealing", "Priority": 5})
@@ -424,8 +424,8 @@ class TotalIV(Dataset):
             self.add_entry("0538_03_unannealed", "8in_198ch_2019_N0538_3_1E15_neg40", "June2021_ALPS")
             
 
-            self.update("3110", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 4.2E15 neq, after annealing, #font[22]{before discharge}", "Priority": 1})
-            self.update("3110_afterCV", {"Color": ROOT.kOrange+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "HD, 120 #mum, 4.2E15 neq, after annealing, #font[22]{after discharge}", "Priority": 2})
+            self.update("3110", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 5.0E15 neq, after annealing, #font[22]{before discharge}", "Priority": 1})
+            self.update("3110_afterCV", {"Color": ROOT.kOrange+1, "LineStyle": 2, "MarkerStyle": 22, "Label": "HD, 120 #mum, 5.0E15 neq, after annealing, #font[22]{after discharge}", "Priority": 2})
             #self.update("2002", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 200 #mum, 2.9E15 neq", "Priority": 3})
             #self.update("2002_unannealed", {"Color": ROOT.kGray+1, "LineStyle": 3, "MarkerStyle": 22, "Label": " ... no annealing", "Priority": 4})
             self.update("0538_03_unannealed", {"Color": ROOT.kGray+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 300 #mum, 0.8E15 neq, #font[22]{before annealing}, after discharge", "Priority": 3})
@@ -460,7 +460,7 @@ class ChannelIV(Dataset):
 
             # specify style
             #self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 11.0 E15 neq", "Priority": 1})
-            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, ~4.2E15 neq/cm^{2}", "Priority": 2})
+            self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, ~5.0E15 neq/cm^{2}", "Priority": 2})
             self.update("0541_04", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 27  , "Label": "LD, 200 #mum, ~1.9E15 neq/cm^{2}", "Priority": 3})
             #self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.9E15 neq", "Priority": 4})
             self.update("1013", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 300 #mum, ~0.8E15 neq/cm^{2}", "Priority": 5})
@@ -504,7 +504,7 @@ class ChannelCV(ChannelIV):
             self.add_entry("0541_04", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing_chucktempcorrected", "June2021_ALPS", {"Channel": 24, "RelThickness": 2./2., "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
 
             # specify style
-            self.update("3009", {"Color": ROOT.kCyan+1, "LineStyle": 2, "MarkerStyle": 23, "Label": "HD, 120 #mum, ~4.2E15 neq/cm^{2} + annealing", "Priority": 2})
+            self.update("3009", {"Color": ROOT.kCyan+1, "LineStyle": 2, "MarkerStyle": 23, "Label": "HD, 120 #mum, ~5.0E15 neq/cm^{2} + annealing", "Priority": 2})
             self.update("0541_04", {"Color": ROOT.kOrange+1, "LineStyle": 2, "MarkerStyle": 20  , "Label": "LD, 200 #mum, ~1.9E15 neq/cm^{2} + annealing", "Priority": 3})
             self.update("1013", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 21, "Label": "LD, 300 #mum, ~0.8E15 neq/cm^{2} + annealing", "Priority": 5})
         
