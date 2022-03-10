@@ -31,11 +31,11 @@ def compute_errors(measurement_meta, current):
     Campaign = measurement_meta["Campaign"]
     #2. fluence uncertainty is assumed to be 15% for Si diodes, 25% for Fe foils
     if fluence < 30:
-        x_err_up =  0.15 * fluence
-        x_err_down = 0.15 * fluence 
+        x_err_up =  0.2 * fluence
+        x_err_down = 0.2 * fluence 
     else:
-        x_err_up =  0.25 * fluence
-        x_err_down = 0.25 * fluence 
+        x_err_up =  0.2 * fluence
+        x_err_down = 0.2 * fluence 
 
     # 3. +/- 0.5 deg C temperature variation at CERN, +/- 1.5 deg C at TTU
     DELTAT = 0.5
