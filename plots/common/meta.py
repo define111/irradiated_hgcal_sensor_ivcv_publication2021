@@ -478,7 +478,7 @@ class ChannelIV(Dataset):
             self.update("0541_04_25", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 28, "Label": "full pad (#25)", "Priority": 2})
             self.update("0541_04_13", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "outer calib. pad (#13)", "Priority": 3})
             self.update("0541_04_14", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 27, "Label": "inner calib. pad (#14)", "Priority": 4})
-            self.update("0541_04_18", {"Color": ROOT.kOrange+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "large edge pad (#18)", "Priority": 5})
+            self.update("0541_04_18", {"Color": ROOT.kOrange+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "large corner pad (#18)", "Priority": 5})
             self.update("0541_04_5", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 32, "Label": "small edge pad (#5)", "Priority": 6})
 
 
@@ -520,7 +520,7 @@ class ChannelCV(ChannelIV):
             self.update("0541_04_25", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 28, "Label": "full pad (#25)", "Priority": 2})
             self.update("0541_04_13", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "outer calib. pad (#13)", "Priority": 3})
             self.update("0541_04_14", {"Color": ROOT.kBlue+1, "LineStyle": 1, "MarkerStyle": 27, "Label": "inner calib. pad (#14)", "Priority": 4})
-            self.update("0541_04_18", {"Color": ROOT.kOrange+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "large edge pad (#18)", "Priority": 5})
+            self.update("0541_04_18", {"Color": ROOT.kOrange+1, "LineStyle": 3, "MarkerStyle": 22, "Label": "large corner pad (#18)", "Priority": 5})
             self.update("0541_04_5", {"Color": ROOT.kRed+1, "LineStyle": 2, "MarkerStyle": 32, "Label": "small edge pad (#5)", "Priority": 6})
 
 

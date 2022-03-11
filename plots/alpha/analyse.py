@@ -97,7 +97,7 @@ for _pair in PAIRS:
             else:
                 Uref = UREF 
             gr = infile.Get("IV_uncorrected_channel%i" % _channel)
-            scale_graph(gr, TemperatureScaling(-40., -30.))
+            scale_graph(gr, 1E-3 * TemperatureScaling(-40., -30.))
 
             lfti_up = ROOT.TF1("pol1_up", "pol1", (1.+DELTAUREF)*Uref-105., (1.+DELTAUREF)*Uref+105.)
             lfti_down = ROOT.TF1("pol1_down", "pol1", (1.-DELTAUREF)*Uref-105., (1.-DELTAUREF)*Uref+105.)
@@ -168,11 +168,11 @@ legend_fits.SetTextSize(35)
 pol1_fits = []
 for draw_index, iv_vs_fluence_gr in enumerate(iv_vs_fluence_graphs):
     cm.setup_graph(iv_vs_fluence_gr, {"MarkerStyle": [20, 25, 22, 32, 28][draw_index], "LineStyle": 1, "MarkerSize": 4})
-    iv_vs_fluence_gr.GetYaxis().SetRangeUser(85., 2400.)
+    iv_vs_fluence_gr.GetYaxis().SetRangeUser(85.*1E-3, 2400.*1E-3)
     cm.setup_x_axis(iv_vs_fluence_gr.GetXaxis(), pad, {"Title": "Irradiation fluence (1E14 neq/cm^{2})"})
-    y_title = "I_{pad, -30^{#circ}C}(U=%i) / V (#muA/cm^{3})" % UREF
+    y_title = "I_{pad, -30^{#circ}C}(U=%i) / V (mA/cm^{3})" % UREF
     if UREF < 0:
-        y_title = "I_{pad, -30^{#circ}C}(U=U_{dep}) / V (#muA/cm^{3})"
+        y_title = "I_{pad, -30^{#circ}C}(U=U_{dep}) / V (mA/cm^{3})"
     cm.setup_y_axis(iv_vs_fluence_gr.GetYaxis(), pad, {"Title": y_title})
 
     iv_vs_fluence_gr.SetLineColor([ROOT.kBlue+1, ROOT.kOrange+1, ROOT.kBlack, ROOT.kGreen+2, ROOT.kGray][draw_index])
@@ -209,10 +209,10 @@ pol1_fit.SetLineStyle(2)
 pol1_fit.SetLineWidth(4)    
 pol1_fit.Draw("SAME")
 alpha_error_temp = alpha_mean*deltaI_relative(0.5, -40)
-legend_fits.AddEntry(pol1_fit, "#alpha_{600V}(-30^{#circ}C)=(%.1f#pm%.1f#pm%.1f)x10^{-19} A/cm" % (alpha_mean*(1E-1), alpha_error*(1E-1), alpha_error_temp*(1E-1)), "l")
+legend_fits.AddEntry(pol1_fit, "#alpha_{600V}(-30^{#circ}C)=(%.1f#pm%.1f#pm%.1f)x10^{-19} A/cm" % (alpha_mean*(1E2), alpha_error*(1E2), alpha_error_temp*(1E2)), "l")
 
-line300_200 = ROOT.TLine(15., 85., 15., 2400.)
-line200_120 = ROOT.TLine(35., 85., 35., 2400.)
+line300_200 = ROOT.TLine(15., 85.*1E-3, 15., 2400.*1E-3)
+line200_120 = ROOT.TLine(35., 85.*1E-3, 35., 2400.*1E-3)
 line300_200.Draw()
 line200_120.Draw()
 
