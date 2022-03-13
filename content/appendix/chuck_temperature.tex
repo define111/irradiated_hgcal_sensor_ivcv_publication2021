@@ -28,7 +28,7 @@ The precision in repeating the sensor placement on the chuck can be neglected wi
 \end{equation}
 \ref{plot:chucktemp_before} shows the hereby computed chuck temperature differences.
 The determined variation is consistent with the $\pm\SI{0.5}{\celsius}$ non-uniformity as specified by the chuck producer.
-Assuming a reference temperature of $T_\text{ref}\equiv\SI{40}{\celsius}$, a two-dimensional gaussian parameterisation bound to $[\SI{-0.5}{\celsius}, \SI{0.5}{\celsius}]$ is fitted to reproduce the temperature differences $\delta I_{i(j),k}$.
+Assuming a reference temperature of $T_\text{ref}\equiv\SI{-40}{\celsius}$, a two-dimensional gaussian parameterisation bound to $[\SI{-0.5}{\celsius}, \SI{0.5}{\celsius}]$ is fitted to reproduce the temperature differences $\delta I_{i(j),k}$.
 The fit is performed with the tensorflow library (version 2.6.0) and the result is shown in~\ref{plot:chucktemp_correction}.
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
