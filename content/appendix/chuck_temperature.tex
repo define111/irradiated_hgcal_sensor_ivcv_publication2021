@@ -1,9 +1,9 @@
 \section{Temperature Uniformity of the Systems att C200-40 Cold Chuck}
 \label{appendix:chuck_temp}
 The leakage current in silicon devices is dependent on the temperature.
-For the investigated sensors in this work, the current is mainly generated in the bulk for which the temperature ($T$) and current ($I$) are related by~\ref{eq:temp_scaling}~\cite{Chilingarov_2013}, where $E_g=\SI{1.21}{\electronvolt}$ and $k_b$ denotes the Boltzmann constant.
+For the investigated sensors in this work, the current is mainly generated in the bulk for which the temperature ($T$) and current ($I$) are related by~\ref{eq:temp_scaling}~\cite{Chilingarov_2013}, where $E_\text{eff}=\SI{1.21}{\electronvolt}$ is the effective gab energy and $k_b$ denotes the Boltzmann constant.
 \begin{equation}
-    \frac{I}{T^2}\cdot \exp{\frac{E_g}{2\cdot k_b \cdot T}}~\equiv~\text{const.}
+    \frac{I}{T^2}\cdot \exp{\frac{E_\text{eff}}{2\cdot k_b \cdot T}}~\equiv~\text{const.}
     \label{eq:temp_scaling}
 \end{equation}
 The validity of this temperature scaling law applied for the HGCAL silicon pad sensors in the relevant temperature range has been verified and is illustrated in~\ref{plot:iv_tempscaling}.
@@ -23,7 +23,7 @@ By comparing per-pad currents ($I_{i(j,k)}$) at a fixed bias voltage between sym
 For this purpose, one of the neutron-irradiated low density sensor wafer was characterised three times at \SI{0}{\degree}, \SI{120}{\degree}, and \SI{240}{\degree} orientation.
 The precision in repeating the sensor placement on the chuck can be neglected with respect to the size of the pads. 
 \begin{equation}
-    \frac{\delta I_{i(j),k}}{I_k} = \frac{\delta T_{i(j), k}}{T_k} \cdot \left(2 + \frac{E_g}{2\cdot k_b \cdot T_k} \right)~,~~T_k \coloneqq T_\text{ref}
+    \frac{\delta I_{i(j),k}}{I_k} = \frac{\delta T_{i(j), k}}{T_k} \cdot \left(2 + \frac{E_\text{eff}}{2\cdot k_b \cdot T_k} \right)~,~~T_k \coloneqq T_\text{ref}
     \label{eq:temp_diff}
 \end{equation}
 \ref{plot:chucktemp_before} shows the hereby computed chuck temperature differences.
