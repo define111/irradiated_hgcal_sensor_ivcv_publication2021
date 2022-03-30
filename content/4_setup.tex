@@ -6,7 +6,8 @@ The following description is limited to the particular setup at CERN from which 
 \subsection{ARRAY- and Cold-Chuck Based Setup at CERN}
 \label{subsec:setup_alps}
 At CERN, the S200FA probe station produced by Wentworth Laboratories Ltd. was used for the electrical characterisation of neutron-irradiated silicon pad sensors. 
-It is referred to as "Automatic-Low-Temperature Probe Station" (ALPS) because of its temperature-controlled chuck (C200-40 model produced by Systems att) that can reach temperatures down to \SI{-40}{\celsius} and its programmable movements.
+Its temperature-controlled chuck (Systems att, C200-40 model) can reach temperatures down to \SI{-40}{\celsius} and is programmable.
+Therefore this particular probe station is also referred to as "Automatic-Low-Temperature Probe Station" (ALPS).
 Apart from the power supply, the picoammeter, and the LCR-meter, all relevant components were installed inside ALPS, see \ref{fig:ALPS_setup}.
 \begin{figure}[h]
 	\centering
@@ -17,7 +18,7 @@ Apart from the power supply, the picoammeter, and the LCR-meter, all relevant co
 		}
 		\label{fig:ALPS_setup}
 	\end{figure}
-The silicon wafers were first placed on the chuck and then connected to the probe- and switch-card based ARRAY system~\cite{pitters:array2019}.
+The silicon sensors were first placed on the chuck and then connected to the probe- and switch-card based ARRAY system~\cite{pitters:array2019}.
 Through-holes in the cards and the probe station's microscope  enable sufficient sensor-to-pin alignment. 
 The high voltage from the power supply was provided to the chuck and to the sensor's backside via dedicated pads on the sensor's front side.
 Also the guard ring was accessible via a dedicated pad and could be connected with dedicated pins on the probe cards.
@@ -38,10 +39,10 @@ This particular frequency was chosen to minimise the error associated to the cap
 \label{subsec:setup_procedure}
 After connecting the sensor to the probecard, per-pad leakage currents as a function of the bias voltage (IV) for all pads on a given sensor were measured first.
 This was preceded by a per-pad capacitance vs. bias voltage assessment (CV).
-After each iteration over all pads at a fixed bias voltage, voltages were incremented up to \SI{850}{\volt}, whereby the exact choice depended on the measurement type (IV/CV) and on the thickness of the tested sensor.
+After each iteration over all pads at a fixed bias voltage, voltages were incremented in varying steps between 50-\SI{100}{\volt} up to \SI{850}{\volt}, whereby the exact choice depended on the measurement type (IV/CV) and on the thickness of the tested sensor.
 Although not applicable for the results shown in this work, it should be noted that a given measurement sequence was aborted if the total leakage current exceeded \SI{2}{\milli\ampere}.
 Similarly, individual pads whose leakage currents exceeded \SI{5}{\micro\ampere} were not measured any further and in particular were excluded from the subsequent CV.
-These compliance limits prohibited large voltage drops inside the test circuitry minimising the risk of harmful damages to the ARRAY system.
+These compliance limits prohibited large voltage drops inside the test circuitry minimising the risk of harmful damage to the ARRAY system.
 The entire characterisation sequence was fully automatised as a publicly available LabView-based program (HexDAQ version 1.5.1~\cite{labview_hexdaq}).
 Including voltage ramps and settling times, IV measurements of low-density sensors took about \SI{1.5}{\hour} (CV: \SI{2.5}{\hour}), whereby the duration was about twice as long for high-density sensors.
 In order to quantify the potential of sensor curation via beneficial annealing, silicon sensors were also warmed up to \SI{60}{\celsius} for a total of \SI{80}{\min}\footnote{Corresponding to about two weeks at room temperature.} inside the probe station.

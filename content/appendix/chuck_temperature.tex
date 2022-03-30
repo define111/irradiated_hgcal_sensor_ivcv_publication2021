@@ -17,9 +17,9 @@ The validity of this temperature scaling law applied for the HGCAL silicon pad s
 	\end{figure}
 Notably, a change by \SI{1}{\celsius} impacts the current by more than 10$~\%$. 
 Variations of the temperature across the chuck, and with it across the sensor, may mimic neutron fluence profiles as in~\ref{plot:iv_hexplot}. 
-This, they should be identified and corrected for.\newline
+Thus, they should be identified and corrected for.\newline
 In this work, the temperature non-uniformity of the cold chuck at CERN (C200-40 model produced by Systems att) could be estimated from leakage current data of neutron-irradiated sensors.
-By comparing per-pad currents ($I_{i(j,k)}$) at a fixed bias voltage between symmetry locations $i$, $j$, $k$, temperature differences $\delta I_{i(j), k}$ can be calculated according to~\ref{eq:temp_diff}.
+By comparing per-pad currents ($I_{i(j,k)}$) at a fixed bias voltage between symmetric locations $i$, $j$, $k$, temperature differences $\delta I_{i(j), k}$ can be calculated according to~\ref{eq:temp_diff}.
 For this purpose, one of the neutron-irradiated low density sensor wafer was characterised three times at \SI{0}{\degree}, \SI{120}{\degree}, and \SI{240}{\degree} orientation.
 The precision in repeating the sensor placement on the chuck can be neglected with respect to the size of the pads. 
 \begin{equation}
@@ -54,9 +54,9 @@ The fit is performed with the tensorflow library (version 2.6.0) and the result 
 		\label{plot:chucktemp_after}
 	\end{subfigure}
 	\caption{
-		(a) Temperature differences derived from per-pad leakage currents between symmetry locations of a representative neutron-irradiated HGCAL silicon sensors on the cold chuck at CERN.
+		(a) Temperature differences derived from per-pad leakage currents between symmetric locations of a representative neutron-irradiated HGCAL silicon sensors on the cold chuck at CERN.
 		(b) Determined profile of temperature differences, modelled as a two-dimensional gaussian, across the sensor surface.
-		(c) Closure check: Derived temperature differences after accordingly correcting the measured per-pad leakage currents.
+		(c) Closure check: derived temperature differences after accordingly correcting the measured per-pad leakage currents.
 	}
 \end{figure}
 The hereby constructed map of chuck temperature differences is input to correct the measured per-pad leakage currents using~\ref{eq:temp_scaling}.

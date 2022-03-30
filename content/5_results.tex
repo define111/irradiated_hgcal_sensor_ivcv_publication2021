@@ -29,7 +29,7 @@ The presentation of the results is complemented in \ref{subsec:discussion} with 
         (b) Per-pad leakage currents normalised to the area of full hexagonal pads as a function of the effective bias voltage for different pads with different geometries on one example sensor.
 	}
 \end{figure}
-The total leakage current is defined as the current flowing through the high-voltage resistor R$_\text{HV}$ (cf. Figure 2 in~\cite{pitters:array2019}) and is interpreted as the dark current of a full silicon wafer.
+The total leakage current is defined as the current flowing through the high-voltage resistor R$_\text{HV}$ (cf. Figure 2 in~\cite{pitters:array2019}) and is interpreted as the dark current of a full silicon sensor.
 As it is exemplified for two prototype sensors in \ref{plot:tot_IV_good}, the total leakage current did not exhibit exponential growth and stayed well below the ARRAY system's compliance of \SI{2}{\milli\ampere} for most of the irradiated sensors that were tested up to \SI{850}{\volt} at \SI{-40}{\celsius}.
 Irreversible discharges are undesired but in fact occurred for a handful of the tested sensors where the total leakage current during electrical characterisation suddenly increased and exceeded the \SI{2}{\milli\ampere} limitation.
 Whereas one half of those instances could be traced back mechanical damages, e.g.$~$induced during the transport (from RINSC to CERN), the other half hinted at the presence of a minor flaw in the HGCAL silicon sensor design.
@@ -57,8 +57,8 @@ The measured IV curves after different annealing times are shown for a represent
 	\end{subfigure}    
 
 	\caption{
-		(a) IV-curves of a representative full hexagonal pad for different annealing scenarios for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to approximately 2.4$~$E15 1-MeV-neutron equivalents/cm$^{2}$.
-        (b) Decrease of the per-pad leakage current (interpolated to $U_\text{bias}=\SI{600}{\volt}$) as a function of the annealing time at \SI{60}{\celsius} for a subset of full hexagonal pads that are uniformly distributed over the full wafer.
+		(a) IV-curves of a representative full hexagonal pad for different annealing scenarios for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to approximately 2.4$~$E15~$\neqcm$.
+        (b) Decrease of the per-pad leakage current (interpolated to $U_\text{bias}=\SI{600}{\volt}$) as a function of the annealing time at \SI{60}{\celsius} for a subset of full hexagonal pads that are uniformly distributed over the full sensor.
 	}
 \end{figure}
 For bias voltages beyond full depletion, per-pad leakage currents at \SI{600}{\volt} are reduced systematically by \SI{25}{\percent} after \SI{80}{\minute} at \SI{60}{\celsius}, cf.~\ref{plot:annealing_current}.
@@ -82,7 +82,7 @@ As expected~\cite{MOLL199987}, the current-related damage rate ($\alpha$) is fou
 Interestingly, even after correction for the chuck temperature non-uniformity, per-pad leakage current densities across a sensor at a fixed voltage differ by up to \SI{20}{\percent}.
 The associated current profiles are present both before (cf. \ref{plot:iv_hexplot_3009,plot:iv_hexplot_0541_04,plot:iv_hexplot_1013}) and after additional annealing (cf. \ref{plot:iv_hexplot_3009_annealed,plot:iv_hexplot_0541_04_annealed,plot:iv_hexplot_1013_annealed}).
 Furthermore, they are consistent between sensors that had been irradiated simultaneously in the same puck.
-Hence, this circumstance is interpreted as evidence for the presence of a gaussian-like ($\sigma\approx\SI{10}{\centi\metre}$) fluence profile within the beamport of the irradiation facility at RINSC.
+Hence, this circumstance is interpreted as evidence for the presence of a gaussian-like ($\sigma\approx\SI{10}{\centi\metre}$) fluence profile within the beam port of the irradiation facility at RINSC.
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -166,7 +166,7 @@ Only results from sensors after additional annealing are discussed in the follow
         \label{plot:annealing_Vdep}
 	\end{subfigure}
 	\caption{
-        (a) Inverted CV-curves of a representative full hexagonal pad for different annealing scenarios for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to approximately 2.4$~$E15 1-MeV-neutron equivalents/cm$^{2}$.   
+        (a) Reciprocal-squared capacitance ($C^2_\text{pad}$) as a function the bias voltage of a representative full hexagonal pad for different annealing scenarios for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to approximately 2.4$~$E15~$\neqcm$.   
 		(b) Relative decrease of the depletion voltage estimate ($U_\text{dep}$) as a function of the additional annealing time at \SI{60}{\celsius} for a subset of full pads.
 	}
 \end{figure}
@@ -225,7 +225,7 @@ However, further investigation of this hypothesis is beyond the scope of this pa
 The profile of estimated depletion voltage of a representative sensor is shown in~\ref{plot:Vdep_hexplot_0541_04}.
 Those estimates exhibit positive correlation with the leakage currents, taken as proxy for the fluence, cf. \ref{plot:Vdep_hexplot_0541_04}.
 In fact, the obtained correlation coefficient from this analysis is positive for all tested sensors where full depletion could be reached.
-This circumstance can be understood as further evidence for the presence of a fluence profile inside the beamport during irradiation.
+This circumstance can be understood as further evidence for the presence of a fluence profile inside the beam port during irradiation.
 
 \subsection{Discussion}
 \label{subsec:discussion}
@@ -234,7 +234,7 @@ On the other hand, variations in the derived pad capacitance and inferred deplet
 It should be remarked that the voltage sequence, the modelling of a serial circuitry for the conversion of impedance into capacitance, the open correction, the choice of f$_\text{LCR}$ or of R$_\text{bias}$ on the switch card have not been optimised for the precise assessment of these quantities for irradiated sensors.
 Further simulation-based studies might be needed in the future for this purpose.
 Nonetheless, unchanged end-capacitances and reduced depletion voltages after beneficial annealing are qualitatively consistent with previous R$\&$D.
-In summary, we experimentally verified the radiation-hardness of full HGCAL prototype silicon wafers.
-By implication, proper operation of the RINSC neutron-irradiation facility for the irradiation of 8'' silicon wafers could be demonstrated for the first time.
+In summary, we experimentally verified the radiation-hardness of full HGCAL prototype silicon sensors.
+By implication, proper operation of the RINSC neutron-irradiation facility for the irradiation of 8'' silicon sensors could be demonstrated for the first time.
 However, more accurate studies on the electrical sensor properties after neutron-irradiation would need to incorporate the systematic uncertainty on the effective annealing during irradiation, that is due to the temperature evolution and its potential lateral profile inside the reactor's beam port.
 Similarly, an accurate assessment of the actual fluence at each pad would have to address the neutron flux profile, for whose existence this work provides first evidence.
