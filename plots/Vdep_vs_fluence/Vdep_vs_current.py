@@ -127,7 +127,7 @@ for _ID in ["5414"]:
     campaign_label = cm.create_campaign_label()
     campaign_label.Draw()
 
-    textlabel = {"5414": "LD, 200 #mum, ~1.9E15 neq/cm^{2}", "1002": "LD, 300 #mum, ~0.8E15 neq/cm^{2}", "3009": "HD, 120 #mum, ~4.2E15 neq/cm^{2}"}[_ID]
+    textlabel = {"5414": "LD, 200 #mum, ~1.9#times10^{15} neq/cm^{2}", "1002": "LD, 300 #mum, ~0.8#times10^{15} neq/cm^{2}", "3009": "HD, 120 #mum, ~4.2#times10^{15} neq/cm^{2}"}[_ID]
     label = ROOT.TLatex(0.45, 0.9, textlabel)
     cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
     #label.Draw()

@@ -44,21 +44,21 @@ MEASUREMENTS = {
         "Campaign": "June2021_ALPS", 
         "SensorType": "HD",
         "zmax": 2.12,
-        "Title": "HD, 120 #mum, ~5.0E15 neq/cm^{2}"
+        "Title": "HD, 120 #mum, ~5.0#times10^{15} neq/cm^{2}"
     },
     "1013": {
         "MeasID": "8in_198ch_2019_1013_1E15_neg40_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
         "zmax": 1.62,
-        "Title": "LD, 300 #mum, ~0.8E15 neq/cm^{2}"
+        "Title": "LD, 300 #mum, ~0.8#times10^{15} neq/cm^{2}"
     },
     "0541_04": {
         "MeasID": "8in_198ch_2019_N0541_04_25E14_neg40_chucktempcorrected",
         "Campaign": "June2021_ALPS", 
         "SensorType": "LD",
         "zmax": 3.25,
-        "Title": "LD, 200 #mum, ~1.9E15 neq/cm^{2}"
+        "Title": "LD, 200 #mum, ~1.9#times10^{15} neq/cm^{2}"
     },
     "1105": {
         "MeasID": "8in_198ch_2019_1105_15E14_neg40_postAnnealing_TTU",
@@ -98,28 +98,28 @@ MEASUREMENTS = {
         "Campaign": "TTU_October2021", 
         "SensorType": "HD",
         "zmax": 1.15,
-        "Title": "HD, 120 #mum, 1.65E15 neq/cm^{2}"
+        "Title": "HD, 120 #mum, 1.65#times10^{15} neq/cm^{2}"
     },
     "3008": {
         "MeasID": "8in_432_3008_25E14_neg40_postAnnealing_TTU",
         "Campaign": "TTU_October2021", 
         "SensorType": "HD",
         "zmax": 1.15,
-        "Title": "HD, 120 #mum, 1.65E15 neq/cm^{2}"
+        "Title": "HD, 120 #mum, 1.65#times10^{15} neq/cm^{2}"
     },
     "3104": {
         "MeasID": "8in_432_3104_25E14_neg40_postAnnealing_TTU",
         "Campaign": "TTU_October2021", 
         "SensorType": "HD",
         "zmax": 1.15,
-        "Title": "HD, 120 #mum, 1.65E15 neq/cm^{2}"
+        "Title": "HD, 120 #mum, 1.65#times10^{15} neq/cm^{2}"
     },
     "3105": {
         "MeasID": "8in_432_3105_25E14_neg40_postAnnealing_TTU",
         "Campaign": "TTU_October2021", 
         "SensorType": "HD",
         "zmax": 1.15,
-        "Title": "HD, 120 #mum, 1.65E15 neq/cm^{2}"
+        "Title": "HD, 120 #mum, 1.65#times10^{15} neq/cm^{2}"
     }  
 }
 '''  

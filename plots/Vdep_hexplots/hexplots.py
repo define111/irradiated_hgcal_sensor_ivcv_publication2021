@@ -24,7 +24,7 @@ MEASUREMENTS = {
         "SensorType": "LD",
         "zmin": 217,
         "zmax": 276,
-        "Title": "LD, 200 #mum, 1.9E15 neq/cm^{2}"
+        "Title": "LD, 200 #mum, 1.9#times10^{15} neq/cm^{2}"
     },
 }
 EVALVOLTAGE = 600

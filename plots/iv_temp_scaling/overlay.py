@@ -91,7 +91,7 @@ campaign_label.Draw()
 
 pad.SetGrid(True)
 
-label = ROOT.TLatex(0.40, 0.89, "LD, 300 #mum, 0.9E15 neq")
+label = ROOT.TLatex(0.40, 0.89, "LD, 300 #mum, 0.9#times10^{15} neq/cm^{2}")
 cm.setup_label(label, {"TextAlign": 31, "TextFont": 73})
 label.Draw()
 

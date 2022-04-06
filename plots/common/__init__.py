@@ -214,7 +214,7 @@ def apply_root_properties(obj, props, *_props):
             setter(value)
 
 
-def create_cms_labels(postfix="preliminary", x=0.135, y=0.96):
+def create_cms_labels(postfix="R&D", x=0.135, y=0.96):
     label = ROOT.TLatex(x, y, "#font[22]{CMS HGCAL} " + postfix)
     setup_label(label)
     return label

@@ -88,7 +88,7 @@ cms_labels.Draw()
 campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
-_label_text = "LD, 200 #mum, ~2.4E15/cm^{2}"
+_label_text = "LD, 200 #mum, ~2.4#times10^{15}/cm^{2}"
 label = ROOT.TLatex(0.24, 0.82, _label_text)
 cm.setup_label(label, {"TextFont": 73})
 legend1.SetHeader(_label_text)

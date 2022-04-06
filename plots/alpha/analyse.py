@@ -169,7 +169,7 @@ pol1_fits = []
 for draw_index, iv_vs_fluence_gr in enumerate(iv_vs_fluence_graphs):
     cm.setup_graph(iv_vs_fluence_gr, {"MarkerStyle": [20, 25, 22, 32, 28][draw_index], "LineStyle": 1, "MarkerSize": 4})
     iv_vs_fluence_gr.GetYaxis().SetRangeUser(85.*1E-3, 2400.*1E-3)
-    cm.setup_x_axis(iv_vs_fluence_gr.GetXaxis(), pad, {"Title": "Irradiation fluence (1E14 neq/cm^{2})"})
+    cm.setup_x_axis(iv_vs_fluence_gr.GetXaxis(), pad, {"Title": "Irradiation fluence (10^{14} neq/cm^{2})"})
     y_title = "I_{pad, -30^{#circ}C}(U=%i) / V (mA/cm^{3})" % UREF
     if UREF < 0:
         y_title = "I_{pad, -30^{#circ}C}(U=U_{dep}) / V (mA/cm^{3})"
