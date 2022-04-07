@@ -63,8 +63,8 @@ The measured IV curves after different annealing times are shown for a represent
 	}
 \end{figure}
 For bias voltages beyond full depletion, per-pad leakage currents at \SI{600}{\volt} are reduced systematically by \SI{25}{\percent} after \SI{80}{\minute} at \SI{60}{\celsius}, cf.~\ref{plot:annealing_current}.
-Given the simultaneous reduction in the depletion voltage, cf.~\ref{plot:annealing_CV}, leakage currents around full depletion are even reduced further.
-Altogether, we observe the expected proportionality of the per-pad leakage current density to the anticipated fluence that the sensors were exposed to.
+Given the simultaneous reduction in the depletion voltage, cf.~\ref{plot:annealing_CV}, leakage currents around full depletion are even further reduced.
+Altogether, the expected proportionality of the per-pad leakage current density to the fluence, that the sensors were exposed to, could be observed.
 The proportionality for current densities interpolated to an effective bias voltage of \SI{600}{\volt}, which is well above full depletion for most of the investigated sensors, and extrapolated to HGCAL's foreseen operation temperature of \SI{-30}{\celsius} is displayed in \ref{plot:alpha_600}.
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
@@ -79,14 +79,14 @@ The proportionality for current densities interpolated to an effective bias volt
 		}
 	\label{plot:alpha_600}
 \end{figure}
-As expected~\cite{MOLL199987}, the current-related damage rate ($\alpha$) is found to be independent of the tested silicon material properties investigated in this work.
+As expected~\cite{MOLL199987}, the current-related damage rate ($\alpha$) is found to be independent on the tested silicon material properties investigated in this work.
 However, the numerical result for $\alpha$ scaled to room temperature, $\alpha_\text{600V}(\SI{+20}{\celsius})=\left(3.2\pm 0.2\pm 0.2\right)\cdot 10^{-17}~$A/cm, is about \SI{20}{\percent} less than the literature value~\cite{moll:SiDamages}.
-Among other contributing factors, this could indicate a systematic overestimate of the fluence at the RINSC irradiation facility.\newline 
+Among other contributing factors, this could indicate a systematic overestimation of the fluence at the RINSC irradiation facility.\newline 
 Interestingly, even after correction for the chuck temperature non-uniformity, per-pad leakage current densities across a sensor at a fixed voltage vary significantly by $\mathcal{O}(10~\%)$.
 The associated current profiles are present both before (cf. \ref{plot:iv_hexplot_3009,plot:iv_hexplot_0541_04,plot:iv_hexplot_1013}) and after additional annealing (cf. \ref{plot:iv_hexplot_3009_annealed,plot:iv_hexplot_0541_04_annealed,plot:iv_hexplot_1013_annealed}).
 Furthermore, they are consistent between sensors that had been irradiated simultaneously in the same puck.
 Hence, this circumstance is interpreted as evidence for the presence fluence profile within the beam port of the irradiation facility at RINSC.
-It is noted that this fluence profile can reasonably well be approximated as a Gaussian with a width of $\sigma\sim\SI{10}{\centi\metre}$.
+It is noted that this fluence profile can be reasonably well approximated as a Gaussian with a width of $\sigma\sim\SI{10}{\centi\metre}$.
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -219,9 +219,9 @@ Only results from sensors after additional annealing are discussed in the follow
 		(b) their correlation to the per-pad leakage current, used as proxy for the delivered fluence.
 	}
 \end{figure}
-We find that the per-pad capacitance after irradiation scales reasonably well with the area of the pad, cf.~\ref{plot:pad_CV_channels}.
+The per-pad capacitance after irradiation is found to scale reasonably well with the area of the pad, cf.~\ref{plot:pad_CV_channels}.
 Deviations from this scaling amount to less than \SI{5}{\percent}.
-The inter-pad capacitance has been in measured to be \SI{2}{\pico\farad}.
+The inter-pad capacitance has been measured to be \SI{2}{\pico\farad}.
 The deviation of the pad capacitance of up to \SI{5}{\percent} may hint at differing inter-pad capacitances between other pads geometries.
 However, further investigation of this hypothesis is beyond the scope of this paper. 
 \ref{plot:pad_invCV_sensor} illustrates that the estimated depletion voltages in this work scale primarily with the associated thickness of the depleted zone. 
@@ -235,8 +235,8 @@ This circumstance can be understood as further evidence for the presence of a fl
 The leakage currents measured from the neutron-irradiated silicon sensors in this work exhibit both qualitative and quantitative consistency with previous R$\&$D on irradiated silicon sensors, and in particular they are found to be independent on the tested silicon fabrication process (flatband voltage, p-stop).
 Furthermore, unchanged end-capacitances and reduced depletion voltages after beneficial annealing are qualitatively consistent with previous R$\&$D.
 The accurate determination of depletion voltages of irradiated silicon sensors is delicate and requires a thorough understanding of the underlying circuitry, in particular a dedicated choice of f$_\text{LCR}$ and of R$_\text{bias}$ on the switch card, and are biased by the choice of tested bias voltages.
-Therefore and given that variations in those quantities are not a concern for the operation of HGCAL, we refrain from more quantitative statements on the depletion voltages and their variations between different sensor fabrication parameters at this point.\newline
-Despite this limitation, our findings with the first prototypes of 8'' HGCAL silicon sensors are in full support of the radiation-hardness of their general design.
+Therefore and given that variations in those quantities are not a concern for the operation of HGCAL, more quantitative statements on the depletion voltages and their variations between different sensor fabrication parameters are refrained from at this point.\newline
+Despite this limitation, these findings with the first prototypes of 8'' HGCAL silicon sensors are in full support of the radiation-hardness of their general design.
 By implication, RINSC could be qualified as a valid facility for neutron irradiation of 8'' silicon sensors for the first time.
 However, more accurate studies on the electrical sensor properties after neutron-irradiation would need to incorporate the systematic uncertainty on the effective annealing during irradiation, that is due to the temperature evolution and its potential lateral profile inside the reactor's beam port.
 Similarly, an accurate assessment of the actual fluence at each pad would have to address the neutron flux profile, for whose existence this work provides first evidence.
