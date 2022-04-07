@@ -112,8 +112,12 @@ RD8_text.SetTextColor(cm.colors["creamred"])
 RD8_text.SetTextSize(0.03)
 RD8_text.DrawText(0.22, 0.13, "Start")
 RD8_text.DrawText(0.34, 0.9, "End")
-RD8_text.DrawText(0.4, 0.48, "Dry ice evaporated")
+RD8_text.DrawText(0.37, 0.48, "Dry ice evaporated")
 
+insert_text = ROOT.TText()
+insert_text.SetTextColor(cm.colors["black"])
+insert_text.SetTextSize(0.03)
+insert_text.DrawText(0.13, 0.45, "Insertion")
 
 pad.SetGrid(True)
 #save pdf
