@@ -79,7 +79,7 @@ The proportionality for current densities interpolated to an effective bias volt
 		}
 	\label{plot:alpha_600}
 \end{figure}
-As expected~\cite{MOLL199987}, the current-related damage rate ($\alpha$) is found to be independent of the silicon material properties investigated in this work.
+As expected~\cite{MOLL199987}, the current-related damage rate ($\alpha$) is found to be independent of the tested silicon material properties investigated in this work.
 However, the numerical result for $\alpha$ scaled to room temperature, $\alpha_\text{600V}(\SI{+20}{\celsius})=\left(3.2\pm 0.2\pm 0.2\right)\cdot 10^{-17}~$A/cm, is about \SI{20}{\percent} less than the literature value~\cite{moll:SiDamages}.
 Among other contributing factors, this could indicate a systematic overestimate of the fluence at the RINSC irradiation facility.\newline 
 Interestingly, even after correction for the chuck temperature non-uniformity, per-pad leakage current densities across a sensor at a fixed voltage vary significantly by $\mathcal{O}(10~\%)$.
@@ -170,7 +170,7 @@ Only results from sensors after additional annealing are discussed in the follow
         \label{plot:annealing_Vdep}
 	\end{subfigure}
 	\caption{
-        (a) Reciprocal-squared capacitance ($C^2_\text{pad}$) as a function the bias voltage of a representative full hexagonal pad for different annealing durations for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to approximately 2.4$\cdot 10^{15}~\neqcm$.   
+        (a) Reciprocal-squared capacitance ($C^{-2}_\text{pad}$) as a function the bias voltage of a representative full hexagonal pad for different annealing durations for a \SI{200}{\micro\metre} low-density prototype sensor irradiated to approximately 2.4$\cdot 10^{15}~\neqcm$.   
 		(b) Relative decrease of the depletion voltage estimate ($U_\text{dep}$) as a function of the additional annealing time at \SI{60}{\celsius} for a subset of full pads.
 	}
 \end{figure}
@@ -193,7 +193,7 @@ Only results from sensors after additional annealing are discussed in the follow
 	\caption{
 		(a) Area-normalised capacitances as a function of the effective bias voltage for different pads with different geometries on one example low density sensor.
 		(b) Normalised squared-inverse capacitances as a function of the effective bias voltage for estimating the sensor depletion voltage for one central pad on three example sensors from different irradiation rounds.
-		The frequency of the Keysight E4980A LCR meter in these measurements was set to \SI{2}{\kilo\hertz}.
+		%The frequency of the Keysight E4980A LCR meter in these measurements was set to \SI{2}{\kilo\hertz}.
 	}
 \end{figure}
 \begin{figure}
@@ -216,28 +216,27 @@ Only results from sensors after additional annealing are discussed in the follow
 	\end{subfigure}
 	\caption{
 		(a) Per-pad depletion voltage estimates for a \SI{200}{\micron} LD example sensor irradiated to 1.9$\cdot 10^{15}~\neqcm$, and 
-		(b) their correlation to the per-pad leakage current, interpretable as proxy for the fluence.
+		(b) their correlation to the per-pad leakage current, used as proxy for the delivered fluence.
 	}
 \end{figure}
-We find that the per-pad capacitance after irradiation still scales reasonably well with the area of the pad, cf.~\ref{plot:pad_CV_channels}.
+We find that the per-pad capacitance after irradiation scales reasonably well with the area of the pad, cf.~\ref{plot:pad_CV_channels}.
 Deviations from this scaling amount to less than \SI{5}{\percent}.
-Between full pads, the inter-pad capacitance has been in measured to be \SI{2}{\pico\farad}.
-The deviation of up to \SI{5}{\percent} may hint at differing inter-pad capacitances between other pads geometries.
+The inter-pad capacitance has been in measured to be \SI{2}{\pico\farad}.
+The deviation of the pad capacitance of up to \SI{5}{\percent} may hint at differing inter-pad capacitances between other pads geometries.
 However, further investigation of this hypothesis is beyond the scope of this paper. 
 \ref{plot:pad_invCV_sensor} illustrates that the estimated depletion voltages in this work scale primarily with the associated thickness of the depleted zone. 
-
-The profile of estimated depletion voltage of a representative sensor is shown in~\ref{plot:Vdep_hexplot_0541_04}.
-Those estimates exhibit positive correlation with the leakage currents, taken as proxy for the fluence, cf. \ref{plot:Vdep_hexplot_0541_04}.
+The estimated per-pad depletion voltage across the sensor of a representative sensor is shown in~\ref{plot:Vdep_hexplot_0541_04}.
+Those estimates exhibit positive correlation with the leakage currents, taken as proxy for the fluence, cf. \ref{plot:Vdep_vs_current_5414}.
 In fact, the obtained correlation coefficient from this analysis is positive for all tested sensors where full depletion could be reached.
 This circumstance can be understood as further evidence for the presence of a fluence profile inside the beam port during irradiation.
 
 \subsection{Discussion}
 \label{subsec:discussion}
-The leakage currents measured from the neutron-irradiated silicon sensors in this work exhibit both qualitative and quantitative consistency with previous R$\&$D on irradiated silicon sensors, and in particular they are found to be independent on the silicon fabrication process.
+The leakage currents measured from the neutron-irradiated silicon sensors in this work exhibit both qualitative and quantitative consistency with previous R$\&$D on irradiated silicon sensors, and in particular they are found to be independent on the tested silicon fabrication process (flatband voltage, p-stop).
 Furthermore, unchanged end-capacitances and reduced depletion voltages after beneficial annealing are qualitatively consistent with previous R$\&$D.
 The accurate determination of depletion voltages of irradiated silicon sensors is delicate and requires a thorough understanding of the underlying circuitry, in particular a dedicated choice of f$_\text{LCR}$ and of R$_\text{bias}$ on the switch card, and are biased by the choice of tested bias voltages.
-At this point, we therefore refrain from more quantitative statements on the depletion voltages and their variations between different sensor fabrication parameters.\newline
+Therefore and given that variations in those quantities are not a concern for the operation of HGCAL, we refrain from more quantitative statements on the depletion voltages and their variations between different sensor fabrication parameters at this point.\newline
 Despite this limitation, our findings with the first prototypes of 8'' HGCAL silicon sensors are in full support of the radiation-hardness of their general design.
-By implication, proper operation of the RINSC neutron-irradiation facility for the irradiation of 8'' silicon sensors could be demonstrated for the first time.
+By implication, RINSC could be qualified as a valid facility for neutron irradiation of 8'' silicon sensors for the first time.
 However, more accurate studies on the electrical sensor properties after neutron-irradiation would need to incorporate the systematic uncertainty on the effective annealing during irradiation, that is due to the temperature evolution and its potential lateral profile inside the reactor's beam port.
 Similarly, an accurate assessment of the actual fluence at each pad would have to address the neutron flux profile, for whose existence this work provides first evidence.
