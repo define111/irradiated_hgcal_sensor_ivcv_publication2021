@@ -88,7 +88,7 @@ for draw_index, _channel in enumerate(_df.Pad.unique()):
     graphs[_channel].SetMarkerColor((NGraphs-1)%9+1)
     graphs[_channel].SetLineColor((NGraphs-1)%9+1)
 
-    xaxis_title = "t = Addtional annealing at +60^{#circ} C (min)"
+    xaxis_title = "t = Duration of annealing at +60^{#circ} C (min)"
     cm.setup_x_axis(graphs[_channel].GetXaxis(), pad, {"Title": xaxis_title, "TitleOffset": 0.90*graphs[_channel].GetXaxis().GetTitleOffset()})
     yaxis_title = "U_{dep}/U_{dep}(t=0) [%]"
     cm.setup_y_axis(graphs[_channel].GetYaxis(), pad, {"Title": yaxis_title})

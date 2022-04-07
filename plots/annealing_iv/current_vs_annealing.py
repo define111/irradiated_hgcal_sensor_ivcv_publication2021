@@ -130,7 +130,7 @@ for draw_index, _channel in enumerate(_df.channel.unique()):
         graphs[_channel].GetYaxis().SetRangeUser(59., 101.)
     else:
         graphs[_channel].GetYaxis().SetRangeUser(72., 101.)
-    xaxis_title = "t = Addtional annealing at +60^{#circ} C (min)"
+    xaxis_title = "t = Duration of annealing at +60^{#circ} C (min)"
     cm.setup_x_axis(graphs[_channel].GetXaxis(), pad, {"Title": xaxis_title, "TitleOffset": 0.90*graphs[_channel].GetXaxis().GetTitleOffset()})
     if EVALVOLTAGE == -1:
         yaxis_title = "I_{pad, -40^{#circ}C}(t, U_{dep})/I_{pad, -40^{#circ}C}(t=0, U_{dep}) [%]"

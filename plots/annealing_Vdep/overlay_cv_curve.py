@@ -37,7 +37,7 @@ colors = [ROOT.kBlack, ROOT.kCyan+1, ROOT.kBlue+1, ROOT.kViolet+1, ROOT.kGreen-1
 
 for drawindex, postfix in enumerate(["", "_9minAnnealing", "_24minAnnealing", "_61minAnnealing", "_80minAnnealing"]):
     measID = _measID+postfix
-    label = "no additional annealing" if postfix=="" else postfix.replace("_", "").replace("minAnnealing", " min at 60^{#circ}C")
+    label = "0 min thermal annealing" if postfix=="" else postfix.replace("_", "").replace("minAnnealing", " min at 60^{#circ}C")
     # retrieve paths of processed files as input
     infile = ROOT.TFile(os.path.join(
         os.environ["DATA_DIR"], "cv/%s/Vdep/%s/ch_%i.root" % (Campaign, measID, CHANNEL)), "READ")
