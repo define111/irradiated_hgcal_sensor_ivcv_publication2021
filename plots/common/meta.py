@@ -86,22 +86,22 @@ MEASUREMENTS["2004"] = {
     "fluence": 23.5,                  #round 5, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
     "annealing": 79.9
 }
-MEASUREMENTS["3003"] = {
+MEASUREMENTS["3002"] = {
     "Campaign": "Winter2021",
     "Design": "HD",
     "Cells": [103, 104, 121, 122, 140, 141, 142],
-    "ID": "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected",
+    "ID": "8in_432_3002_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected",
     "p-stop": "ind.",
     "thickness": 120,
     "Vfb": -2, 
     "fluence": 110,                 #round 3, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf                 
     "annealing": 400
 }
-MEASUREMENTS["3103"] = {
+MEASUREMENTS["3102"] = {
     "Campaign": "Winter2021",
     "Design": "HD",
     "Cells": [103, 104, 121, 122, 140, 141, 142],
-    "ID": "8in_432_3103_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected",
+    "ID": "8in_432_3102_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected",
     "p-stop": "comm.",
     "thickness": 120,
     "Vfb": -2, 
@@ -401,14 +401,14 @@ class TotalIV(Dataset):
         if _type == "good":
             # specify which data 
             self.add_entry("1002", "8in_198ch_2019_1002_65E13_neg40_October2020", "October2020_ALPS")
-            self.add_entry("3003", "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021", "Winter2021")
+            self.add_entry("3002", "8in_432_3002_1E16_neg40deg_new_picoammeter_Winter2021", "Winter2021")
             #self.add_entry("2004", "8in_198ch_2019_2004_25E14_neg40_80minAnnealing", "Spring2021_ALPS")
             #self.add_entry("1013", "8in_198ch_2019_1013_1E15_neg40_post80minAnnealing", "June2021_ALPS")
             ##self.add_entry("3009", "8in_432_3009_5E15_neg40_post80minAnnealing", "June2021_ALPS")
             #self.add_entry("0541_04", "8in_198ch_2019_N0541_04_25E14_neg40_post80minAnnealing", "June2021_ALPS")
         
             # specify style
-            self.update("3003", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, ~11.0#times10^{15} neq/cm^{2}", "Priority": 1})
+            self.update("3002", {"Color": ROOT.kBlack, "LineStyle": 2, "MarkerStyle": 20, "Label": "HD, 120 #mum, ~11.0#times10^{15} neq/cm^{2}", "Priority": 1})
             #self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, 5.0E15 neq, after annealing", "Priority": 2})
             #self.update("0541_04", {"Color": ROOT.kCyan+1, "LineStyle": 1, "MarkerStyle": 21, "Label": "LD, 200 #mum, 1.5E15 neq", "Priority": 3})
             #self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.3E15 neq", "Priority": 4})
@@ -452,14 +452,14 @@ class ChannelIV(Dataset):
 
         if _type == "sensors":
             #self.add_entry("1002", "8in_198ch_2019_1002_65E13_neg40_October2020_chucktempcorrected", "October2020_ALPS", {"Channel": 24, "RelThickness": 3./2., "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
-            #self.add_entry("3003", "8in_432_3003_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected", "Winter2021", {"Channel": 313, "RelThickness": 1.2/2., "RelArea": A_FULLPAD_HD/A_FULLPAD_LD})
+            #self.add_entry("3002", "8in_432_3002_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected", "Winter2021", {"Channel": 313, "RelThickness": 1.2/2., "RelArea": A_FULLPAD_HD/A_FULLPAD_LD})
             #self.add_entry("2004", "8in_198ch_2019_2004_25E14_neg40_chucktempcorrected", "Spring2021_ALPS", {"Channel": 24, "RelThickness": 2./2., "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
             self.add_entry("3009", "8in_432_3009_5E15_neg40_chucktempcorrected", "June2021_ALPS", {"Channel": 123, "RelThickness": 1.2/2., "RelArea": A_FULLPAD_HD/A_FULLPAD_LD})
             self.add_entry("1013", "8in_198ch_2019_1013_1E15_neg40_chucktempcorrected", "June2021_ALPS", {"Channel": 24, "RelThickness": 3./2., "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
             self.add_entry("0541_04", "8in_198ch_2019_N0541_04_25E14_neg40_chucktempcorrected", "June2021_ALPS", {"Channel": 24, "RelThickness": 2./2., "RelArea": A_FULLPAD_LD/A_FULLPAD_LD})
 
             # specify style
-            #self.update("3003", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 11.0 E15 neq", "Priority": 1})
+            #self.update("3002", {"Color": ROOT.kGray+1, "LineStyle": 1, "MarkerStyle": 20, "Label": "HD, 120 #mum, 11.0 E15 neq", "Priority": 1})
             self.update("3009", {"Color": ROOT.kBlack, "LineStyle": 1, "MarkerStyle": 28, "Label": "HD, 120 #mum, ~5.0#times10^{15} neq/cm^{2}", "Priority": 2})
             self.update("0541_04", {"Color": ROOT.kOrange+1, "LineStyle": 1, "MarkerStyle": 27  , "Label": "LD, 200 #mum, ~1.9#times10^{15} neq/cm^{2}", "Priority": 3})
             #self.update("2004", {"Color": ROOT.kBlue+1, "LineStyle": 2, "MarkerStyle": 27, "Label": "LD, 200 #mum, 2.9E15 neq", "Priority": 4})

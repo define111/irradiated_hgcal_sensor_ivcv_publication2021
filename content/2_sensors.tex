@@ -2,15 +2,14 @@
 \label{sec:sensors}
 
 The CMS high granularity calorimeter will be made of more than \SI{600}{\metre\squared} of planar DC-coupled silicon pad sensors.
-The sensors are fabricated as 8'' hexagonal wafers.
-A hexagonal sensor geometry allows for an optimal use of the circular wafer as which the silicon crystals are grown.
-Motivated by empiric evidence of superior noise performance with respect to n-type sensors~\cite{Adam_2017}, p-type doping of their bulk was chosen.%\newline
+Starting from 8'' circular wafers, the sensors are diced into hexagons being the largest tileable polygon.
+P-type doping of their bulk was chosen due to empiric evidence of superior noise performance after irradiation with respect to n-type doping~\cite{Adam_2017}. %\newline
 In this work, the first version prototypes of hexagonal wafer sensors with the so-called low-density (LD) and high-density (HD) designs were irradiated with neutrons and electrically qualified.
 Their design is illustrated in~\ref{fig:Sensors}.
 Each HGCAL silicon sensor is segmented into several hundred pads that constitute the sensitive units. 
 The majority of those pads are shaped as regular hexagons which are drawn as cyan-colored pads in~\ref{fig:Sensors}.
 Special non-hexagonal structures fill out the sensor periphery.
-The arrangement of pads on a sensor is enclosed and protected by a guard ring from currents drawn from the dicing edges of the sensor.
+The arrangement of pads on a sensor is enclosed by a set of guard rings which protect the sensor from currents drawn from its dicing edges.
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -26,10 +25,11 @@ The arrangement of pads on a sensor is enclosed and protected by a guard ring fr
 		}
 	\end{subfigure}    
 	\caption{
-        (a) Layout of the tested 8'' prototype silicon pad sensors with the low-density (LD) and (b) the high-density (HD) design.
-		Regular hexagonal pads are depicted in cyan. 
+        Layout of the tested 8'' prototype silicon pad sensors with (a) the low-density (LD) and (b) the high-density (HD) design.
+		Regular-sized hexagonal pads are depicted in cyan.
 		Edge and corner pads populate the sensor periphery. 
-		Six (LD), respectively twelve (HD), regular, small hexagonal pads on the sensor are dedicated for calibration of the energy.
+		Six (LD), respectively twelve (HD), regular, small hexagonal pads on the sensor are dedicated for energy calibration with minimum ionising particles up to the end of life.
+		The colour coding highlights the usage of different pad geometries but other than that has no meaning.
 		The sensors' guard rings are not shown.
 	}
 	\label{fig:Sensors}
@@ -37,16 +37,16 @@ The arrangement of pads on a sensor is enclosed and protected by a guard ring fr
 The LD sensors were produced from physically thinned p-type float zone silicon wafers.
 They are segmented into 198 pads, where full hexagonal pads are about \SI{1.2}{\centi\metre\squared} large, and have an active thickness of \SI{200}{\micro\meter} or \SI{300}{\micro\meter}.
 %It was found empirically~\cite{hgcal-tdr:2018} that the relative signal degradation is worse the thicker the active area of the silicon sensor is.
-LD sensors will be installed in regions of intermediate radiation fluences inside HGCAL.
-By contrast, regions with the highest fluences will be populated with HD sensors whose active thickness amounts to \SI{120}{\micro\meter} \footnote{Although their active thickness amounts to only \SI{120}{\micro\meter}, the physical thickness of HD sensors is \SI{300}{\micro\meter}.}.%\newline
-HD sensors are segmented into 444 pads (full hexagon pad size: \SI{0.5}{\centi\metre\squared}) and are produced from epitaxial on handle wafers.
-As it is foreseen for the final design, p-stop structures were added to all the tested prototype silicon sensors in this work in order to limit the accumulation of electrons on the Si/SiO$_2$ interface which otherwise could form a conduction channel, effectively shorting adjacent pads.
-Those structures were either bound to the single pads (individual p-stop) or shared between neighboring ones (common p-stop)~\cite{Brondolin_2020}.
-In addition, the tested prototype sensors differed in their flatband voltage (either \SI{-2}{\volt} or \SI{-5}{\volt}).
-Other than that, all production parameters, such as doping concentrations and the composition of the oxide layer, were identical for all prototype sensors discussed in this work.
+LD sensors will be installed in regions of intermediate radiation levels inside HGCAL.
+By contrast, regions with the highest radiation levels will be populated with HD sensors whose active thickness amounts to \SI{120}{\micro\meter}.
+HD sensors are segmented into 444 pads (full hexagon pad size: \SI{0.5}{\centi\metre\squared}) and are produced from epitaxial material.\newline
+As it is foreseen for the final design, p-stop structures were added to all the tested prototype silicon sensors in this work in order to limit the accumulation of electrons on the Si/SiO$_2$ interface after exposure to high radiation levels which otherwise could form a conduction channel, effectively shorting adjacent pads.
+Those structures were either bound to the single pads (individual p-stop) or shared between neighboring ones (common p-stop), representing two options under consideration for HGCAL~\cite{Brondolin_2020}.
+In addition, the tested prototype sensors differed in their flatband voltage (pre-irradiation value of either \SI{-2}{\volt} or \SI{-5}{\volt}).
+Unless explicitly stated otherwise, all other production parameters, such as doping concentrations and the composition of the oxide material, were identical for all prototype sensors discussed in this work.
 It is noted that differences in the bulk properties are not expected to affect the sensor degradation due to irradiation~\cite{MOLL199987} and are thus not thematised this work.
 %\newline
-Prior to irradiation, the studied sensors had been electrically qualified demonstrating their proper functionality.
+Prior to irradiation, the studied sensors shown in this work had been electrically qualified demonstrating their proper functionality.
 Full depletion was achieved at bias voltages around \SI{40}{\volt} for \SI{120}{\micro\metre} sensors, \SI{120}{\volt} for \SI{200}{\micro\metre} sensors, and \SI{280}{\volt} for \SI{300}{\micro\meter} sensors. 
 Moreover, per-pad leakage currents of the non-irradiated sensors did not exceed a few nA, and the total currents at room temperatures between 20-\SI{24}{\celsius} over the full sensor remained well below \SI{100}{\micro\ampere} over the relevant range of bias voltages up to \SI{-850}{\volt}. %\newline
 In general, exposure of silicon sensors to radiation causes displacement damage to the silicon lattice which affects both the leakage currents and the depletion voltages. 
