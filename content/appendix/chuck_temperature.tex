@@ -1,6 +1,6 @@
 \section{Temperature Uniformity of the Systems att C200-40 Cold Chuck}
 \label{appendix:chuck_temp}
-The leakage current in silicon devices is dependent on the temperature.
+The leakage current in silicon devices dependends on the temperature.
 For the investigated sensors in this work, the current is mainly generated in the bulk for which the temperature ($T$) and current ($I$) are related by~\ref{eq:temp_scaling}~\cite{Chilingarov_2013}, where $E_\text{eff}=\SI{1.21}{\electronvolt}$ is the effective gab energy and $k_b$ denotes the Boltzmann constant.
 \begin{equation}
     \frac{I}{T^2}\cdot \exp{\frac{E_\text{eff}}{2\cdot k_b \cdot T}}~\equiv~\text{const.}
@@ -16,11 +16,11 @@ The validity of this temperature scaling law applied for the HGCAL silicon pad s
 	\label{plot:iv_tempscaling}
 	\end{figure}
 Notably, a change by \SI{1}{\celsius} impacts the current by more than 10$~\%$. 
-Variations of the temperature across the chuck, and with it across the sensor, may mimic neutron fluence profiles as in~\ref{plot:iv_hexplot}. 
+Variations of the temperature across the actively cooled-down chuck, and with it across the sensor, may mimic neutron fluence profiles as in~\ref{plot:iv_hexplot}. 
 Thus, they should be identified and corrected for.%\newline
 In this work, the temperature non-uniformity of the cold chuck at CERN (C200-40 model produced by Systems att) could be estimated from leakage current data of neutron-irradiated sensors.
-By comparing per-pad currents ($I_{i(j,k)}$) at a fixed bias voltage between symmetric locations $i$, $j$, $k$, temperature differences $\delta I_{i(j), k}$ can be calculated according to~\ref{eq:temp_diff}.
-For this purpose, one of the neutron-irradiated low density sensors was characterised three times at \SI{0}{\degree}, \SI{120}{\degree}, and \SI{240}{\degree} orientation.
+By comparing per-pad currents ($I_{i(j,k)}$) at a fixed bias voltage between the symmetry locations $i$, $j$, $k$, described below, temperature differences $\delta I_{i(j), k}$ can be calculated according to~\ref{eq:temp_diff}.
+For this purpose, one of the neutron-irradiated low-density sensors was characterised three times at \SI{0}{\degree}, \SI{120}{\degree}, and \SI{240}{\degree} rotation.
 The precision in repeating the sensor placement on the chuck can be neglected with respect to the size of the pads. 
 \begin{equation}
     \frac{\delta I_{i(j),k}}{I_k} = \frac{\delta T_{i(j), k}}{T_k} \cdot \left(2 + \frac{E_\text{eff}}{2\cdot k_b \cdot T_k} \right)~,~~T_k \coloneqq T_\text{ref}
@@ -29,7 +29,7 @@ The precision in repeating the sensor placement on the chuck can be neglected wi
 \ref{plot:chucktemp_before} shows the hereby computed chuck temperature differences.
 The determined variation is consistent with the $\pm\SI{0.5}{\celsius}$ non-uniformity as specified by the chuck producer.
 Assuming a reference temperature of $T_\text{ref}\equiv\SI{-40}{\celsius}$, a two-dimensional gaussian parameterisation bound to $[\SI{-0.5}{\celsius}, \SI{0.5}{\celsius}]$ is fitted to reproduce the temperature differences $\delta I_{i(j),k}$.
-The fit is performed with the tensorflow library (version 2.6.0) and the result is shown in~\ref{plot:chucktemp_correction}.
+The result of the fit is shown in~\ref{plot:chucktemp_correction}.
 \begin{figure}
 	\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 	\centering
@@ -60,4 +60,4 @@ The fit is performed with the tensorflow library (version 2.6.0) and the result 
 	}
 \end{figure}
 The hereby constructed map of chuck temperature differences is input to correct the measured per-pad leakage currents using~\ref{eq:temp_scaling}.
-As a closure check, the re-application of~\ref{eq:temp_diff} on the temperature-corrected dataset demonstrates the applicability of this particular chuck temperature model.
+As a closure check, the re-application of~\ref{eq:temp_diff} on the temperature-corrected dataset demonstrates the applicability of this particular chuck temperature model as shown in~\ref{plot:chucktemp_after}.
