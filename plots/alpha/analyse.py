@@ -236,7 +236,7 @@ pad.SetGrid(True)
 
 if UREF == 600:
     location_label_text = ROOT.TText()
-    location_label_text.SetTextColor(ROOT.kGray)
+    location_label_text.SetTextColor(ROOT.kBlack)
     location_label_text.SetTextSize(0.03)
     #location_label_text.DrawText(0.23, 0.24, "CERN")
     #location_label_text.DrawText(0.3, 0.29, "CERN")
@@ -248,7 +248,7 @@ if UREF == 600:
     location_label_text.DrawText(0.855, 0.765, "0.5x p-stop")
 
     type_label_text = ROOT.TLatex()
-    type_label_text.SetTextColor(ROOT.kBlack)
+    type_label_text.SetTextColor(ROOT.kViolet+1)
     type_label_text.SetTextSize(0.04)
     type_label_text.DrawLatex(0.25, 0.56, "300 #mum, LD")
     type_label_text.DrawLatex(0.48, 0.56, "200 #mum, LD")
