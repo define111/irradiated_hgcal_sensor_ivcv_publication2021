@@ -17,8 +17,8 @@ from common.util import *
 
 
 #measurement specifics
-_measID = "8in_198ch_2019_2004_25E14_neg40"
-Campaign = "Spring2021_ALPS"
+_measID = "8in_198ch_2019_N4790_05_neg40degC_BackSideBiased"
+Campaign = "RINSC_May2022_ALPS_BacksideBias"
 
 hexplot_geo_file_path = os.path.join(os.environ["HEXPLOT_DIR"], "geo", "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt")
 
@@ -45,15 +45,15 @@ pad.cd()
 # determine per-channel leakage current at common voltage (EVALVOLTAGE)
 tmp_data = []
 
-for annealing in [0, 9, 24, 61, 80]:
+for annealing in [30, 50, 68, 83]:
     postfix = ""
     if annealing > 0:
-        postfix = "_%iminAnnealing" % annealing
+        postfix = "_%iminsAnnealing" % annealing
     measID = _measID+postfix
 
 
     infile_path = os.path.join(os.environ["DATA_DIR"], "cv/%s/Vdep/%s/Vdep_serial.txt" % (Campaign, measID))
-
+    print(infile_path)
     #reject the bad channels
     data_in = pd.DataFrame(np.genfromtxt(infile_path, usecols=(1,2,3), skip_header=1), columns=["Pad", "Dummy", "Vdep"])
     data_in = data_in[~data_in.Pad.isin(NONFULLCELLS)]
@@ -94,7 +94,7 @@ for draw_index, _channel in enumerate(_df.Pad.unique()):
     cm.setup_y_axis(graphs[_channel].GetYaxis(), pad, {"Title": yaxis_title})
 
     if NGraphs==1:
-        graphs[_channel].GetYaxis().SetRangeUser(59., 101.)
+        graphs[_channel].GetYaxis().SetRangeUser(83., 101.)
         graphs[_channel].Draw("APL")
     else:
         graphs[_channel].Draw("PLSAME")
@@ -111,7 +111,7 @@ cms_labels.Draw()
 campaign_label = cm.create_campaign_label()
 campaign_label.Draw()
 
-_label_text = "LD, 200 #mum, ~2.4#times10^{15}/cm^{2}"
+_label_text = "LD, 300 #mum, ~3.7#times10^{15}/cm^{2}"
 label = ROOT.TLatex(0.24, 0.82, _label_text)
 cm.setup_label(label, {"TextFont": 73})
 legend1.SetHeader(_label_text)

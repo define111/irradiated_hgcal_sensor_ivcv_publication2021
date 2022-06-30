@@ -44,10 +44,10 @@ HEXPLOTCOMMAND = "<HEXPLOTDIR>/bin/HexPlot \
                 --if <FORMAT> \
                 --CV -p GEO  --colorpalette <COLORPALETTE>\
                 --vn 'Capacitance:<DEF>:<UNIT>' --select <SELECTORVAL>\
-                -z <ZMIN>:<ZMAX>".replace("<HEXPLOTDIR>", os.environ["HEXPLOT_DIR"]).replace("<GEOFILE>", "hex_positions_HPK_198ch_8inch_edge_ring_testcap_paper.txt")
+                -z <ZMIN>:<ZMAX>".replace("<HEXPLOTDIR>", os.environ["HEXPLOT_DIR"]).replace("<GEOFILE>", "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt")
 
 # get geometry mapping
-geofile = "<HEXPLOTDIR>/geo/<GEOFILE>".replace("<HEXPLOTDIR>", os.environ["HEXPLOT_DIR"]).replace("<GEOFILE>", "hex_positions_HPK_198ch_8inch_edge_ring_testcap_paper.txt")
+geofile = "<HEXPLOTDIR>/geo/<GEOFILE>".replace("<HEXPLOTDIR>", os.environ["HEXPLOT_DIR"]).replace("<GEOFILE>", "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt")
 geomap = pd.DataFrame(np.genfromtxt(geofile, usecols=(0, 1, 2), dtype=[("padnr", int), ("x", float), ("y", float)]))
 temperatures = []
 dummy = np.zeros(len(geomap))

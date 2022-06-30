@@ -18,11 +18,93 @@ import pandas as pd
 from common.meta import GEOFILES
 
 MEASUREMENTS = {
-    "3009_annealed": {
-        "MeasID": "8in_432_3009_5E15_neg40_post80minAnnealing_chucktempcorrected",
-        "Campaign": "June2021_ALPS", 
-        "SensorType": "HD",
-        "zmax": 2.12,
+    "N4790_7": {
+        "MeasID": "HPK_8in_198ch_2019_N4790_7_neg40degC_BackSideBiased_80minsAnnealing",
+        "Campaign": "RINSC_May2022_ALPS_BacksideBias", 
+        "SensorType": "LD",
+        "zmax": 6.0,
+        "Title": "after additional annealing"
+    },
+    "N4792_6": {
+        "MeasID": "8in_198ch_2019_N4792_6_neg40degC_BackSideBiased_80minsAnnealing",
+        "Campaign": "RINSC_May2022_ALPS_BacksideBias", 
+        "SensorType": "LD",
+        "zmax": 6.0,
+        "Title": "after additional annealing"
+    },
+    
+    "N4790_19": {
+        "MeasID": "8in_198ch_2019_N4790_19_neg40degC_BackSideBiased_80minsAnnealing",
+        "Campaign": "RINSC_May2022_ALPS_BacksideBias", 
+        "SensorType": "LD",
+        "zmax": 6.0,
+        "Title": "after additional annealing"
+    },
+    
+    "N4790_5": {
+        "MeasID": "8in_198ch_2019_N4790_05_neg40degC_80minsAnnealing_BackSideBias",
+        "Campaign": "RINSC_May2022_ALPS_BacksideBias", 
+        "SensorType": "LD",
+        "zmax": 4.0,
+        "Title": "after additional annealing"
+    },
+    "N4791_10": {
+        "MeasID": "8in_198ch_2019_N4791_10_neg40degC_BackSideBiased_80minsAnnealing",
+        "Campaign": "RINSC_May2022_ALPS_BacksideBias", 
+        "SensorType": "LD",
+        "zmax": 4.0,
+        "Title": "after additional annealing"
+    },
+    
+    "N4790_16": {
+        "MeasID": "8in_198ch_2019_N4790_16_neg40degC_BackSideBias_115minsAnnealing",
+        "Campaign": "RINSC_May2022_ALPS_BacksideBias", 
+        "SensorType": "LD",
+        "zmax": 4.0,
+        "Title": "after additional annealing"
+    },
+    
+    "N4790_09": {
+        "MeasID": "HPK_8in_198ch_2019_N4790_9_neg40degC_BackSideBiased_80minsAnnealing",
+        "Campaign": "RINSC_May2022_ALPS_BacksideBias", 
+        "SensorType": "LD",
+        "zmax": 6.5,
+        "Title": "after additional annealing"
+    },
+    "N4790_21": {
+        "MeasID": "HPK_8in_198ch_2019_N479021_neg40degC_BackSideBiased_115minsAnnealing",
+        "Campaign": "RINSC_May2022_ALPS_BacksideBias", 
+        "SensorType": "LD",
+        "zmax": 6.5,
+        "Title": "after additional annealing"
+    },
+    "N4792_7": {
+        "MeasID": "HPK_8in_198ch_2019_N4792_7_neg40degC_BackSideBiased_80minsAnnealing",
+        "Campaign": "RINSC_May2022_ALPS_BacksideBias", 
+        "SensorType": "LD",
+        "zmax": 6.5,
+        "Title": "after additional annealing"
+    },
+
+    "N4790_8": {
+        "MeasID": "8in_198ch_2019_N4790_8_neg40degC",
+        "Campaign": "RINSC_March2022_ALPS", 
+        "SensorType": "LD",
+        "zmax": 5.0,
+        "Title": "after additional annealing"
+    },
+    "N4792_09": {
+        "MeasID": "8in_198ch_2019_N4792_09_neg40degC_noAnnealing",
+        "Campaign": "RINSC_March2022_ALPS", 
+        "SensorType": "LD",
+        "zmax": 5.0,
+        "Title": "after additional annealing"
+    },
+    "N4792_20": {
+        "MeasID": "8in_198ch_2019_N4792_20_neg40degC_noAnnealing",
+        "Campaign": "RINSC_March2022_ALPS", 
+        "SensorType": "LD",
+        "zmax": 5.0,
         "Title": "after additional annealing"
     },
     "1013_annealed": {
@@ -155,7 +237,9 @@ for ID in MEASUREMENTS:
     infilepath = os.path.join(os.environ["DATA_DIR"], "iv/<CAMPAIGN>/channelIV/<MEASID>/TGraphErrors.root")
     infilepath = infilepath.replace("<CAMPAIGN>", Campaign)
     infilepath = infilepath.replace("<MEASID>", measID)
+    print(os.environ["DATA_DIR"])
     infile = ROOT.TFile(infilepath, "READ")
+
 
     # retrieve sensor information
 
@@ -200,8 +284,8 @@ for ID in MEASUREMENTS:
         "channel", "U", "I"])
 
     lcurr_vis_path = os.path.join(
-        thisdir, "%s.pdf" % ID)
-    tmp_file_path = lcurr_vis_path.replace(".pdf", ".txt")
+        thisdir, "%s.png" % ID)
+    tmp_file_path = lcurr_vis_path.replace(".png", ".txt")
     np.savetxt(tmp_file_path, _df)
 
     this_cmd = HEXPLOTCOMMAND

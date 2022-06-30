@@ -3,13 +3,14 @@
 #tested with 6.06 and 6.22
 
 action() {
-    local src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && /bin/pwd )"
+    local src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && /bin/.pwd )"
     local origin="$( pwd )"
 
     export PYTHONPATH=$PWD:$PYTHONPATH;
     export DATA_DIR=$PWD/../data/ivcv_irradiated_2021;
+    source /home/marta/root/bin/thisroot.sh;
+    export HEXPLOT_DIR=/home/marta/HGCAL_sensor_analysis/;
 
-    cd "$src_dir"
     (
         python3 total_iv/overlay.py --type good;
     ) 
@@ -24,13 +25,17 @@ action() {
     )
     (
         python3 annealing_iv/overlay_iv_curve.py;
+        python3 annealing_iv/current_vs_annealing.py;
     )
     (
         python3 annealing_Vdep/overlay_cv_curve.py;
+        python3 annealing_Vdep/Vdep_vs_annealing.py
     )  
     (
         python3 alpha/analyse_internal.py --UREF 600;
         python3 alpha/analyse.py --UREF 600;
+        python3 alpha/analyse.py --UREF 800;
+        python3 alpha/analyse.py --UREF -1;
     )
     (
         python3 iv_temp_scaling/overlay.py;

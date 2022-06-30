@@ -220,7 +220,7 @@ def create_cms_labels(postfix="R&D", x=0.135, y=0.96):
     return label
 
 
-def create_campaign_label(text="2020/21 irradiation at RINSC", x=0.93, y=0.96):
+def create_campaign_label(text="2021/22 irradiation at RINSC", x=0.93, y=0.96):
     label = ROOT.TLatex(x, y, text)
     setup_label(label, {"TextAlign": 31})
     return label

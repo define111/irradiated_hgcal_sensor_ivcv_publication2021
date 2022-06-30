@@ -4,8 +4,8 @@ import os
 
 
 GEOFILES = {
-    "LD": "hex_positions_HPK_198ch_8inch_edge_ring_testcap_paper.txt",
-    "HD": "hex_positions_HPK_432ch_8inch_edge_ring_testcap_paper.txt"
+    "LD": "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt",
+    "HD": "hex_positions_HPK_432ch_8inch_edge_ring_testcap.txt"
 }
 
 MEASUREMENTS = {}
@@ -18,29 +18,47 @@ MEASUREMENTS["1002"] = {
     "thickness": 300,
     "Vfb": -2,
     "fluence": 7.1,                 #round 1, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
-    "annealing": 80.5
+    "annealing": 80.5,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "1002",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["1102"] = {
     "Campaign": "October2020_ALPS",
     "Design": "LD",
     "Cells": [159, 171, 172],
     "ID": "8in_198ch_2019_1102_65E13_neg40_annealed68min_October2020_chucktempcorrected",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 300,
     "Vfb": -2,
     "fluence": 7.1,                 #round 1, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
-    "annealing": 76.7
+    "annealing": 76.7,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "1102",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["1101"] = {
     "Campaign": "October2020_ALPS",
     "Design": "LD",
     "Cells": [159, 171, 172],
     "ID": "8in_198ch_2019_1101_65E13_neg40_annealed68min_October2020_chucktempcorrected",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 300,
     "Vfb": -5,
     "fluence": 7.1,                 #round 1, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
-    "annealing": 76.0
+    "annealing": 76.0,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",\
+    "oxideType": "No",
+    "Sensor_name": "1101",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["2002"] = {
     "Campaign": "Spring2021_ALPS",
@@ -51,29 +69,47 @@ MEASUREMENTS["2002"] = {
     "thickness": 200,
     "Vfb": -2, 
     "fluence": 23.5,                  #round 5, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
-    "annealing": 79.9
+    "annealing": 79.9,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "2002",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["2114"] = {
     "Campaign": "Spring2021_ALPS",
     "Design": "LD",
     "Cells": [78, 92, 93],
     "ID": "8in_198ch_2019_2114_25E14_neg40_80minAnnealing_chucktempcorrected",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 200,
     "Vfb": -2, 
     "fluence": 23.5,                  #round 5, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
-    "annealing": 79.9
+    "annealing": 79.9,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "2114",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["2105"] = {
     "Campaign": "Spring2021_ALPS",
     "Design": "LD",
     "Cells": [78, 92, 93],
     "ID": "8in_198ch_2019_2105_25E14_neg40_80minAnnealing_chucktempcorrected",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 200,
     "Vfb": -5, 
     "fluence": 23.5,                  #round 5, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
-    "annealing": 79.9
+    "annealing": 79.9,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "2105",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["2004"] = {
     "Campaign": "Spring2021_ALPS",
@@ -84,7 +120,13 @@ MEASUREMENTS["2004"] = {
     "thickness": 200,
     "Vfb": -5, 
     "fluence": 23.5,                  #round 5, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
-    "annealing": 79.9
+    "annealing": 79.9,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "2004",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["3002"] = {
     "Campaign": "Winter2021",
@@ -95,18 +137,30 @@ MEASUREMENTS["3002"] = {
     "thickness": 120,
     "Vfb": -2, 
     "fluence": 110,                 #round 3, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf                 
-    "annealing": 400
+    "annealing": 400,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3002",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["3102"] = {
     "Campaign": "Winter2021",
     "Design": "HD",
     "Cells": [103, 104, 121, 122, 140, 141, 142],
     "ID": "8in_432_3102_1E16_neg40deg_new_picoammeter_Winter2021_chucktempcorrected",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 120,
     "Vfb": -2, 
     "fluence": 110,                 #round 3, c.f. https://indico.cern.ch/event/1085830/contributions/4565317/attachments/2343669/3995999/11-12-2021_RINSC_Irradiation_Validation_and_Status.pdf
-    "annealing": 400
+    "annealing": 400,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3102",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["3009"] = {
     "Campaign": "June2021_ALPS",
@@ -117,7 +171,13 @@ MEASUREMENTS["3009"] = {
     "thickness": 120,
     "Vfb": -2, 
     "fluence": 50,                  #round 8
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3009",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["3010"] = {
     "Campaign": "June2021_ALPS",
@@ -128,29 +188,47 @@ MEASUREMENTS["3010"] = {
     "thickness": 120,
     "Vfb": -2, 
     "fluence": 50,                  #round 8
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3010",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["3109"] = {
     "Campaign": "June2021_ALPS",
     "Design": "HD",
     "Cells": [166, 167, 187, 188, 189, 211, 212],
     "ID": "8in_432_3109_5E15_neg40_post80minAnnealing_chucktempcorrected",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 120,
     "Vfb": -2, 
     "fluence": 50,                  #round 8
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3109",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["3110"] = {
     "Campaign": "June2021_ALPS",
     "Design": "HD",
     "Cells": [166, 167, 187, 188, 189, 211, 212],
     "ID": "8in_432_3110_5E15_neg40_post80minAnnealing_chucktempcorrected",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 120,
     "Vfb": -2, 
     "fluence": 50,                  #round 8
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 8_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3110",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["1013"] = {
     "Campaign": "June2021_ALPS",
@@ -161,18 +239,30 @@ MEASUREMENTS["1013"] = {
     "thickness": 300,
     "Vfb": -2, 
     "fluence": 8.2,                  #round 10               
-    "annealing": 80.
+    "annealing": 80,
+    "version": 1,
+    "Round": 10_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "1013",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["1114"] = {
     "Campaign": "June2021_ALPS",
     "Design": "LD",
     "Cells": [164, 165, 175],
     "ID": "8in_198ch_2019_1114_1E15_neg40_post80minAnnealing_chucktempcorrected",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 300,
     "Vfb": -2, 
     "fluence": 8.2,                  #round 10               
-    "annealing": 80.
+    "annealing": 80,
+    "version": 1,
+    "Round": 10_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "1114",
+    "Frequency": "1kHz_old",
 }
 MEASUREMENTS["5414"] = {
     "Campaign": "June2021_ALPS",
@@ -183,7 +273,13 @@ MEASUREMENTS["5414"] = {
     "thickness": 200,
     "Vfb": -5, 
     "fluence": 19,                  #round 11
-    "annealing": 100.
+    "annealing": 100,
+    "version": 1,
+    "Round": 11_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "5414",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["3005"] = {
@@ -195,7 +291,13 @@ MEASUREMENTS["3005"] = {
     "thickness": 120,
     "Vfb": -2,                  #cf. https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 16.5,             #round 7
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 7_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3005",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["3008"] = {
@@ -207,7 +309,13 @@ MEASUREMENTS["3008"] = {
     "thickness": 120,
     "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 16.5,             #round 7
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 7_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3008",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["3104"] = {
@@ -215,11 +323,17 @@ MEASUREMENTS["3104"] = {
     "Design": "HD",
     "Cells": [203, 204, 227, 228, 229, 251, 252],
     "ID": "8in_432_3104_25E14_neg40_postAnnealing_TTU",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 120,
     "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 16.5,             #round 7
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 7_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3104",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["3105"] = {
@@ -227,11 +341,17 @@ MEASUREMENTS["3105"] = {
     "Design": "HD",
     "Cells": [203, 204, 227, 228, 229, 251, 252],
     "ID": "8in_432_3105_25E14_neg40_postAnnealing_TTU",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 120,
     "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 16.5,             #round 7
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 7_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3105",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["3101"] = {
@@ -239,11 +359,17 @@ MEASUREMENTS["3101"] = {
     "Design": "HD",
     "Cells": [203, 204, 227, 228, 229, 251, 252],
     "ID": "8in_432_3101_1E16_neg40_TTU",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 120,
     "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 80.0,             #round 6
-    "annealing": 0
+    "annealing": 0,
+    "version": 1,
+    "Round": 6_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3101",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["3107"] = {
@@ -251,11 +377,17 @@ MEASUREMENTS["3107"] = {
     "Design": "HD",
     "Cells": [203, 204, 227, 228, 229, 251, 252],
     "ID": "8in_432_3107_1E16_neg40_TTU",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 120,
     "Vfb": -5,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 80.0,             #round 6
-    "annealing": 0
+    "annealing": 0,
+    "version": 1,
+    "Round": 6_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "3107",
+    "Frequency": "1kHz_old",
 }
 
 
@@ -264,11 +396,17 @@ MEASUREMENTS["1105"] = {
     "Design": "LD",
     "Cells": [88, 103, 104],
     "ID": "8in_198ch_2019_1105_15E14_neg40_postAnnealing_TTU",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 300,
     "Vfb": -5,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 13.5,             #round 9
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 9_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "1105",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["1105_xcheck"] = {
@@ -276,11 +414,17 @@ MEASUREMENTS["1105_xcheck"] = {
     "Design": "LD",
     "Cells": [88, 103, 104],
     "ID": "8in_198ch_2019_1105_neg40degC",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 300,
     "Vfb": -5,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 13.5,             #round 9
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 9_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "1105_xcheck",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["1003"] = {
@@ -292,7 +436,13 @@ MEASUREMENTS["1003"] = {
     "thickness": 300,
     "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 13.5,             #round 9
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 9_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "1003",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["1003_xcheck"] = {
@@ -304,7 +454,13 @@ MEASUREMENTS["1003_xcheck"] = {
     "thickness": 300,
     "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 13.5,             #round 9
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 9_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "1003_xcheck",
+    "Frequency": "1kHz_old",
 }
 
 
@@ -313,11 +469,17 @@ MEASUREMENTS["1113"] = {
     "Design": "LD",
     "Cells": [88, 103, 104],
     "ID": "8in_198ch_2019_1113_15E14_neg40_postAnnealing_TTU",
-    "p-stop": "comm.",
+    "p-stop": "com.",
     "thickness": 300,
     "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 13.5,             #round 9
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 9_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "1113",
+    "Frequency": "1kHz_old",
 }
 
 MEASUREMENTS["54117"] = {
@@ -329,10 +491,288 @@ MEASUREMENTS["54117"] = {
     "thickness": 300,
     "Vfb": -5,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
     "fluence": 13.5,             #round 9
-    "annealing": 80
+    "annealing": 80,
+    "version": 1,
+    "Round": 9_1,
+    "Annealing_stage": "Final",
+    "oxideType": "No",
+    "Sensor_name": "54117",
+    "Frequency": "1kHz_old",
 }
 
 
+MEASUREMENTS["N4790_5"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4790_05_neg40degC_BackSideBiased_80minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 300,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "B",
+    "fluence": 16,             #round 7
+    "annealing": 80,
+    "version": 2,
+    "Round": 7,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4790_5",
+    "Frequency": "1kHz",
+}
+
+
+MEASUREMENTS["N4790_16"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4790_16_neg40degC_BackSideBias_115minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 300,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "D",
+    "fluence": 16,             #round 7
+    "annealing": 80,
+    "version": 2,
+    "Round": 7,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4790_16",
+    "Frequency": "1kHz",
+}
+
+MEASUREMENTS["N4792_6"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4792_6_neg40degC_BackSideBiased_80minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 200,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "C",
+    "fluence": 37,             #round 3
+    "annealing": 80,
+    "version": 2,
+    "Round": 3,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4792_6",
+    "Frequency": "1kHz",
+}
+
+
+MEASUREMENTS["N4792_7"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4792_7_neg40degC_BackSideBiased_80minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 200,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "C",
+    "fluence": 37,             #round 5
+    "annealing": 80,
+    "version": 2,
+    "Round": 5,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4792_7",
+    "Frequency": "1kHz",
+}
+
+MEASUREMENTS["N4790_9"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4790_9_neg40degC_BackSideBiased_80minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 200,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "B",
+    "fluence": 37,             #round 5
+    "annealing": 80,
+    "version": 2,
+    "Round": 5,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4790_9",
+    "Frequency": "1kHz",
+}
+
+MEASUREMENTS["N4790_21"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N479021_neg40degC_BackSideBiased_115minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 200,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "D",
+    "fluence": 37,             #round 5
+    "annealing": 80,
+    "version": 2,
+    "Round": 5,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4790_21",
+    "Frequency": "1kHz",
+}
+
+MEASUREMENTS["N4790_19"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4790_19_neg40degC_BackSideBiased_80minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 200,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "D",
+    "fluence": 37,             #round 3
+    "annealing": 80,
+    "version": 2,
+    "Round": 3,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4790_19",
+    "Frequency": "1kHz",
+}
+
+MEASUREMENTS["N4790_7"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4790_7_neg40degC_BackSideBiased_80minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 200,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "B",
+    "fluence": 37,             #round 3
+    "annealing": 80,
+    "version": 2,
+    "Round": 3,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4790_7",
+    "Frequency": "1kHz",
+}
+
+MEASUREMENTS["N4791_6"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4791_6_neg40degC_BackSideBiased_80minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 300,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "C",
+    "fluence": 21,             #round 1
+    "annealing": 80,
+    "version": 2,
+    "Round": 1,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4791_6",
+    "Frequency": "1kHz",
+}
+
+
+MEASUREMENTS["N4790_19_2kHz"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4790_19_neg40degC_BackSideBiased_80minsAnnealing_2kHz",
+    "p-stop": "com.",
+    "thickness": 200,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "D",
+    "fluence": 37,             #round 3
+    "annealing": 80,
+    "version": 2,
+    "Round": 3,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4790_19",
+    "Frequency": "2kHz",
+}
+
+MEASUREMENTS["N4792_6_2kHz"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4792_6_neg40degC_BackSideBiased_80minsAnnealing_2kHz",
+    "p-stop": "com.",
+    "thickness": 200,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "C",
+    "fluence": 37,             #round 3
+    "annealing": 80,
+    "version": 2,
+    "Round": 3,
+    "Annealing_stage": "Final",
+    "Sensor_name": "N4792_6",
+    "Frequency": "2kHz",
+}
+
+MEASUREMENTS["N4790_4_8mins"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "HPK_8in_198ch_2019_N4790_4_neg40degC_BackSideBiased_8minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 300,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "B",
+    "fluence": 12,             #round 8
+    "annealing": 80,
+    "version": 2,
+    "Round": 8,
+    "Annealing_stage": "Partial",
+    "Sensor_name": "N4790_4",
+    "Frequency": "1kHz",
+}
+
+MEASUREMENTS["N4790_4_38mins"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "HPK_8in_198ch_2019_N4790_4_neg40degC_BackSideBiased_38minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 300,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "B",
+    "fluence": 12,             #round 8
+    "annealing": 38,
+    "version": 2,
+    "Round": 8,
+    "Annealing_stage": "Partial",
+    "Frequency": "1kHz",
+    "Sensor_name": "N4790_4"
+}
+
+MEASUREMENTS["N4791_10_30mins"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4791_10_neg40degC_BackSideBiased_30minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 300,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "C",
+    "fluence": 16,             
+    "annealing": 30,
+    "version": 2,
+    "Round": 7,
+    "Annealing_stage": "Partial",
+    "Frequency": "1kHz",
+    "Sensor_name": "N4791_10"
+}
+
+MEASUREMENTS["N4791_10_80mins"] = {
+    "Campaign": "RINSC_May2022_ALPS_BacksideBias",
+    "Design": "LD",
+    "Cells": [193, 194, 195],
+    "ID": "8in_198ch_2019_N4791_10_neg40degC_BackSideBiased_80minsAnnealing",
+    "p-stop": "com.",
+    "thickness": 300,
+    "Vfb": -2,                  #https://docs.google.com/spreadsheets/d/1YQ9Icu-fA5thREVmhuf5KUcIxVmbys7nzgwrs02DT20/edit#gid=928090113
+    "oxideType": "C",
+    "fluence": 16,             
+    "annealing": 30,
+    "version": 2,
+    "Round": 7,
+    "Annealing_stage": "Final",
+    "Frequency": "1kHz",
+    "Sensor_name": "N4791_10"
+}
 
 class Dataset:
     def __init__(self):

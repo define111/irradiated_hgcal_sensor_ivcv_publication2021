@@ -16,8 +16,8 @@ args = parser.parse_args()
 
 #read DB information
 hexplot_geo_file = {
-	"LD": "hex_positions_HPK_198ch_8inch_edge_ring_testcap_paper.txt",
-	"HD": "hex_positions_HPK_432ch_8inch_edge_ring_testcap_paper.txt"
+	"LD": "hex_positions_HPK_198ch_8inch_edge_ring_testcap.txt",
+	"HD": "hex_positions_HPK_432ch_8inch_edge_ring_testcap.txt"
 }[args.geometry]
 
 tmp_file_path = os.path.join(thisdir, "%s.txt" % args.geometry)
